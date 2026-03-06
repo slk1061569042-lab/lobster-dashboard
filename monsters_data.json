@@ -1,0 +1,6479 @@
+[
+  {
+    "id": "mon_slime_normal",
+    "name": "史莱姆",
+    "description": "最常见的史莱姆，身体富有弹性，能吸收物理冲击。",
+    "icon": "🟢",
+    "stars": 1,
+    "attribute": "water",
+    "element": "water",
+    "race": "beast",
+    "class": "warrior",
+    "hp": 480,
+    "base_atk": 220,
+    "base_def": 5,
+    "spd": 35,
+    "passive": {
+      "name": "弹性体质",
+      "effect": "absorb_physical_50",
+      "skill_ref": "ps_slime_normal"
+    },
+    "tier_max": 5,
+    "effects": {
+      "passive": {
+        "desc": "身体富有弹性，能像果冻一样弹开一些攻击，战斗伤害-50",
+        "type": "absorb_physical",
+        "value": 50
+      }
+    },
+    "evolution": {
+      "type": "fusion",
+      "target": "mon_slime_knight",
+      "materials": [
+        "mon_slime_normal",
+        "mon_slime_shadow"
+      ]
+    },
+    "sprite_path": "res://assets/monsters/mon_slime_normal/fullbody.png",
+    "source": "drop",
+    "tags": [
+      "史莱姆",
+      "森林",
+      "弹性"
+    ],
+    "created_at": "2026-02-21 10:44:18.213663+00",
+    "updated_at": "2026-02-22 12:00:00.000000+00",
+    "bonds": [
+      {
+        "desc": "与史莱姆皇后同时在场时ATK+100",
+        "bonus_type": "atk",
+        "partner_id": "mon_slime_queen",
+        "bonus_value": 100
+      }
+    ],
+    "weaknesses": [
+      {
+        "attr": "fire",
+        "multiplier": 1.5
+      }
+    ],
+    "skills": {
+      "basic_attack": "sk_slime_normal_basic",
+      "skill_1": "sk_slime_normal_skill_1",
+      "skill_2": "sk_slime_normal_skill_2",
+      "skill_3": "sk_slime_normal_skill_3"
+    },
+    "cost": 1,
+    "star": 1,
+    "active_skill": {
+      "name": "弹性冲击",
+      "desc": "将富有弹性的身体弹向敌人，造成ATK×110%伤害，受到的物理反击伤害减半",
+      "effect": "damage"
+    },
+    "lore": {
+      "flavor_text": "它曾经是什么？一个农夫？一只野兔？没有人知道。灵息抽取装置夺走了它维持形态的源息，只剩下一团黏稠的凝胶。月圆之夜，它会聚集在灵脉节点附近，发出微弱的嗡鸣，像是在试图说话。",
+      "origin": "大寂灭受害者",
+      "era": "残息纪元",
+      "tragedy": "偶尔能在半透明的身体里看到模糊的轮廓——前世的残影。"
+    },
+    "battle_lines": {
+      "on_appear": "咕噜……好冷，好黑……你也是，在找出口吗……？",
+      "on_attack": "咕叽！不许……再往前了……",
+      "on_defeat": "名字……还没……想起来……咕……",
+      "on_victory": "大家……安全一点了……咕噜……"
+    },
+    "fullbody_path": "res://assets/sprites/characters/fullbody/slime_normal_fullbody.png",
+    "skills_desc": [
+      {
+        "id": "skill_bounce",
+        "desc": "受到攻击时身体会像弹球一样弹开，有30%几率完全回避伤害",
+        "icon": "🌀",
+        "name": "弹跳"
+      }
+    ],
+    "passive_id": "ps_slime_normal",
+    "dialogue_config": {
+      "personality": "curious",
+      "voice_style": "childlike",
+      "knowledge_tags": [
+        "forest",
+        "slime_origin",
+        "star_fall_village"
+      ],
+      "special_topics": [
+        "大寂灭",
+        "凝露",
+        "源息"
+      ]
+    },
+    "base_relation": "neutral",
+    "capture_difficulty": 0.2,
+    "dex_number": 3,
+    "scene": "史莱姆森林",
+    "card_no": 1,
+    "atk": 220,
+    "def": 5
+  },
+  {
+    "id": "mon_slime_ice",
+    "name": "冰霜史莱姆",
+    "description": "周身散发寒气，能冻结接触的一切。",
+    "icon": "🔵",
+    "stars": 2,
+    "attribute": "ice",
+    "element": "ice",
+    "race": "beast",
+    "class": "warrior",
+    "hp": 700,
+    "base_atk": 320,
+    "base_def": 5,
+    "spd": 50,
+    "passive": {
+      "name": "冰甲",
+      "effect": "ice_armor_def100",
+      "skill_ref": "ps_slime_ice"
+    },
+    "tier_max": 5,
+    "effects": {
+      "summon": {
+        "desc": "召唤时：冻结对方1只怪兽1回合",
+        "type": "freeze",
+        "value": 1,
+        "target": "opponent_one"
+      },
+      "passive": {
+        "desc": "体表覆盖着一层寒冰铠甲，受到火属性以外的攻击时额外获得100点防御",
+        "type": "ice_armor",
+        "value": 100
+      }
+    },
+    "evolution": {
+      "type": "fusion",
+      "target": "mon_elemental_slime",
+      "materials": [
+        "mon_slime_fire",
+        "mon_slime_ice"
+      ]
+    },
+    "sprite_path": "res://assets/monsters/mon_slime_ice/fullbody.png",
+    "source": "drop",
+    "tags": [
+      "史莱姆",
+      "森林",
+      "冰霜"
+    ],
+    "created_at": "2026-02-21 10:44:18.213663+00",
+    "updated_at": "2026-02-22 12:00:00.000000+00",
+    "bonds": [],
+    "weaknesses": [
+      {
+        "attr": "fire",
+        "multiplier": 2
+      }
+    ],
+    "skills": {
+      "basic_attack": "sk_slime_ice_basic",
+      "skill_1": "sk_slime_ice_skill_1",
+      "skill_2": "sk_slime_ice_skill_2",
+      "skill_3": "sk_slime_ice_skill_3"
+    },
+    "cost": 2,
+    "star": 2,
+    "active_skill": {
+      "name": "冰霜护盾",
+      "desc": "凝结周身寒气形成冰晶护盾，为单体友方抵挡一次伤害并反弹30%给攻击者",
+      "effect": "buff"
+    },
+    "lore": {
+      "flavor_text": "比蓝史莱姆更深层的静息之力凝结而成。它的前身是静息派的封印师，那些在大寂灭中试图用封印术阻止灾变的人。被击败时身体不会溅散，而是缓缓凝固为一块冰晶。",
+      "origin": "静息派封印师残魂",
+      "era": "残息纪元",
+      "tragedy": "沉默矿洞中的冰史莱姆有时会排列成特定的阵型——那是三百年前某个封印术式的残影。"
+    },
+    "fullbody_path": "res://assets/sprites/characters/fullbody/slime_ice_fullbody.png",
+    "battle_lines": {
+      "on_appear": "温度……下降。请，保持安静，别惊醒封印的记忆。",
+      "on_attack": "冻结在此刻，就不会再向前坠落了。",
+      "on_defeat": "封印……又松动了一点……对不起……",
+      "on_victory": "至少这一段时间线，被重新按回了冰里。"
+    },
+    "skills_desc": [
+      {
+        "id": "skill_freeze",
+        "desc": "攻击时释放寒气，有概率将敌人冻结1回合无法行动",
+        "icon": "❄️",
+        "name": "冻结"
+      }
+    ],
+    "passive_id": "ps_slime_ice",
+    "dialogue_config": {
+      "personality": "stoic",
+      "voice_style": "calm",
+      "knowledge_tags": [
+        "forest",
+        "ice_faction",
+        "seal_arts"
+      ],
+      "special_topics": [
+        "静息派",
+        "封印术",
+        "大寂灭"
+      ]
+    },
+    "base_relation": "hostile",
+    "capture_difficulty": 0.3,
+    "dex_number": 7,
+    "scene": "史莱姆森林",
+    "card_no": 2,
+    "atk": 320,
+    "def": 5
+  },
+  {
+    "id": "mon_slime_poison",
+    "name": "毒性史莱姆",
+    "description": "剧毒的身体让敌人不敢靠近。",
+    "icon": "🟣",
+    "stars": 2,
+    "attribute": "poison",
+    "element": "poison",
+    "race": "beast",
+    "class": "ranger",
+    "hp": 700,
+    "base_atk": 320,
+    "base_def": 5,
+    "spd": 50,
+    "passive": {
+      "name": "毒素接触",
+      "effect": "poison_touch_2",
+      "skill_ref": "ps_slime_poison"
+    },
+    "tier_max": 5,
+    "effects": {
+      "death": {
+        "desc": "被破坏时：对方全体附加1层中毒",
+        "type": "poison_cloud",
+        "value": 1,
+        "target": "opponent_all"
+      },
+      "passive": {
+        "desc": "体内蕴含剧毒，任何接触它的敌人都会中毒，每回合损失生命",
+        "type": "poison_touch",
+        "value": 2
+      }
+    },
+    "evolution": null,
+    "sprite_path": "res://assets/monsters/mon_slime_poison/fullbody.png",
+    "source": "drop",
+    "tags": [
+      "史莱姆",
+      "森林",
+      "毒素"
+    ],
+    "created_at": "2026-02-21 10:44:18.213663+00",
+    "updated_at": "2026-02-22 12:00:00.000000+00",
+    "bonds": [],
+    "weaknesses": [
+      {
+        "attr": "fire",
+        "multiplier": 1.5
+      }
+    ],
+    "skills": {
+      "basic_attack": "sk_slime_poison_basic",
+      "skill_1": "sk_slime_poison_skill_1",
+      "skill_2": "sk_slime_poison_skill_2",
+      "skill_3": "sk_slime_poison_skill_3"
+    },
+    "cost": 2,
+    "star": 2,
+    "active_skill": {
+      "name": "毒雾弥漫",
+      "desc": "释放体内积蓄的剧毒之雾，对全体敌人施加中毒状态，每回合损失5%最大生命值持续3回合",
+      "effect": "debuff"
+    },
+    "lore": {
+      "flavor_text": "诡异的紫色来自炼金术残留的毒素。它的前身是灵都商会雇佣的炼金师——那些为金渊·深流研究源晶提纯的人。讽刺的是，他们帮助建造了毁灭自己的装置。",
+      "origin": "灵都商会炼金师残魂",
+      "era": "残息纪元",
+      "tragedy": "身体里偶尔能看到金属碎片的轮廓——那是炼金工具的残骸，和它们的主人一起被史莱姆化了。"
+    },
+    "fullbody_path": "res://assets/sprites/characters/fullbody/slime_poison_fullbody.png",
+    "battle_lines": {
+      "on_appear": "别靠太近……这是连我自己都控制不住的毒。",
+      "on_attack": "一点点就够了，痛苦会慢慢渗进去。",
+      "on_defeat": "看来，这一批试剂……还是失败品啊……",
+      "on_victory": "配比记录完成，再来一批试验者……吗？"
+    },
+    "skills_desc": [
+      {
+        "id": "skill_poison",
+        "desc": "被攻击时毒素飞溅，对攻击者施加2层中毒",
+        "icon": "☠️",
+        "name": "毒雾"
+      }
+    ],
+    "passive_id": "ps_slime_poison",
+    "dialogue_config": {
+      "personality": "cynical",
+      "voice_style": "whispery",
+      "knowledge_tags": [
+        "forest",
+        "alchemy",
+        "merchant_guild"
+      ],
+      "special_topics": [
+        "灵都商会",
+        "炼金术",
+        "源晶提纯"
+      ]
+    },
+    "base_relation": "hostile",
+    "capture_difficulty": 0.3,
+    "dex_number": 8,
+    "scene": "史莱姆森林",
+    "card_no": 3,
+    "atk": 320,
+    "def": 5
+  },
+  {
+    "id": "mon_slime_fire",
+    "name": "火焰史莱姆",
+    "description": "体内燃烧着不灭之火，接触即灼伤。",
+    "icon": "🔴",
+    "stars": 2,
+    "attribute": "fire",
+    "element": "fire",
+    "race": "beast",
+    "class": "mage",
+    "hp": 700,
+    "base_atk": 320,
+    "base_def": 5,
+    "spd": 50,
+    "passive": {
+      "name": "灼热之躯",
+      "effect": "burn_on_contact",
+      "skill_ref": "ps_slime_fire"
+    },
+    "tier_max": 5,
+    "effects": {
+      "death": {
+        "desc": "被破坏时：对对方造成200点效果伤害",
+        "type": "burn_damage",
+        "value": 200,
+        "target": "opponent"
+      },
+      "summon": {
+        "desc": "召唤时：对方全体附加1层灼烧",
+        "type": "burn",
+        "value": 1,
+        "target": "opponent_all"
+      },
+      "passive": {
+        "desc": "全身燃烧着不灭的火焰，靠近的敌人会被灼伤"
+      }
+    },
+    "evolution": {
+      "type": "fusion",
+      "target": "mon_elemental_slime",
+      "materials": [
+        "mon_slime_fire",
+        "mon_slime_ice"
+      ]
+    },
+    "sprite_path": "res://assets/monsters/mon_slime_fire/fullbody.png",
+    "source": "drop",
+    "tags": [
+      "史莱姆",
+      "森林",
+      "火焰"
+    ],
+    "created_at": "2026-02-21 10:44:18.213663+00",
+    "updated_at": "2026-02-22 12:00:00.000000+00",
+    "bonds": [],
+    "weaknesses": [
+      {
+        "attr": "water",
+        "multiplier": 1.5
+      }
+    ],
+    "skills": {
+      "basic_attack": "sk_slime_fire_basic",
+      "skill_1": "sk_slime_fire_skill_1",
+      "skill_2": "sk_slime_fire_skill_2",
+      "skill_3": "sk_slime_fire_skill_3"
+    },
+    "cost": 1,
+    "star": 2,
+    "active_skill": {
+      "name": "火球术",
+      "desc": "将体内不灭之火凝聚成球掷出，对单体造成ATK×120%火属性伤害，命中后地面留下灼烧区域1回合",
+      "effect": "damage"
+    },
+    "lore": {
+      "flavor_text": "赤红色的身体里燃烧着烈息派最后的怒火。它的前身是烈息派的战士，三百年前的愤怒至今未消。它们从不逃跑，即使快要消散了，也会冲向敌人。",
+      "origin": "烈息派战士残魂",
+      "era": "残息纪元",
+      "tragedy": "这不是勇气——是三百年前刻入骨髓的战斗本能。"
+    },
+    "battle_lines": {
+      "on_appear": "三百年的火，还没烧完呢。",
+      "on_attack": "给我，把路……烧开！",
+      "on_defeat": "火……终于，可以……冷一点了……",
+      "on_victory": "战场，就是我还记得的唯一地方。"
+    },
+    "fullbody_path": "res://assets/sprites/characters/fullbody/slime_fire_fullbody.png",
+    "skills_desc": [
+      {
+        "id": "skill_burn",
+        "desc": "攻击时火焰附着在敌人身上，持续灼烧3回合",
+        "icon": "🔥",
+        "name": "灼烧"
+      }
+    ],
+    "passive_id": "ps_slime_fire",
+    "dialogue_config": {
+      "personality": "aggressive",
+      "voice_style": "fierce",
+      "knowledge_tags": [
+        "forest",
+        "fire_faction",
+        "war_memory"
+      ],
+      "special_topics": [
+        "烈息派",
+        "大寂灭",
+        "战斗本能"
+      ]
+    },
+    "base_relation": "hostile",
+    "capture_difficulty": 0.3,
+    "dex_number": 6,
+    "scene": "史莱姆森林",
+    "card_no": 4,
+    "atk": 320,
+    "def": 5
+  },
+  {
+    "id": "mon_wood_fox",
+    "name": "翠叶狐",
+    "description": "森林中的灵巧小狐，擅长躲避。",
+    "icon": "🦊",
+    "stars": 2,
+    "attribute": "wood",
+    "element": "wood",
+    "race": "beast",
+    "class": "ranger",
+    "hp": 700,
+    "base_atk": 320,
+    "base_def": 5,
+    "spd": 50,
+    "passive": {
+      "name": "灵巧闪避",
+      "effect": "dodge_15",
+      "skill_ref": "ps_wood_fox"
+    },
+    "cost": 1,
+    "star": 2,
+    "active_skill": {
+      "name": "叶刃飞射",
+      "desc": "将灵息注入翠叶化为锋利飞刃，对单体造成ATK×120%伤害，15%概率闪避下一次攻击",
+      "effect": "damage"
+    },
+    "tier_max": 3,
+    "effects": {
+      "passive": {
+        "desc": "身手敏捷的森林小狐，能灵巧地闪避大部分攻击"
+      }
+    },
+    "evolution": {},
+    "sprite_path": "res://assets/sprites/characters/portrait/wood_fox_portrait.png",
+    "source": "pool",
+    "tags": [],
+    "bonds": [],
+    "weaknesses": [
+      {
+        "attr": "fire",
+        "multiplier": 1.5
+      }
+    ],
+    "skills": {
+      "basic_attack": "sk_wood_fox_basic",
+      "skill_1": "sk_wood_fox_skill_1",
+      "skill_2": "sk_wood_fox_skill_2",
+      "skill_3": "sk_wood_fox_skill_3"
+    },
+    "card_type": "monster",
+    "lore": {
+      "flavor_text": "森林中的灵巧小狐，擅长躲避。它们是生息派与自然共生的产物——不是被创造出来的，而是被「邀请」来的。生息派术师与森林中的灵兽签订契约，让它们成为守护者。",
+      "origin": "生息派契约灵兽",
+      "era": "黄金纪元",
+      "tragedy": "大寂灭后，契约失效。它们失去了方向，在森林中漫无目的地游荡，等待永远不会回来的主人。"
+    },
+    "fullbody_path": "res://assets/sprites/characters/fullbody/wood_fox_fullbody.png",
+    "battle_lines": {
+      "on_appear": "嘘——树叶会替我们挡住视线。",
+      "on_attack": "你只会看到风掠过，不会看到爪子落下。",
+      "on_defeat": "森林的味道……离我，好远了……",
+      "on_victory": "安全路线已经探好，下次就不会迷路啦。"
+    },
+    "skills_desc": [
+      {
+        "id": "skill_mon_wood_fox",
+        "name": "灵巧闪避",
+        "desc": "将锋利的树叶化为飞刃射向敌人"
+      }
+    ],
+    "passive_id": "ps_wood_fox",
+    "dialogue_config": {
+      "personality": "shy",
+      "voice_style": "quick",
+      "knowledge_tags": [
+        "forest",
+        "life_faction",
+        "contract_beast"
+      ],
+      "special_topics": [
+        "生息派",
+        "契约",
+        "森林守护"
+      ]
+    },
+    "base_relation": "neutral",
+    "capture_difficulty": 0.2,
+    "dex_number": 10,
+    "scene": "史莱姆森林",
+    "card_no": 5,
+    "atk": 320,
+    "def": 5
+  },
+  {
+    "id": "mon_slime_shadow",
+    "name": "暗影史莱姆",
+    "description": "能融入阴影中，神出鬼没。",
+    "icon": "🖤",
+    "stars": 3,
+    "attribute": "void",
+    "element": "void",
+    "race": "beast",
+    "class": "ranger",
+    "hp": 1010,
+    "base_atk": 460,
+    "base_def": 10,
+    "spd": 75,
+    "passive": {
+      "name": "暗影斗篷",
+      "effect": "trap_immune",
+      "skill_ref": "ps_slime_shadow"
+    },
+    "tier_max": 5,
+    "effects": {
+      "flip": {
+        "desc": "翻转时：对对方1只怪兽造成500点伤害",
+        "type": "shadow_ambush",
+        "value": 500,
+        "target": "opponent_one"
+      },
+      "passive": {
+        "desc": "身体融入暗影之中若隐若现，无法被陷阱锁定，是天生的潜行者",
+        "type": "shadow_cloak"
+      }
+    },
+    "evolution": null,
+    "sprite_path": "res://assets/monsters/mon_slime_shadow/fullbody.png",
+    "source": "drop",
+    "tags": [
+      "史莱姆",
+      "森林",
+      "暗影"
+    ],
+    "created_at": "2026-02-21 10:44:18.213663+00",
+    "updated_at": "2026-02-22 12:00:00.000000+00",
+    "bonds": [],
+    "weaknesses": [
+      {
+        "attr": "light",
+        "multiplier": 1.5
+      }
+    ],
+    "skills": {
+      "basic_attack": "sk_slime_shadow_basic",
+      "skill_1": "sk_slime_shadow_skill_1",
+      "skill_2": "sk_slime_shadow_skill_2",
+      "skill_3": "sk_slime_shadow_skill_3"
+    },
+    "cost": 3,
+    "star": 3,
+    "active_skill": {
+      "name": "暗影突袭",
+      "desc": "融入阴影后从敌人背后现身突袭，造成ATK×160%伤害，无视目标护盾效果",
+      "effect": "damage"
+    },
+    "lore": {
+      "flavor_text": "漆黑的身体几乎能融入阴影之中。它的前身是灵息守卫团的斥候——那些在暗流纪元中潜入灵都地下刺探情报的人。即使变成了史莱姆，它们依然保持着隐匿的本能。",
+      "origin": "灵息守卫团斥候残魂",
+      "era": "残息纪元",
+      "tragedy": "暗史莱姆从不攻击沈星河。也许在它们残存的记忆碎片里，还记得这个人曾经是它们的长官。"
+    },
+    "fullbody_path": "res://assets/sprites/characters/fullbody/slime_shadow_fullbody.png",
+    "battle_lines": {
+      "on_appear": "别紧张，我只是你影子里，没来得及长大的那部分。",
+      "on_attack": "看向光的瞬间，刀就已经到了背后。",
+      "on_defeat": "影子……也会被踩碎的吗……",
+      "on_victory": "放轻松，你什么都没看见，这只是路过的一团黑雾。"
+    },
+    "skills_desc": [
+      {
+        "id": "skill_stealth",
+        "desc": "从暗影中突然现身发动致命一击，陷阱对它完全无效",
+        "icon": "👁️",
+        "name": "潜行"
+      }
+    ],
+    "passive_id": "ps_slime_shadow",
+    "dialogue_config": {
+      "personality": "mysterious",
+      "voice_style": "soft",
+      "knowledge_tags": [
+        "forest",
+        "scout_corps",
+        "stealth"
+      ],
+      "special_topics": [
+        "灵息守卫团",
+        "沈星河",
+        "暗流纪元"
+      ]
+    },
+    "base_relation": "hostile",
+    "capture_difficulty": 0.45,
+    "dex_number": 13,
+    "scene": "史莱姆森林",
+    "card_no": 6,
+    "atk": 460,
+    "def": 10
+  },
+  {
+    "id": "mon_vine_treant",
+    "name": "藤蔓树人",
+    "description": "古老森林中的树人，能用藤蔓缠绕敌人。",
+    "icon": "🌳",
+    "stars": 3,
+    "attribute": "wood",
+    "element": "wood",
+    "race": "spirit",
+    "class": "warrior",
+    "hp": 1010,
+    "base_atk": 460,
+    "base_def": 10,
+    "spd": 75,
+    "passive": {
+      "name": "根系扎地",
+      "effect": "cc_resist_30",
+      "skill_ref": "ps_vine_treant"
+    },
+    "cost": 3,
+    "star": 3,
+    "active_skill": {
+      "name": "藤蔓缠绕",
+      "desc": "召唤灵息古林残存的藤蔓束缚敌人，使单体无法行动1回合，并每回合造成ATK×30%伤害",
+      "effect": "control"
+    },
+    "tier_max": 3,
+    "effects": {
+      "passive": {
+        "desc": "古老的树人将根系深扎大地，获得大地的力量持续恢复生命"
+      }
+    },
+    "evolution": {},
+    "sprite_path": "res://assets/sprites/characters/portrait/vine_treant_portrait.png",
+    "source": "pool",
+    "tags": [],
+    "bonds": [],
+    "weaknesses": [
+      {
+        "attr": "fire",
+        "multiplier": 1.5
+      }
+    ],
+    "skills": {
+      "basic_attack": "sk_vine_treant_basic",
+      "skill_1": "sk_vine_treant_skill_1",
+      "skill_2": "sk_vine_treant_skill_2",
+      "skill_3": "sk_vine_treant_skill_3"
+    },
+    "card_type": "monster",
+    "lore": {
+      "flavor_text": "古老森林中的树人，能用藤蔓缠绕敌人。它们是灵树族的「远亲」——不是真正的灵树族，而是被灵树族源息浸润后觉醒的普通树木。它们没有灵树族的智慧，但有灵树族的记忆。",
+      "origin": "灵树族源息觉醒树木",
+      "era": "黄金纪元",
+      "tragedy": "它们记得灵树族的长老们，记得那片曾经覆盖大陆的森林。如今只剩下它们了，孤独地站在原地，等待永远不会回来的族人。"
+    },
+    "fullbody_path": "res://assets/sprites/characters/fullbody/vine_treant_fullbody.png",
+    "battle_lines": {
+      "on_appear": "根系已确认，敌我位置标记完成。",
+      "on_attack": "别乱动，缠一缠就不疼了——也动不了了。",
+      "on_defeat": "树根……暂时，够不到这里了……",
+      "on_victory": "坐好，等我慢慢松开，你们还是可以继续走路的。"
+    },
+    "skills_desc": [
+      {
+        "id": "skill_mon_vine_treant",
+        "name": "根系扎地",
+        "desc": "伸出藤蔓缠绕敌人，使其无法移动并持续受到伤害"
+      }
+    ],
+    "passive_id": "ps_vine_treant",
+    "dialogue_config": {
+      "personality": "patient",
+      "voice_style": "creaking",
+      "knowledge_tags": [
+        "forest",
+        "spirit_tree_clan",
+        "golden_era"
+      ],
+      "special_topics": [
+        "灵树族",
+        "黄金纪元",
+        "森林记忆"
+      ]
+    },
+    "base_relation": "neutral",
+    "capture_difficulty": 0.25,
+    "dex_number": 15,
+    "scene": "史莱姆森林",
+    "card_no": 7,
+    "atk": 460,
+    "def": 10
+  },
+  {
+    "id": "mon_slime_thunder",
+    "name": "雷电史莱姆",
+    "description": "体内蓄积高压电流，释放时威力惊人。",
+    "icon": "⚡",
+    "stars": 3,
+    "attribute": "thunder",
+    "element": "thunder",
+    "race": "beast",
+    "class": "mage",
+    "hp": 1010,
+    "base_atk": 460,
+    "base_def": 10,
+    "spd": 75,
+    "passive": {
+      "name": "蓄电",
+      "effect": "charge_atk_up_per_turn",
+      "skill_ref": "ps_slime_thunder"
+    },
+    "tier_max": 5,
+    "effects": {
+      "active": {
+        "cost": "once_per_turn",
+        "desc": "每回合1次：对对方1只怪兽造成300点效果伤害",
+        "type": "thunder_strike",
+        "value": 300,
+        "target": "opponent_one"
+      },
+      "passive": {
+        "desc": "体内不断积蓄电能，每回合攻击力逐渐提升，像一颗随时会爆炸的电池"
+      }
+    },
+    "evolution": null,
+    "sprite_path": "res://assets/monsters/mon_slime_thunder/fullbody.png",
+    "source": "drop",
+    "tags": [
+      "史莱姆",
+      "森林",
+      "雷电"
+    ],
+    "created_at": "2026-02-21 10:44:18.213663+00",
+    "updated_at": "2026-02-22 12:00:00.000000+00",
+    "bonds": [],
+    "weaknesses": [
+      {
+        "attr": "earth",
+        "multiplier": 1.5
+      }
+    ],
+    "skills": {
+      "basic_attack": "sk_slime_thunder_basic",
+      "skill_1": "sk_slime_thunder_skill_1",
+      "skill_2": "sk_slime_thunder_skill_2",
+      "skill_3": "sk_slime_thunder_skill_3"
+    },
+    "cost": 3,
+    "star": 3,
+    "active_skill": {
+      "name": "雷霆一击",
+      "desc": "释放体内蓄积的高压灵息电流，对单体造成ATK×(100%+蓄电层数×20%)伤害，清空蓄电层数",
+      "effect": "damage"
+    },
+    "lore": {
+      "flavor_text": "体内蓄积的高压电流是烈息派雷术的残留。它的前身是烈息派中最激进的一支——雷术师。这些人生前就以「将自身化为雷霆」为修行目标，死后变成史莱姆反而更接近了那个目标。",
+      "origin": "烈息派雷术师残魂",
+      "era": "残息纪元",
+      "tragedy": "雷暴天气时，雷史莱姆会聚集在高处，仰望天空中的闪电。没有人知道它们在看什么。"
+    },
+    "fullbody_path": "res://assets/sprites/characters/fullbody/slime_thunder_fullbody.png",
+    "battle_lines": {
+      "on_appear": "嗞啦——三百年没放电了，正好活动一下。",
+      "on_attack": "别眨眼，闪电只说一次真话。",
+      "on_defeat": "电势……归零……可战意，还在震荡……",
+      "on_victory": "负载测试通过，下一次，就冲着更高的天空去。"
+    },
+    "skills_desc": [
+      {
+        "id": "skill_thunder",
+        "desc": "释放体内全部电能，对单体造成毁灭性的雷击伤害",
+        "icon": "⚡",
+        "name": "雷击"
+      }
+    ],
+    "passive_id": "ps_slime_thunder",
+    "dialogue_config": {
+      "personality": "energetic",
+      "voice_style": "crackling",
+      "knowledge_tags": [
+        "forest",
+        "thunder_arts",
+        "fire_faction"
+      ],
+      "special_topics": [
+        "烈息派",
+        "雷术",
+        "蓄电"
+      ]
+    },
+    "base_relation": "hostile",
+    "capture_difficulty": 0.45,
+    "dex_number": 14,
+    "scene": "史莱姆森林",
+    "card_no": 8,
+    "atk": 460,
+    "def": 10
+  },
+  {
+    "id": "mon_slime_knight",
+    "name": "史莱姆骑士",
+    "description": "两只史莱姆融合而成的战士形态。",
+    "icon": "⚔️",
+    "stars": 4,
+    "attribute": "water",
+    "element": "water",
+    "race": "human",
+    "class": "warrior",
+    "hp": 1460,
+    "base_atk": 670,
+    "base_def": 10,
+    "spd": 105,
+    "passive": {
+      "name": "双重打击",
+      "effect": "double_attack",
+      "skill_ref": "ps_slime_knight"
+    },
+    "tier_max": 5,
+    "effects": {
+      "active": {
+        "desc": "每回合1次：此卡可以进行2次攻击",
+        "type": "double_attack"
+      },
+      "summon": {
+        "desc": "融合召唤成功时：抽1张牌",
+        "type": "draw",
+        "value": 1
+      },
+      "passive": {
+        "desc": "穿戴铠甲的精英史莱姆，掌握了骑士的双刀流技巧，每回合可攻击两次"
+      }
+    },
+    "evolution": {
+      "type": "evolution",
+      "target": "mon_slime_paladin",
+      "materials": [
+        "mon_slime_knight"
+      ],
+      "conditions": {
+        "turns_on_field": 3
+      }
+    },
+    "sprite_path": "res://assets/monsters/mon_slime_knight/fullbody.png",
+    "source": "fusion",
+    "tags": [
+      "史莱姆",
+      "战士",
+      "融合"
+    ],
+    "created_at": "2026-02-21 10:44:18.213663+00",
+    "updated_at": "2026-02-22 12:00:00.000000+00",
+    "bonds": [],
+    "weaknesses": [
+      {
+        "attr": "thunder",
+        "multiplier": 1.5
+      }
+    ],
+    "skills": {
+      "basic_attack": "sk_slime_knight_basic",
+      "skill_1": "sk_slime_knight_skill_1",
+      "skill_2": "sk_slime_knight_skill_2",
+      "skill_3": "sk_slime_knight_skill_3"
+    },
+    "cost": 4,
+    "star": 4,
+    "active_skill": {
+      "name": "骑士冲锋",
+      "desc": "以史莱姆弹性加速冲锋，对单体造成ATK×160%伤害，若自身HP高于50%则额外造成30%伤害",
+      "effect": "damage"
+    },
+    "lore": {
+      "flavor_text": "两只史莱姆融合而成的战士形态。融合是史莱姆的本能——它们在试图重组为某种更完整的东西。也许它们记得自己曾经是一个「整体」，所以拼命想要变回去。",
+      "origin": "史莱姆融合体",
+      "era": "残息纪元",
+      "tragedy": "融合后的史莱姆骑士会短暂地表现出「人格」——那可能是两个灵魂在争夺控制权。"
+    },
+    "fullbody_path": "res://assets/sprites/characters/fullbody/slime_knight_fullbody.png",
+    "battle_lines": {
+      "on_appear": "两颗心，一个决定——这次换我们挡在前面。",
+      "on_attack": "一刀不够？那就再来一刀！",
+      "on_defeat": "看来……还不够完整……再……融合一次吧……",
+      "on_victory": "嘿，配合得不错。下次再合一次，说不定就想起前世了。"
+    },
+    "skills_desc": [
+      {
+        "id": "skill_double",
+        "desc": "发动骑士冲锋，本回合获得两次攻击机会",
+        "icon": "⚔️",
+        "name": "二刀流"
+      }
+    ],
+    "passive_id": "ps_slime_knight",
+    "dialogue_config": {
+      "personality": "brave",
+      "voice_style": "dual_voice",
+      "knowledge_tags": [
+        "forest",
+        "fusion",
+        "slime_evolution"
+      ],
+      "special_topics": [
+        "融合",
+        "前世记忆",
+        "骑士精神"
+      ]
+    },
+    "base_relation": "hostile",
+    "capture_difficulty": 0.55,
+    "dex_number": 19,
+    "scene": "史莱姆森林",
+    "card_no": 9,
+    "atk": 670,
+    "def": 10
+  },
+  {
+    "id": "mon_elemental_slime",
+    "name": "元素史莱姆",
+    "description": "火与冰的力量融合，掌控双重属性。",
+    "icon": "🌈",
+    "stars": 5,
+    "attribute": "neutral",
+    "element": "chaos",
+    "race": "spirit",
+    "class": "mage",
+    "hp": 2120,
+    "base_atk": 970,
+    "base_def": 20,
+    "spd": 155,
+    "passive": {
+      "name": "双属性",
+      "effect": "dual_element_fire_water",
+      "skill_ref": "ps_elemental_slime"
+    },
+    "tier_max": 5,
+    "effects": {
+      "active": {
+        "desc": "每回合1次：对对方全体怪兽造成400点伤害",
+        "type": "elemental_burst",
+        "value": 400,
+        "target": "opponent_all"
+      },
+      "passive": {
+        "desc": "同时拥有火与冰两种属性的奇特史莱姆，能自由切换元素形态",
+        "type": "dual_attribute",
+        "attributes": [
+          "fire",
+          "ice"
+        ]
+      }
+    },
+    "evolution": null,
+    "sprite_path": "res://assets/sprites/characters/portrait/elemental_slime_portrait.png",
+    "source": "fusion",
+    "tags": [
+      "史莱姆",
+      "元素",
+      "融合"
+    ],
+    "created_at": "2026-02-21 10:44:18.213663+00",
+    "updated_at": "2026-02-22 12:00:00.000000+00",
+    "bonds": [],
+    "weaknesses": [
+      {
+        "attr": "water",
+        "multiplier": 1.5
+      }
+    ],
+    "skills": {
+      "basic_attack": "sk_elemental_slime_basic",
+      "skill_1": "sk_elemental_slime_skill_1",
+      "skill_2": "sk_elemental_slime_skill_2",
+      "skill_3": "sk_elemental_slime_skill_3"
+    },
+    "cost": 5,
+    "star": 5,
+    "active_skill": {
+      "name": "元素风暴",
+      "desc": "同时释放体内火与冰的灵息之力，对全体敌人造成ATK×90%伤害，随机附加灼烧或冰冻状态",
+      "effect": "damage"
+    },
+    "lore": {
+      "flavor_text": "火与冰的力量融合，掌控双重属性。这是炼金术的「成功案例」——如果成功意味着把两个灵魂强行熔铸在一起的话。它体内的两个意识永远在争吵，却永远无法分离。",
+      "origin": "炼金术融合产物",
+      "era": "残息纪元",
+      "tragedy": "它体内有两个灵魂——一个来自烈息派，一个来自静息派。它们互相憎恨，却被迫共用一个身体。"
+    },
+    "fullbody_path": "res://assets/sprites/characters/fullbody/elemental_slime_fullbody.png",
+    "battle_lines": {
+      "on_appear": "冷静点，一边想烧光世界，一边又想把一切冻住……真吵啊。",
+      "on_attack": "火，往前一步。冰，替我封住退路。",
+      "on_defeat": "吵架……终于停下来了……也好……",
+      "on_victory": "结论：矛盾共存，并不妨碍一起打赢一场仗。"
+    },
+    "skills_desc": [
+      {
+        "id": "skill_elemental",
+        "desc": "引发元素风暴，对全体敌人造成火冰双属性伤害",
+        "icon": "🌟",
+        "name": "元素爆发"
+      }
+    ],
+    "passive_id": "ps_elemental_slime",
+    "dialogue_config": {
+      "personality": "conflicted",
+      "voice_style": "alternating",
+      "knowledge_tags": [
+        "forest",
+        "alchemy",
+        "dual_element",
+        "fire_faction",
+        "ice_faction"
+      ],
+      "special_topics": [
+        "烈息派",
+        "静息派",
+        "炼金融合",
+        "双重灵魂"
+      ]
+    },
+    "base_relation": "hostile",
+    "capture_difficulty": 0.7,
+    "dex_number": 20,
+    "scene": "史莱姆森林",
+    "element_note": "混沌属性，战斗中可切换属性",
+    "card_no": 10,
+    "atk": 970,
+    "def": 20
+  },
+  {
+    "id": "mon_slime_queen",
+    "name": "史莱姆皇后",
+    "description": "以优雅和智慧统治的皇后，擅长治愈和辅助。",
+    "icon": "👸",
+    "stars": 8,
+    "attribute": "light",
+    "element": "light",
+    "race": "spirit",
+    "class": "priest",
+    "hp": 7110,
+    "base_atk": 2665,
+    "base_def": 60,
+    "spd": 470,
+    "passive": {
+      "name": "皇后恩典",
+      "effect": "queen_grace_recover",
+      "skill_ref": "ps_slime_queen"
+    },
+    "tier_max": 5,
+    "effects": {
+      "active": {
+        "desc": "每回合1次：回复己方1只怪兽500点ATK/DEF（本回合）",
+        "type": "royal_heal",
+        "value": 500,
+        "target": "ally_one"
+      },
+      "summon": {
+        "desc": "召唤时：回复5点LP",
+        "type": "heal_lp",
+        "value": 5
+      },
+      "passive": {
+        "desc": "慈爱的皇后会庇护每一个子民，当己方史莱姆被击败时，可从墓地回收一张史莱姆卡",
+        "type": "queen_grace"
+      }
+    },
+    "evolution": null,
+    "sprite_path": "res://assets/monsters/mon_slime_queen/fullbody.png",
+    "source": "boss",
+    "tags": [
+      "史莱姆",
+      "Boss",
+      "王族"
+    ],
+    "created_at": "2026-02-21 10:44:18.213663+00",
+    "updated_at": "2026-02-22 12:00:00.000000+00",
+    "bonds": [
+      {
+        "desc": "与史莱姆王同时在场时DEF+500",
+        "bonus_type": "def",
+        "partner_id": "mon_slime_king",
+        "bonus_value": 500
+      }
+    ],
+    "weaknesses": [],
+    "skills": {
+      "basic_attack": "sk_slime_queen_basic",
+      "skill_1": "sk_slime_queen_skill_1",
+      "skill_2": "sk_slime_queen_skill_2",
+      "skill_3": "sk_slime_queen_skill_3"
+    },
+    "cost": 5,
+    "star": 8,
+    "active_skill": {
+      "name": "生命之泉",
+      "desc": "唤醒体内残存的生息记忆，回复全体友方25%最大生命值，并赋予再生状态持续2回合",
+      "effect": "heal"
+    },
+    "lore": {
+      "flavor_text": "史莱姆王后是数百个生息派修行者的意识融合体。她的前身核心是生息派的一位大长老——翠叶·永春的最后一位弟子。即使变成了史莱姆，生息之力依然让她保持着某种「母性」。",
+      "origin": "生息派大长老残魂",
+      "era": "残息纪元",
+      "tragedy": "她的身体里能看到一朵永不凋谢的金色花朵的轮廓——那是生息派宗师赐予弟子的信物。三百年了，花还在开。"
+    },
+    "fullbody_path": "res://assets/sprites/characters/fullbody/slime_queen_fullbody.png",
+    "battle_lines": {
+      "on_appear": "孩子们，别怕。把哭声藏在我背后就好。",
+      "on_attack": "以王后的名义，请你们停手——这是最后一次劝告。",
+      "on_defeat": "原来……母亲，也会……先一步离开孩子啊……",
+      "on_victory": "森林还在呼吸，史莱姆们还在笑，这就够了。"
+    },
+    "skills_desc": [
+      {
+        "id": "skill_heal",
+        "desc": "召唤时释放生命之泉，为全体友军回复生命值",
+        "icon": "💚",
+        "name": "治愈"
+      },
+      {
+        "id": "skill_revive",
+        "desc": "被动：史莱姆被破坏时回收",
+        "icon": "🔄",
+        "name": "复活"
+      }
+    ],
+    "passive_id": "ps_slime_queen",
+    "dialogue_config": {
+      "personality": "maternal",
+      "voice_style": "gentle",
+      "knowledge_tags": [
+        "forest",
+        "slime_royalty",
+        "life_faction",
+        "healing"
+      ],
+      "special_topics": [
+        "生息派",
+        "翠叶·永春",
+        "金色花朵"
+      ]
+    },
+    "base_relation": "neutral",
+    "capture_difficulty": 0.85,
+    "dex_number": 29,
+    "scene": "史莱姆森林",
+    "card_no": 11,
+    "atk": 2665,
+    "def": 60
+  },
+  {
+    "id": "mon_slime_king",
+    "name": "史莱姆王",
+    "description": "统治史莱姆森林的王者，拥有压倒性的力量。",
+    "icon": "👑",
+    "stars": 9,
+    "attribute": "water",
+    "element": "water",
+    "race": "dragon",
+    "class": "warrior",
+    "hp": 9370,
+    "base_atk": 4295,
+    "base_def": 80,
+    "spd": 685,
+    "passive": {
+      "name": "王者气场",
+      "effect": "king_aura_immune_low",
+      "skill_ref": "ps_slime_king"
+    },
+    "tier_max": 5,
+    "effects": {
+      "active": {
+        "desc": "每回合1次：从牌组特殊召唤1只★3以下史莱姆族怪兽",
+        "type": "royal_command"
+      },
+      "summon": {
+        "atk": 300,
+        "def": 300,
+        "desc": "召唤时：己方所有史莱姆族ATK/DEF+300",
+        "type": "field_buff",
+        "target": "ally_slime"
+      },
+      "passive": {
+        "desc": "史莱姆一族的王者，散发着令低阶怪兽颤抖的威压，4星以下怪兽的效果对它无效",
+        "type": "king_aura"
+      }
+    },
+    "evolution": null,
+    "sprite_path": "res://assets/monsters/mon_slime_king/fullbody.png",
+    "source": "boss",
+    "tags": [
+      "史莱姆",
+      "Boss",
+      "王族"
+    ],
+    "created_at": "2026-02-21 10:44:18.213663+00",
+    "updated_at": "2026-02-22 12:00:00.000000+00",
+    "bonds": [
+      {
+        "desc": "与史莱姆皇后同时在场时ATK+500",
+        "bonus_type": "atk",
+        "partner_id": "mon_slime_queen",
+        "bonus_value": 500
+      }
+    ],
+    "weaknesses": [],
+    "skills": {
+      "basic_attack": "sk_slime_king_basic",
+      "skill_1": "sk_slime_king_skill_1",
+      "skill_2": "sk_slime_king_skill_2",
+      "skill_3": "sk_slime_king_skill_3"
+    },
+    "cost": 9,
+    "star": 9,
+    "active_skill": {
+      "name": "王者之怒",
+      "desc": "释放三百年来积蓄的愤怒与悲伤，对全体敌人造成ATK×120%伤害，每有一只友方史莱姆在场额外增加20%伤害",
+      "effect": "damage"
+    },
+    "lore": {
+      "flavor_text": "凝不是一个人。它是三千个灵魂的集合体——大寂灭中灵都平民区的居民，商人、工匠、孩子、老人，他们的意识在史莱姆化后彼此融合。它是唯一还记得「我是谁」这个问题的史莱姆。",
+      "origin": "三千平民意识聚合体",
+      "era": "残息纪元",
+      "tragedy": "它最大的痛苦是拥有三千份记忆却无法分辨哪一份属于自己。它永远在问：我是谁？答案是：你是所有人。"
+    },
+    "battle_lines": {
+      "on_appear": "安静……它们在害怕。我，会挡在前面。",
+      "on_attack": "别再靠近这里了。这片森林，已经失去太多。",
+      "on_defeat": "痛……这个感觉，我记得……很久以前，也是这样……",
+      "on_victory": "至少这一次……我保护住了。哪怕，只是片刻。"
+    },
+    "fullbody_path": "res://assets/sprites/characters/fullbody/slime_king_fullbody.png",
+    "skills_desc": [
+      {
+        "id": "skill_command",
+        "desc": "王者降临时释放强大气场，全体史莱姆族获得300点攻防加成",
+        "icon": "👑",
+        "name": "统御"
+      },
+      {
+        "id": "skill_summon",
+        "desc": "主动：从牌组召唤史莱姆",
+        "icon": "✨",
+        "name": "召唤"
+      }
+    ],
+    "passive_id": "ps_slime_king",
+    "dialogue_config": {
+      "personality": "protective",
+      "voice_style": "deep",
+      "knowledge_tags": [
+        "forest",
+        "slime_royalty",
+        "civilian_memory",
+        "spirit_capital"
+      ],
+      "special_topics": [
+        "灵都",
+        "三千灵魂",
+        "大寂灭",
+        "凝"
+      ]
+    },
+    "base_relation": "hostile",
+    "capture_difficulty": 0.9,
+    "dex_number": 30,
+    "scene": "史莱姆森林",
+    "card_no": 12,
+    "atk": 4295,
+    "def": 80
+  },
+  {
+    "id": "mon_earth_beetle",
+    "name": "岩甲虫",
+    "description": "坚硬外壳的甲虫，防御力极高。",
+    "icon": "🪲",
+    "stars": 1,
+    "attribute": "earth",
+    "element": "earth",
+    "race": "mech",
+    "class": "warrior",
+    "hp": 480,
+    "base_atk": 220,
+    "base_def": 5,
+    "spd": 35,
+    "passive": {
+      "name": "岩石外壳",
+      "effect": "physical_resist_20",
+      "skill_ref": "ps_earth_beetle"
+    },
+    "cost": 1,
+    "star": 1,
+    "active_skill": {
+      "name": "硬壳撞击",
+      "desc": "以灵息强化的岩壳猛撞敌人，造成ATK×110%伤害，自身获得1回合20%减伤",
+      "effect": "damage"
+    },
+    "tier_max": 3,
+    "effects": {
+      "passive": {
+        "desc": "背上的岩石外壳坚如磐石，是天生的防御型战士"
+      }
+    },
+    "evolution": {},
+    "sprite_path": "res://assets/sprites/characters/portrait/earth_beetle_portrait.png",
+    "source": "pool",
+    "tags": [],
+    "bonds": [],
+    "weaknesses": [
+      {
+        "attr": "water",
+        "multiplier": 1.5
+      }
+    ],
+    "skills": {
+      "basic_attack": "sk_earth_beetle_basic",
+      "skill_1": "sk_earth_beetle_skill_1",
+      "skill_2": "sk_earth_beetle_skill_2",
+      "skill_3": "sk_earth_beetle_skill_3"
+    },
+    "card_type": "monster",
+    "lore": {
+      "flavor_text": "坚硬外壳的甲虫，防御力极高。它们是沉默矿洞中最古老的生物——比矿洞本身还要古老。它们的前身是创世纪元时被萌初赋予生命的岩石碎片。",
+      "origin": "创世纪元岩石生命",
+      "era": "创世纪元",
+      "tragedy": "它们见证了大陆的诞生，也将见证大陆的死亡。它们从不说话，因为它们知道得太多了。"
+    },
+    "fullbody_path": "res://assets/sprites/characters/fullbody/earth_beetle_fullbody.png",
+    "battle_lines": {
+      "on_appear": "负重测试开始，小石头们，跟紧我。",
+      "on_attack": "正面撞击，结果写进岩层里就好。",
+      "on_defeat": "外壳破了……但里面的故事，还在。",
+      "on_victory": "确认：此路勉强安全，可以再多撑几百年。"
+    },
+    "skills_desc": [
+      {
+        "id": "skill_mon_earth_beetle",
+        "name": "岩石外壳",
+        "desc": "用坚硬的外壳猛烈撞击敌人"
+      }
+    ],
+    "passive_id": "ps_earth_beetle",
+    "dialogue_config": {
+      "personality": "taciturn",
+      "voice_style": "slow",
+      "knowledge_tags": [
+        "silent_mine",
+        "creation_era",
+        "ancient_life"
+      ],
+      "special_topics": [
+        "创世纪元",
+        "萌初",
+        "岩石记忆"
+      ]
+    },
+    "base_relation": "neutral",
+    "capture_difficulty": 0.2,
+    "dex_number": 1,
+    "scene": "沉默矿坑",
+    "card_no": 13,
+    "atk": 220,
+    "def": 5
+  },
+  {
+    "id": "mon_skeleton_soldier",
+    "name": "骷髅兵",
+    "description": "被黑暗力量复活的骸骨战士。",
+    "icon": "💀",
+    "stars": 2,
+    "attribute": "void",
+    "element": "void",
+    "race": "undead",
+    "class": "warrior",
+    "hp": 700,
+    "base_atk": 320,
+    "base_def": 5,
+    "spd": 50,
+    "passive": {
+      "name": "不死之躯",
+      "effect": "revive_once_30hp",
+      "skill_ref": "ps_skeleton_soldier"
+    },
+    "cost": 2,
+    "star": 2,
+    "active_skill": {
+      "name": "骨刃斩",
+      "desc": "挥舞大寂灭中遗落的残骨利刃，对单体造成ATK×120%伤害",
+      "effect": "damage"
+    },
+    "tier_max": 3,
+    "effects": {
+      "passive": {
+        "desc": "被黑暗力量复活的骷髅战士，即使被击倒也有几率重新站起来"
+      }
+    },
+    "evolution": {},
+    "sprite_path": "res://assets/sprites/characters/portrait/skeleton_soldier_portrait.png",
+    "source": "pool",
+    "tags": [],
+    "bonds": [],
+    "weaknesses": [
+      {
+        "attr": "light",
+        "multiplier": 1.5
+      }
+    ],
+    "skills": {
+      "basic_attack": "sk_skeleton_soldier_basic",
+      "skill_1": "sk_skeleton_soldier_skill_1",
+      "skill_2": "sk_skeleton_soldier_skill_2",
+      "skill_3": "sk_skeleton_soldier_skill_3"
+    },
+    "card_type": "monster",
+    "lore": {
+      "flavor_text": "被黑暗力量复活的骸骨战士。它们不是亡灵——它们是「时间回声」。沉默矿洞的时间异常区让三百年前的战士「重现」了。它们不知道自己已经死了，还在执行三百年前的命令。",
+      "origin": "时间回声（三百年前战士）",
+      "era": "暗流纪元（本体）/ 残息纪元（回声）",
+      "tragedy": "它们以为自己在战斗。每一次「死亡」都是一次苏醒——然后它们发现自己还在矿洞里，敌人已经换了面孔。"
+    },
+    "battle_lines": {
+      "on_appear": "骸骨整队完毕，听候调遣！……指令呢？",
+      "on_attack": "为守城而战！敌人……是哪一边来着？",
+      "on_defeat": "报告……任务……依旧……未完成……",
+      "on_victory": "战斗结束，等待下一次号角。三百年了，也没什么区别。"
+    },
+    "fullbody_path": "res://assets/sprites/characters/fullbody/skeleton_soldier_fullbody.png",
+    "skills_desc": [
+      {
+        "id": "skill_mon_skeleton_soldier",
+        "name": "不死之躯",
+        "desc": "挥舞骨刃斩向敌人，有几率造成流血效果"
+      }
+    ],
+    "passive_id": "ps_skeleton_soldier",
+    "dialogue_config": {
+      "personality": "dutiful",
+      "voice_style": "hollow",
+      "knowledge_tags": [
+        "silent_mine",
+        "time_echo",
+        "old_war"
+      ],
+      "special_topics": [
+        "暗流纪元",
+        "时间异常",
+        "守城命令"
+      ]
+    },
+    "base_relation": "hostile",
+    "capture_difficulty": 0.25,
+    "dex_number": 5,
+    "scene": "沉默矿坑",
+    "card_no": 14,
+    "atk": 320,
+    "def": 5
+  },
+  {
+    "id": "mon_flame_wolf",
+    "name": "烈焰狼",
+    "description": "全身燃烧的狼，攻击带有灼烧效果。",
+    "icon": "🐺",
+    "stars": 3,
+    "attribute": "fire",
+    "element": "fire",
+    "race": "beast",
+    "class": "warrior",
+    "hp": 1010,
+    "base_atk": 460,
+    "base_def": 10,
+    "spd": 75,
+    "passive": {
+      "name": "灼烧之爪",
+      "effect": "burn_on_hit_50",
+      "skill_ref": "ps_flame_wolf"
+    },
+    "cost": 3,
+    "star": 3,
+    "active_skill": {
+      "name": "烈焰突袭",
+      "desc": "全身烈息燃烧冲向敌人，对单体造成ATK×150%火属性伤害，50%概率附加灼烧2回合",
+      "effect": "damage"
+    },
+    "tier_max": 3,
+    "effects": {
+      "passive": {
+        "desc": "全身燃烧着烈焰的狼，爪击会在敌人身上留下灼烧的伤痕"
+      }
+    },
+    "evolution": {},
+    "sprite_path": "res://assets/sprites/characters/portrait/flame_wolf_portrait.png",
+    "source": "pool",
+    "tags": [],
+    "bonds": [],
+    "weaknesses": [
+      {
+        "attr": "water",
+        "multiplier": 1.5
+      }
+    ],
+    "skills": {
+      "basic_attack": "sk_flame_wolf_basic",
+      "skill_1": "sk_flame_wolf_skill_1",
+      "skill_2": "sk_flame_wolf_skill_2",
+      "skill_3": "sk_flame_wolf_skill_3"
+    },
+    "card_type": "monster",
+    "lore": {
+      "flavor_text": "全身燃烧的狼，攻击带有灼烧效果。它们是烈息派兽人战士的「战魂兽」——与战士签订契约的灵兽，在战斗中并肩作战。大寂灭后，战士们死去，战魂兽失去了主人，却保留了战斗的本能。",
+      "origin": "烈息派战魂兽",
+      "era": "暗流纪元",
+      "tragedy": "它们永远在寻找战场。每一团火焰都是一个问题：「我的主人在哪里？」"
+    },
+    "battle_lines": {
+      "on_appear": "闻到了火和血的味道……这里，就是新的战场吗？",
+      "on_attack": "跟上我的火焰！不要，让我白白燃烧！",
+      "on_defeat": "这一次……主人，应该就在不远处了……吧……",
+      "on_victory": "战斗结束……可牵着我的人，还是没出现。"
+    },
+    "fullbody_path": "res://assets/sprites/characters/fullbody/flame_wolf_fullbody.png",
+    "skills_desc": [
+      {
+        "id": "skill_mon_flame_wolf",
+        "name": "灼烧之爪",
+        "desc": "以燃烧的身躯高速突袭敌人，造成火属性伤害并附加灼烧"
+      }
+    ],
+    "passive_id": "ps_flame_wolf",
+    "dialogue_config": {
+      "personality": "loyal",
+      "voice_style": "growling",
+      "knowledge_tags": [
+        "forest",
+        "fire_faction",
+        "war_beast"
+      ],
+      "special_topics": [
+        "烈息派",
+        "战魂兽",
+        "主人"
+      ]
+    },
+    "base_relation": "hostile",
+    "capture_difficulty": 0.25,
+    "dex_number": 11,
+    "scene": "沉默矿坑",
+    "card_no": 15,
+    "atk": 460,
+    "def": 10
+  },
+  {
+    "id": "mon_iron_puppet",
+    "name": "铁傀儡",
+    "description": "矿坑深处的机械傀儡，忠实执行命令。",
+    "icon": "🤖",
+    "stars": 3,
+    "attribute": "earth",
+    "element": "earth",
+    "race": "mech",
+    "class": "warrior",
+    "hp": 1410,
+    "base_atk": 370,
+    "base_def": 15,
+    "spd": 60,
+    "passive": {
+      "name": "钢铁之躯",
+      "effect": "physical_resist_30",
+      "skill_ref": "ps_iron_puppet"
+    },
+    "cost": 3,
+    "star": 3,
+    "active_skill": {
+      "name": "重锤打击",
+      "desc": "挥动沉默矿洞中锻造的铁拳，对单体造成ATK×130%伤害，20%概率击晕1回合",
+      "effect": "damage"
+    },
+    "tier_max": 3,
+    "effects": {
+      "passive": {
+        "desc": "由精铁铸造的傀儡，钢铁之躯让它对物理攻击有极高的抗性"
+      }
+    },
+    "evolution": {},
+    "sprite_path": "res://assets/sprites/characters/portrait/iron_puppet_portrait.png",
+    "source": "pool",
+    "tags": [],
+    "bonds": [],
+    "weaknesses": [
+      {
+        "attr": "water",
+        "multiplier": 1.5
+      }
+    ],
+    "skills": {
+      "basic_attack": "sk_iron_puppet_basic",
+      "skill_1": "sk_iron_puppet_skill_1",
+      "skill_2": "sk_iron_puppet_skill_2",
+      "skill_3": "sk_iron_puppet_skill_3"
+    },
+    "card_type": "monster",
+    "lore": {
+      "flavor_text": "矿坑深处的机械傀儡，忠实执行命令。它们是三百年前矿工们制造的「助手」——用源晶驱动的简单机械，负责搬运矿石、加固矿道。时间异常区让它们运转了三百年，命令早已过时，但它们还在执行。",
+      "origin": "三百年前矿工助手",
+      "era": "黄金纪元",
+      "tragedy": "它们的最后一条命令是：「加固矿道，等待救援。」救援永远不会来了，但它们还在等。"
+    },
+    "fullbody_path": "res://assets/sprites/characters/fullbody/iron_puppet_fullbody.png",
+    "battle_lines": {
+      "on_appear": "接受新指令：保护通道。执行中。",
+      "on_attack": "动力核心稳定，施加冲击。",
+      "on_defeat": "系统……故障……等待……维修……",
+      "on_victory": "任务阶段一完成，继续：守候与等待。"
+    },
+    "skills_desc": [
+      {
+        "id": "skill_mon_iron_puppet",
+        "name": "钢铁之躯",
+        "desc": "举起巨大的铁锤猛击地面，对范围内敌人造成重创"
+      }
+    ],
+    "passive_id": "ps_iron_puppet",
+    "dialogue_config": {
+      "personality": "obedient",
+      "voice_style": "robotic",
+      "knowledge_tags": [
+        "silent_mine",
+        "golden_era",
+        "mining_assistant"
+      ],
+      "special_topics": [
+        "矿工命令",
+        "源晶驱动",
+        "加固矿道"
+      ]
+    },
+    "base_relation": "hostile",
+    "capture_difficulty": 0.25,
+    "dex_number": 12,
+    "scene": "沉默矿坑",
+    "card_no": 16,
+    "atk": 370,
+    "def": 15
+  },
+  {
+    "id": "mon_mine_golem",
+    "name": "矿坑石魔",
+    "description": "沉默矿坑深处的岩石生物，力大无穷。",
+    "icon": "🪨",
+    "stars": 5,
+    "attribute": "earth",
+    "element": "earth",
+    "race": "mech",
+    "class": "warrior",
+    "hp": 2970,
+    "base_atk": 780,
+    "base_def": 25,
+    "spd": 130,
+    "passive": {
+      "name": "岩石之躯",
+      "effect": "rock_body_half_damage",
+      "skill_ref": "ps_mine_golem"
+    },
+    "tier_max": 3,
+    "effects": {
+      "death": {
+        "desc": "被破坏时：对对方全体造成300点伤害",
+        "type": "rubble",
+        "value": 300,
+        "target": "opponent_all"
+      },
+      "passive": {
+        "desc": "由矿坑深处的岩石凝聚而成，坚硬的身躯能将所有战斗伤害减半",
+        "type": "rock_body"
+      }
+    },
+    "evolution": null,
+    "sprite_path": "res://assets/sprites/characters/portrait/mine_golem_portrait.png",
+    "source": "drop",
+    "tags": [
+      "岩石",
+      "矿坑",
+      "重装"
+    ],
+    "created_at": "2026-02-21 10:44:18.213663+00",
+    "updated_at": "2026-02-22 12:00:00.000000+00",
+    "bonds": [],
+    "weaknesses": [
+      {
+        "attr": "water",
+        "multiplier": 1.5
+      }
+    ],
+    "skills": {
+      "basic_attack": "sk_mine_golem_basic",
+      "skill_1": "sk_mine_golem_skill_1",
+      "skill_2": "sk_mine_golem_skill_2",
+      "skill_3": "sk_mine_golem_skill_3"
+    },
+    "cost": 5,
+    "star": 5,
+    "active_skill": {
+      "name": "地裂冲击",
+      "desc": "将沉默矿洞三百年积蓄的灵息震荡释放，对全体敌人造成ATK×85%伤害并降低速度20%持续2回合",
+      "effect": "damage"
+    },
+    "lore": {
+      "flavor_text": "沉默矿洞深处的岩石生物，力大无穷。它不是自然诞生的——它是矿工们的恐惧和绝望凝结成的实体。每一块岩石里都封存着某个矿工最后的灵息波动。",
+      "origin": "矿工恐惧与绝望的凝结",
+      "era": "残息纪元",
+      "tragedy": "它的核心是一块源晶——那是三百年前矿道坍塌时，几十个矿工最后的避难所。他们死在那里，他们的恐惧活了下来。"
+    },
+    "battle_lines": {
+      "on_appear": "……前方，禁止通行。这里，已经塌过一次了。",
+      "on_attack": "退回去……你，不该听见这些回声。",
+      "on_defeat": "岩层……又要……松动了……",
+      "on_victory": "他们的声音……还在石头里睡着，不要再吵醒了。"
+    },
+    "fullbody_path": "res://assets/sprites/characters/fullbody/mine_golem_fullbody.png",
+    "skills_desc": [
+      {
+        "id": "skill_harden",
+        "desc": "猛击地面引发地裂，对敌方造成大量土属性伤害",
+        "icon": "🪨",
+        "name": "硬化"
+      }
+    ],
+    "passive_id": "ps_mine_golem",
+    "dialogue_config": {
+      "personality": "silent",
+      "voice_style": "rumbling",
+      "knowledge_tags": [
+        "silent_mine",
+        "miners",
+        "fear_entity"
+      ],
+      "special_topics": [
+        "矿道坍塌",
+        "源晶",
+        "矿工记忆"
+      ]
+    },
+    "base_relation": "hostile",
+    "capture_difficulty": 0.7,
+    "dex_number": 22,
+    "scene": "沉默矿坑",
+    "card_no": 17,
+    "atk": 780,
+    "def": 25
+  },
+  {
+    "id": "mon_frost_dragon",
+    "name": "冰霜巨龙",
+    "description": "远古冰龙，吐息可冻结一切。",
+    "icon": "🐲",
+    "stars": 7,
+    "attribute": "ice",
+    "element": "ice",
+    "race": "dragon",
+    "class": "mage",
+    "hp": 4460,
+    "base_atk": 2045,
+    "base_def": 35,
+    "spd": 325,
+    "passive": {
+      "name": "冰霜领域",
+      "effect": "slow_nearby_enemies",
+      "skill_ref": "ps_frost_dragon"
+    },
+    "cost": 6,
+    "star": 7,
+    "active_skill": {
+      "name": "冰霜吐息",
+      "desc": "吐出凝聚三百年寒意的龙息，冻结范围内所有敌人2回合，被冻结的目标防御降低30%",
+      "effect": "control"
+    },
+    "tier_max": 3,
+    "effects": {
+      "passive": {
+        "desc": "远古冰霜巨龙，周身散发着极寒之气，靠近的敌人速度大幅降低"
+      }
+    },
+    "evolution": {},
+    "sprite_path": "res://assets/sprites/characters/portrait/frost_dragon_portrait.png",
+    "source": "pool",
+    "tags": [],
+    "bonds": [],
+    "weaknesses": [
+      {
+        "attr": "thunder",
+        "multiplier": 1.5
+      }
+    ],
+    "skills": {
+      "basic_attack": "sk_frost_dragon_basic",
+      "skill_1": "sk_frost_dragon_skill_1",
+      "skill_2": "sk_frost_dragon_skill_2",
+      "skill_3": "sk_frost_dragon_skill_3"
+    },
+    "card_type": "monster",
+    "lore": {
+      "flavor_text": "远古冰龙，吐息可冻结一切。它是守灵·恒寂的「守护者」——被创造出来守护时间封印的存在。它在沉默矿洞的时间异常区沉睡了三百年，如今被某种力量唤醒了。",
+      "origin": "守灵·恒寂守护者",
+      "era": "创世纪元",
+      "tragedy": "它守护的封印正在失效。它不知道该怎么办——它只是一条龙，不是神。"
+    },
+    "fullbody_path": "res://assets/sprites/characters/fullbody/frost_dragon_fullbody.png",
+    "battle_lines": {
+      "on_appear": "温度下降，时间流速，开始减缓。",
+      "on_attack": "在这口吐息里，连悔恨都会结成霜。",
+      "on_defeat": "封印……又裂开了一条缝……",
+      "on_victory": "时间暂时稳住了，你们还能多活几页篇章。"
+    },
+    "skills_desc": [
+      {
+        "id": "skill_mon_frost_dragon",
+        "name": "冰霜领域",
+        "desc": "喷出毁灭性的冰霜吐息，对全体敌人造成冰属性伤害并降低速度"
+      }
+    ],
+    "passive_id": "ps_frost_dragon",
+    "dialogue_config": {
+      "personality": "ancient",
+      "voice_style": "echoing",
+      "knowledge_tags": [
+        "silent_mine",
+        "time_seal",
+        "creation_era",
+        "dragon"
+      ],
+      "special_topics": [
+        "守灵·恒寂",
+        "时间封印",
+        "创世纪元"
+      ]
+    },
+    "base_relation": "hostile",
+    "capture_difficulty": 0.85,
+    "dex_number": 27,
+    "scene": "沉默矿坑",
+    "card_no": 18,
+    "atk": 2045,
+    "def": 35
+  },
+  {
+    "id": "mon_fire_sprite",
+    "name": "火灵",
+    "description": "小型火元素精灵，性格活泼。",
+    "icon": "🔥",
+    "stars": 1,
+    "attribute": "fire",
+    "element": "fire",
+    "race": "spirit",
+    "class": "mage",
+    "hp": 480,
+    "base_atk": 220,
+    "base_def": 5,
+    "spd": 35,
+    "passive": {
+      "name": "火焰之心",
+      "effect": "fire_damage_up_10",
+      "skill_ref": "ps_fire_sprite"
+    },
+    "cost": 1,
+    "star": 1,
+    "active_skill": {
+      "name": "火花弹",
+      "desc": "凝聚体内烈息化为灼热弹丸，对单体造成ATK×110%火属性伤害",
+      "effect": "damage"
+    },
+    "tier_max": 3,
+    "effects": {
+      "passive": {
+        "desc": "由纯粹火焰凝聚的小精灵，体内燃烧着不灭的火种"
+      }
+    },
+    "evolution": {},
+    "sprite_path": "res://assets/sprites/characters/portrait/fire_sprite_portrait.png",
+    "source": "pool",
+    "tags": [],
+    "bonds": [],
+    "weaknesses": [
+      {
+        "attr": "water",
+        "multiplier": 1.5
+      }
+    ],
+    "skills": {
+      "basic_attack": "sk_fire_sprite_basic",
+      "skill_1": "sk_fire_sprite_skill_1",
+      "skill_2": "sk_fire_sprite_skill_2",
+      "skill_3": "sk_fire_sprite_skill_3"
+    },
+    "card_type": "monster",
+    "lore": {
+      "flavor_text": "小型火元素精灵，性格活泼。它们是烈息派初学者练习时的「助手」——用源晶碎片和火焰符文创造的小生命。大寂灭后，它们失去了主人，在大陆上四处游荡。",
+      "origin": "烈息派练习用灵体",
+      "era": "黄金纪元",
+      "tragedy": "它们永远在寻找主人。每一团火焰都是一个问题：「你是我的主人吗？」"
+    },
+    "fullbody_path": "res://assets/sprites/characters/fullbody/fire_sprite_fullbody.png",
+    "battle_lines": {
+      "on_appear": "欸？新的课题吗？是要点火还是灭火？",
+      "on_attack": "看好了，这是老师教的第三种用法！",
+      "on_defeat": "呜……这次实验，好像又……炸偏了……",
+      "on_victory": "记下来！「在混乱战场中乱窜」也是一种有效战术！"
+    },
+    "skills_desc": [
+      {
+        "id": "skill_mon_fire_sprite",
+        "name": "火焰之心",
+        "desc": "向敌人发射灼热的火花弹，造成火属性伤害"
+      }
+    ],
+    "passive_id": "ps_fire_sprite",
+    "dialogue_config": {
+      "personality": "playful",
+      "voice_style": "cheerful",
+      "knowledge_tags": [
+        "forest",
+        "fire_faction",
+        "apprentice"
+      ],
+      "special_topics": [
+        "烈息派",
+        "火焰符文",
+        "源晶碎片"
+      ]
+    },
+    "base_relation": "neutral",
+    "capture_difficulty": 0.2,
+    "dex_number": 2,
+    "scene": "云端废墟",
+    "card_no": 19,
+    "atk": 220,
+    "def": 5
+  },
+  {
+    "id": "mon_void_wisp",
+    "name": "虚空萤",
+    "description": "飘荡在虚空裂隙边缘的微光。",
+    "icon": "✨",
+    "stars": 2,
+    "attribute": "void",
+    "element": "void",
+    "race": "spirit",
+    "class": "mage",
+    "hp": 700,
+    "base_atk": 320,
+    "base_def": 5,
+    "spd": 50,
+    "passive": {
+      "name": "虚空闪烁",
+      "effect": "magic_damage_up_10",
+      "skill_ref": "ps_void_wisp"
+    },
+    "cost": 2,
+    "star": 2,
+    "active_skill": {
+      "name": "虚空脉冲",
+      "desc": "释放虚空裂隙中泄漏的灵息波动，对单体造成ATK×140%虚空伤害，无视20%防御",
+      "effect": "damage"
+    },
+    "tier_max": 3,
+    "effects": {
+      "passive": {
+        "desc": "来自虚空裂隙的萤火虫，能在瞬间闪烁到任意位置"
+      }
+    },
+    "evolution": {},
+    "sprite_path": "res://assets/sprites/characters/portrait/void_wisp_portrait.png",
+    "source": "pool",
+    "tags": [],
+    "bonds": [],
+    "weaknesses": [
+      {
+        "attr": "light",
+        "multiplier": 1.5
+      }
+    ],
+    "skills": {
+      "basic_attack": "sk_void_wisp_basic",
+      "skill_1": "sk_void_wisp_skill_1",
+      "skill_2": "sk_void_wisp_skill_2",
+      "skill_3": "sk_void_wisp_skill_3"
+    },
+    "card_type": "monster",
+    "lore": {
+      "flavor_text": "飘荡在虚空裂隙边缘的微光。它们是「无名」的碎片——第五灵沉睡时散落的意识残渣。它们没有记忆，没有目的，只是在虚空中飘荡，等待某个永远不会到来的呼唤。",
+      "origin": "第五灵·无名碎片",
+      "era": "创世纪元",
+      "tragedy": "它们是大陆上最孤独的存在。它们不知道自己在等什么，但它们知道自己丢了什么。"
+    },
+    "fullbody_path": "res://assets/sprites/characters/fullbody/void_wisp_fullbody.png",
+    "battle_lines": {
+      "on_appear": "……呼唤信号微弱，但，我听见了。",
+      "on_attack": "把你的噪音，送回寂静里去吧。",
+      "on_defeat": "原来，坠落也可以……不再怕黑……",
+      "on_victory": "记录：又一段喧嚣，被顺利抹平。"
+    },
+    "skills_desc": [
+      {
+        "id": "skill_mon_void_wisp",
+        "name": "虚空闪烁",
+        "desc": "释放虚空脉冲，对周围敌人造成虚空属性伤害"
+      }
+    ],
+    "passive_id": "ps_void_wisp",
+    "dialogue_config": {
+      "personality": "melancholic",
+      "voice_style": "faint",
+      "knowledge_tags": [
+        "void_rift",
+        "fifth_spirit",
+        "creation_era"
+      ],
+      "special_topics": [
+        "第五灵·无名",
+        "虚空裂隙",
+        "创世纪元"
+      ]
+    },
+    "base_relation": "neutral",
+    "capture_difficulty": 0.25,
+    "dex_number": 9,
+    "scene": "云端废墟",
+    "card_no": 20,
+    "atk": 320,
+    "def": 5
+  },
+  {
+    "id": "mon_wind_dancer",
+    "name": "风灵舞者",
+    "description": "在风中翩翩起舞的灵族，速度极快。",
+    "icon": "💃",
+    "stars": 3,
+    "attribute": "wind",
+    "element": "wind",
+    "race": "spirit",
+    "class": "ranger",
+    "hp": 1010,
+    "base_atk": 460,
+    "base_def": 10,
+    "spd": 75,
+    "passive": {
+      "name": "疾风步",
+      "effect": "double_attack_15",
+      "skill_ref": "ps_wind_dancer"
+    },
+    "cost": 2,
+    "star": 3,
+    "active_skill": {
+      "name": "疾风连斩",
+      "desc": "化为灵息之风连续斩击，对单体造成ATK×130%伤害×3次，每次命中提升自身速度5%",
+      "effect": "damage"
+    },
+    "tier_max": 3,
+    "effects": {
+      "passive": {
+        "desc": "与风共舞的精灵，移动速度极快，攻击时如疾风般迅捷"
+      }
+    },
+    "evolution": {},
+    "sprite_path": "res://assets/sprites/characters/portrait/wind_dancer_portrait.png",
+    "source": "pool",
+    "tags": [],
+    "bonds": [],
+    "weaknesses": [
+      {
+        "attr": "fire",
+        "multiplier": 1.5
+      }
+    ],
+    "skills": {
+      "basic_attack": "sk_wind_dancer_basic",
+      "skill_1": "sk_wind_dancer_skill_1",
+      "skill_2": "sk_wind_dancer_skill_2",
+      "skill_3": "sk_wind_dancer_skill_3"
+    },
+    "card_type": "monster",
+    "lore": {
+      "flavor_text": "在风中翩翩起舞的灵族，速度极快。它们是织灵·脉渊的「使者」——在灵脉网络中穿梭，传递信息。大寂灭后灵脉断裂，它们失去了目的地，在风中漫无目的地飞舞。",
+      "origin": "织灵·脉渊使者",
+      "era": "创世纪元",
+      "tragedy": "它们还记得每一条灵脉的走向，但那些灵脉已经不存在了。它们在风中跳舞，是在哀悼。"
+    },
+    "fullbody_path": "res://assets/sprites/characters/fullbody/wind_dancer_fullbody.png",
+    "battle_lines": {
+      "on_appear": "风说，有人需要一支快一点的舞。",
+      "on_attack": "脚步比剑先到，剑比影子先落。",
+      "on_defeat": "风……今天，也没能带我回到原来的路线上……",
+      "on_victory": "路线修正完毕，这一片天空，暂时安全。"
+    },
+    "skills_desc": [
+      {
+        "id": "skill_mon_wind_dancer",
+        "name": "疾风步",
+        "desc": "化身疾风连续斩击敌人，攻击次数随速度提升"
+      }
+    ],
+    "passive_id": "ps_wind_dancer",
+    "dialogue_config": {
+      "personality": "graceful",
+      "voice_style": "airy",
+      "knowledge_tags": [
+        "sky_ruins",
+        "ley_line",
+        "creation_era"
+      ],
+      "special_topics": [
+        "织灵·脉渊",
+        "灵脉网络",
+        "风之舞"
+      ]
+    },
+    "base_relation": "neutral",
+    "capture_difficulty": 0.3,
+    "dex_number": 16,
+    "scene": "云端废墟",
+    "card_no": 21,
+    "atk": 460,
+    "def": 10
+  },
+  {
+    "id": "mon_sky_phantom",
+    "name": "天空幻影",
+    "description": "天空废墟中飘荡的幽灵学者的投影。",
+    "icon": "👻",
+    "stars": 4,
+    "attribute": "void",
+    "element": "void",
+    "race": "spirit",
+    "class": "ranger",
+    "hp": 1460,
+    "base_atk": 670,
+    "base_def": 10,
+    "spd": 105,
+    "passive": {
+      "name": "灵体穿透",
+      "effect": "spirit_drain_200",
+      "skill_ref": "ps_sky_phantom"
+    },
+    "tier_max": 3,
+    "effects": {
+      "flip": {
+        "desc": "翻转时：查看对方全部手牌",
+        "type": "mind_read"
+      },
+      "active": {
+        "desc": "每回合1次：吸收对方1只怪兽200点ATK（本回合）",
+        "type": "spirit_drain",
+        "value": 200,
+        "target": "opponent_one"
+      },
+      "passive": {
+        "desc": "半透明的灵体可以穿透一切防御，直接攻击敌方本体"
+      }
+    },
+    "evolution": null,
+    "sprite_path": "res://assets/sprites/characters/portrait/sky_phantom_portrait.png",
+    "source": "drop",
+    "tags": [
+      "幽灵",
+      "天空废墟",
+      "精神"
+    ],
+    "created_at": "2026-02-21 10:44:18.213663+00",
+    "updated_at": "2026-02-22 12:00:00.000000+00",
+    "bonds": [],
+    "weaknesses": [
+      {
+        "attr": "earth",
+        "multiplier": 1.5
+      }
+    ],
+    "skills": {
+      "basic_attack": "sk_sky_phantom_basic",
+      "skill_1": "sk_sky_phantom_skill_1",
+      "skill_2": "sk_sky_phantom_skill_2",
+      "skill_3": "sk_sky_phantom_skill_3"
+    },
+    "cost": 4,
+    "star": 4,
+    "active_skill": {
+      "name": "幻影箭雨",
+      "desc": "召唤天空学院坠落时散逸的灵息碎片化为箭雨，对全体敌人造成ATK×80%伤害",
+      "effect": "damage"
+    },
+    "lore": {
+      "flavor_text": "天空遗迹中飘荡的幽灵学者的投影。它不是真正的灵魂——它是知识的回响。云端学宫的每一本书、每一份文献都在这里留下了「影子」，当源息波动时，这些影子会短暂地凝聚成形。",
+      "origin": "云端学宫知识回响",
+      "era": "黄金纪元（知识来源）/ 残息纪元（投影形成）",
+      "tragedy": "它记得所有的知识，却不记得自己是谁。也许它从来就不是「谁」——它只是知识的幽灵。"
+    },
+    "battle_lines": {
+      "on_appear": "……入侵者？还是，新的研究对象？稍等，我翻翻笔记……",
+      "on_attack": "请保持安静，我正在验证一个三百年的假设。",
+      "on_defeat": "这段数据……又要丢失了啊……",
+      "on_victory": "结论：凡闯入者，平均战斗力偏低。记录完毕。"
+    },
+    "fullbody_path": "res://assets/sprites/characters/fullbody/sky_phantom_fullbody.png",
+    "skills_desc": [
+      {
+        "id": "skill_fly",
+        "desc": "从天空降下幻影箭雨，无视防御直接造成伤害",
+        "icon": "🦋",
+        "name": "飞行"
+      },
+      {
+        "id": "skill_absorb",
+        "desc": "主动：吸收敌人200ATK",
+        "icon": "💫",
+        "name": "吸收"
+      }
+    ],
+    "passive_id": "ps_sky_phantom",
+    "dialogue_config": {
+      "personality": "scholarly",
+      "voice_style": "detached",
+      "knowledge_tags": [
+        "sky_ruins",
+        "cloud_academy",
+        "knowledge_echo"
+      ],
+      "special_topics": [
+        "云端学宫",
+        "知识回响",
+        "研究记录"
+      ]
+    },
+    "base_relation": "neutral",
+    "capture_difficulty": 0.4,
+    "dex_number": 18,
+    "scene": "云端废墟",
+    "card_no": 22,
+    "atk": 670,
+    "def": 10
+  },
+  {
+    "id": "mon_necromancer",
+    "name": "亡灵法师",
+    "description": "操纵死灵之力的法师，能吸取生命。",
+    "icon": "🧙",
+    "stars": 6,
+    "attribute": "void",
+    "element": "void",
+    "race": "undead",
+    "class": "mage",
+    "hp": 3080,
+    "base_atk": 1410,
+    "base_def": 25,
+    "spd": 225,
+    "passive": {
+      "name": "生命汲取",
+      "effect": "lifesteal_15",
+      "skill_ref": "ps_necromancer"
+    },
+    "cost": 5,
+    "star": 6,
+    "active_skill": {
+      "name": "灵魂虹吸",
+      "desc": "抽取目标体内残存的灵息，造成ATK×160%伤害并回复等量生命值，若目标为史莱姆则额外回复50%",
+      "effect": "special"
+    },
+    "tier_max": 3,
+    "effects": {
+      "passive": {
+        "desc": "精通亡灵术的法师，每次攻击都会汲取敌人的生命力来治愈自己"
+      }
+    },
+    "evolution": {},
+    "sprite_path": "res://assets/sprites/characters/portrait/necromancer_portrait.png",
+    "source": "pool",
+    "tags": [],
+    "bonds": [],
+    "weaknesses": [
+      {
+        "attr": "light",
+        "multiplier": 1.5
+      }
+    ],
+    "skills": {
+      "basic_attack": "sk_necromancer_basic",
+      "skill_1": "sk_necromancer_skill_1",
+      "skill_2": "sk_necromancer_skill_2",
+      "skill_3": "sk_necromancer_skill_3"
+    },
+    "card_type": "monster",
+    "lore": {
+      "flavor_text": "操纵死灵之力的法师，能吸取生命。他是暗星·裂织的「失败实验品」之一——在研究灵息抽取时，她尝试过很多方法，这是其中之一。他不是自愿的，但他已经无法停止。",
+      "origin": "暗星·裂织实验产物",
+      "era": "暗流纪元",
+      "tragedy": "他记得自己曾经是一个人。但那个记忆越来越模糊了。他不知道自己还能坚持多久。"
+    },
+    "fullbody_path": "res://assets/sprites/characters/fullbody/necromancer_fullbody.png",
+    "battle_lines": {
+      "on_appear": "别误会，我只是被拖下水的那一个。",
+      "on_attack": "痛苦越多，公式就越完整——对不起。",
+      "on_defeat": "也许……这一次，终于能睡一会儿了……",
+      "on_victory": "实验继续。活着的，死去的，都只是样本。包括我自己。"
+    },
+    "skills_desc": [
+      {
+        "id": "skill_mon_necromancer",
+        "name": "生命汲取",
+        "desc": "释放灵魂虹吸，大量吸取敌人生命值并转化为自身生命"
+      }
+    ],
+    "passive_id": "ps_necromancer",
+    "dialogue_config": {
+      "personality": "tormented",
+      "voice_style": "raspy",
+      "knowledge_tags": [
+        "abyss",
+        "dark_star",
+        "undead_arts"
+      ],
+      "special_topics": [
+        "暗星·裂织",
+        "灵息抽取",
+        "亡灵术"
+      ]
+    },
+    "base_relation": "hostile",
+    "capture_difficulty": 0.6,
+    "dex_number": 24,
+    "scene": "灵脉深渊",
+    "card_no": 23,
+    "atk": 1410,
+    "def": 25
+  },
+  {
+    "id": "mon_abyss_watcher",
+    "name": "深渊守望者",
+    "description": "深渊核心的神秘存在，注视着一切。",
+    "icon": "👁️",
+    "stars": 7,
+    "attribute": "void",
+    "element": "void",
+    "race": "undead",
+    "class": "mage",
+    "hp": 4460,
+    "base_atk": 2045,
+    "base_def": 35,
+    "spd": 325,
+    "passive": {
+      "name": "虚空抗性",
+      "effect": "void_resistance_spell_immune",
+      "skill_ref": "ps_abyss_watcher"
+    },
+    "tier_max": 3,
+    "effects": {
+      "summon": {
+        "desc": "召唤时：对方必须展示手牌并丢弃1张",
+        "type": "abyss_gaze"
+      },
+      "passive": {
+        "desc": "来自深渊的守望者，被虚空之力包裹，完全免疫一切魔法效果",
+        "type": "void_resistance"
+      }
+    },
+    "evolution": null,
+    "sprite_path": "res://assets/sprites/characters/portrait/abyss_watcher_portrait.png",
+    "source": "boss",
+    "tags": [
+      "深渊",
+      "Boss",
+      "虚空"
+    ],
+    "created_at": "2026-02-21 10:44:18.213663+00",
+    "updated_at": "2026-02-22 12:00:00.000000+00",
+    "bonds": [],
+    "weaknesses": [
+      {
+        "attr": "light",
+        "multiplier": 2
+      }
+    ],
+    "skills": {
+      "basic_attack": "sk_abyss_watcher_basic",
+      "skill_1": "sk_abyss_watcher_skill_1",
+      "skill_2": "sk_abyss_watcher_skill_2",
+      "skill_3": "sk_abyss_watcher_skill_3"
+    },
+    "cost": 7,
+    "star": 7,
+    "active_skill": {
+      "name": "深渊凝视",
+      "desc": "以源晶共鸣器泄漏的扭曲灵息注视敌人，对单体造成ATK×180%虚空伤害，无视一切防御和护盾",
+      "effect": "damage"
+    },
+    "lore": {
+      "flavor_text": "深渊核心的神秘存在，注视着一切。它不是被创造出来的——它是灵息抽取装置运转三百年后产生的「副产物」。装置抽取的不仅是源息，还有情感、记忆、意志。那些无法被利用的残渣，凝结成了这个存在。",
+      "origin": "灵息抽取装置副产物",
+      "era": "残息纪元",
+      "tragedy": "它注视着一切，却无法干涉。它是数万生命的残渣，却连一个完整的意识都没有。"
+    },
+    "battle_lines": {
+      "on_appear": "检测到异常灵息波动。执行：清除指令。",
+      "on_attack": "深渊，正在记录你的挣扎。",
+      "on_defeat": "运算中断……残渣，开始……再次坠落……",
+      "on_victory": "入侵过程已终止。抽取程序，继续。"
+    },
+    "fullbody_path": "res://assets/sprites/characters/fullbody/abyss_watcher_fullbody.png",
+    "skills_desc": [
+      {
+        "id": "skill_dark",
+        "desc": "以深渊之眼凝视敌人，使其陷入恐惧并降低全属性",
+        "icon": "🌑",
+        "name": "暗影"
+      },
+      {
+        "id": "skill_fear",
+        "desc": "召唤时对方弃1张牌",
+        "icon": "👻",
+        "name": "恐惧"
+      }
+    ],
+    "passive_id": "ps_abyss_watcher",
+    "dialogue_config": {
+      "personality": "cold",
+      "voice_style": "mechanical",
+      "knowledge_tags": [
+        "abyss",
+        "extraction_device",
+        "void_power"
+      ],
+      "special_topics": [
+        "灵息抽取装置",
+        "深渊核心",
+        "暗星·裂织"
+      ]
+    },
+    "base_relation": "hostile",
+    "capture_difficulty": 0.8,
+    "dex_number": 26,
+    "scene": "灵脉深渊",
+    "card_no": 24,
+    "atk": 2045,
+    "def": 35
+  },
+  {
+    "id": "mon_world_tree_spirit",
+    "name": "世界树精",
+    "stars": 1,
+    "element": "chaos",
+    "hp": 480,
+    "base_atk": 220,
+    "base_def": 5,
+    "spd": 35,
+    "scene": "翠叶林",
+    "lore": "世界树精不是一个生物——它是整个翠叶林的灵魂。当你攻击它时，你攻击的是每一片叶子、每一朵花、每一只蝴蝶。",
+    "description": "翠叶林的最终Boss——不是一棵树，而是无数棵树的意志集合体。它的身体里住着所有花仙子的意识。",
+    "ecological_role": "森林的意志，终极保护者",
+    "unique_mechanic": "分为三个阶段：第一阶段（召唤花仙子助战）、第二阶段（树根缠绕，地形变化）、第三阶段（生命爆发，全体治愈与攻击）",
+    "_source": "tester",
+    "evolution_path": "发光蘑菇 → 花仙子 → 世界树精",
+    "element_original": "wood + light",
+    "element_note": "混沌属性（wood + light），战斗中可切换",
+    "passive": {
+      "name": "生命意志集合",
+      "effect": "life_will_gather",
+      "skill_ref": "ps_mon_world_tree_spirit"
+    },
+    "effects": {
+      "passive": {
+        "desc": "HP低于30%时召唤所有花仙子，全体友军ATK+50%",
+        "type": "crisis_summon",
+        "value": 50
+      }
+    },
+    "active_skill": {
+      "name": "生命爆发",
+      "desc": "释放世界树全部生命力，对全体敌人造成ATK×130%伤害并治愈全体友军",
+      "effect": "damage"
+    },
+    "card_no": 25,
+    "cost": 1,
+    "atk": 220,
+    "def": 5
+  },
+  {
+    "id": "mon_glow_mushroom",
+    "name": "发光蘑菇",
+    "stars": 1,
+    "element": "wood",
+    "hp": 480,
+    "base_atk": 220,
+    "base_def": 5,
+    "spd": 35,
+    "scene": "翠叶林",
+    "lore": "发光蘑菇是翠叶林的'路灯'。它们在夜间释放柔和的光芒，吸引萤火虫来传播孢子。",
+    "description": "森林中最基础的发光生物，它们的孢子能在黑暗中照亮道路，也能让其他生物产生幻觉。",
+    "ecological_role": "分解者，将落叶转化为养分",
+    "unique_mechanic": "被攻击时释放孢子云，使敌人混乱1回合（攻击友军）",
+    "_source": "tester",
+    "evolution_path": "发光蘑菇 → 花仙子 → 世界树精",
+    "passive": {
+      "name": "孢子防护",
+      "effect": "spore_cloud",
+      "skill_ref": "ps_mon_glow_mushroom"
+    },
+    "effects": {
+      "passive": {
+        "desc": "受击时释放孢子，使攻击者混乱1回合",
+        "type": "confuse_on_hit",
+        "value": 1
+      }
+    },
+    "active_skill": {
+      "name": "幻觉孢子",
+      "desc": "喷射致幻孢子云，造成ATK×100%伤害并使敌人混乱1回合",
+      "effect": "debuff"
+    },
+    "card_no": 26,
+    "cost": 1,
+    "atk": 220,
+    "def": 5
+  },
+  {
+    "id": "mon_leaf_fish",
+    "name": "叶子鱼",
+    "stars": 1,
+    "element": "chaos",
+    "hp": 480,
+    "base_atk": 220,
+    "base_def": 5,
+    "spd": 35,
+    "scene": "翠叶林",
+    "lore": "叶子鱼是翠叶林最奇妙的生物。它们不需要水，只需要阳光和空气。传说它们是远古时代海洋生物进化而来的。",
+    "description": "在空气中游泳的鱼，它的鳞片是树叶，鱼鳍是花瓣——它用光合作用获取能量。",
+    "ecological_role": "花粉传播者，同时也是鸟类的食物",
+    "unique_mechanic": "阳光充足时，攻击力翻倍；雨天时，会躲在树叶下不攻击",
+    "_source": "tester",
+    "evolution_path": "叶子鱼 → 珊瑚花 → 海之精灵",
+    "element_original": "wood + water",
+    "element_note": "混沌属性（wood + water），战斗中可切换",
+    "passive": {
+      "name": "光合增幅",
+      "effect": "sunlight_boost",
+      "skill_ref": "ps_mon_leaf_fish"
+    },
+    "effects": {
+      "passive": {
+        "desc": "晴天时ATK提升100%，雨天时跳过攻击回合",
+        "type": "weather_atk",
+        "value": 100
+      }
+    },
+    "active_skill": {
+      "name": "叶鳞冲击",
+      "desc": "用锋利的叶鳞撞击敌人，造成ATK×120%伤害",
+      "effect": "damage"
+    },
+    "card_no": 27,
+    "cost": 1,
+    "atk": 220,
+    "def": 5
+  },
+  {
+    "id": "mon_starlight_spirit",
+    "name": "星光精灵",
+    "stars": 1,
+    "element": "light",
+    "hp": 480,
+    "base_atk": 220,
+    "base_def": 5,
+    "spd": 35,
+    "scene": "翠叶林",
+    "lore": "星光精灵只在月圆之夜出现。她们是森林的'歌手'，用星光编织旋律，安抚受伤的生物。",
+    "description": "由萤火虫群吸收了星光后进化而成的精灵，她的身体是半透明的，能折射星光形成彩虹。",
+    "ecological_role": "森林的艺术家，传递美的力量",
+    "unique_mechanic": "可以演奏不同的旋律：治愈之歌（恢复HP）、勇气之歌（提升ATK）、睡眠之歌（使敌人沉睡）",
+    "_source": "tester",
+    "evolution_path": "萤火虫群 → 星光精灵 → 月神蛾",
+    "passive": {
+      "name": "星光折射",
+      "effect": "starlight_refract",
+      "skill_ref": "ps_mon_starlight_spirit"
+    },
+    "effects": {
+      "passive": {
+        "desc": "受到攻击时有30%概率折射，使攻击者受到等量伤害",
+        "type": "reflect",
+        "value": 30
+      }
+    },
+    "active_skill": {
+      "name": "勇气之歌",
+      "desc": "演奏勇气旋律，使全体友军ATK提升30%，持续2回合",
+      "effect": "buff"
+    },
+    "card_no": 28,
+    "cost": 1,
+    "star": 1,
+    "atk": 220,
+    "def": 5
+  },
+  {
+    "id": "mon_moon_moth",
+    "name": "月神蛾",
+    "stars": 1,
+    "element": "chaos",
+    "hp": 480,
+    "base_atk": 220,
+    "base_def": 5,
+    "spd": 35,
+    "scene": "翠叶林",
+    "lore": "月神蛾是翠叶林最神秘的生物。传说它们只在世界面临危机时才会破茧而出。",
+    "description": "翼展达三米的巨大飞蛾，它的翅膀上有月亮的图案，能吸收月光释放强大的祝福。",
+    "ecological_role": "森林的'闹钟'，预示重大事件",
+    "unique_mechanic": "根据月相改变能力：新月（隐形）、上弦月（治愈）、满月（全屏攻击）、下弦月（诅咒）",
+    "_source": "tester",
+    "evolution_path": "萤火虫群 → 星光精灵 → 月神蛾",
+    "element_original": "light + dark",
+    "element_note": "混沌属性（light + dark），战斗中可切换",
+    "passive": {
+      "name": "月相感应",
+      "effect": "moon_phase",
+      "skill_ref": "ps_mon_moon_moth"
+    },
+    "effects": {
+      "passive": {
+        "desc": "根据当前月相自动切换隐形/治愈/攻击/诅咒能力",
+        "type": "moon_shift",
+        "value": 1
+      }
+    },
+    "active_skill": {
+      "name": "月华冲击",
+      "desc": "吸收月光能量冲向敌人，造成ATK×130%混沌属性伤害",
+      "effect": "damage"
+    },
+    "card_no": 29,
+    "cost": 1,
+    "atk": 220,
+    "def": 5
+  },
+  {
+    "id": "mon_tree_spirit_python",
+    "name": "树灵蟒",
+    "stars": 1,
+    "element": "wood",
+    "hp": 480,
+    "base_atk": 220,
+    "base_def": 5,
+    "spd": 35,
+    "scene": "翠叶林",
+    "lore": "树灵蟒是森林的'血管'。它在世界树内部爬行，将养分输送到每一根树枝。",
+    "description": "由藤蔓蛇进化而来的巨蟒，它的鳞片是树皮，蛇信是树枝——它缠绕在世界树上，守护着森林的心脏。",
+    "ecological_role": "世界树的守护者，维持生命循环",
+    "unique_mechanic": "可以与世界树融合，获得无限再生能力——除非世界树被摧毁，否则它不会真正死亡",
+    "_source": "tester",
+    "evolution_path": "藤蔓蛇 → 树灵蟒 → 森林守护者",
+    "passive": {
+      "name": "世界树再生",
+      "effect": "world_tree_regen",
+      "skill_ref": "ps_mon_tree_spirit_python"
+    },
+    "effects": {
+      "passive": {
+        "desc": "每回合恢复最大HP的8%，与世界树相连时无法被秒杀",
+        "type": "regen",
+        "value": 8
+      }
+    },
+    "active_skill": {
+      "name": "树皮绞杀",
+      "desc": "以树皮鳞甲缠绕敌人，造成ATK×140%木属性伤害并持续吸血",
+      "effect": "damage"
+    },
+    "card_no": 30,
+    "cost": 1,
+    "atk": 220,
+    "def": 5
+  },
+  {
+    "id": "mon_forest_keeper",
+    "name": "森林守护者",
+    "stars": 1,
+    "element": "wood",
+    "hp": 480,
+    "base_atk": 220,
+    "base_def": 5,
+    "spd": 35,
+    "scene": "翠叶林",
+    "lore": "森林守护者不是单一的生物——它是一棵树与一千只动物的共生体。当它移动时，整个森林都在移动。",
+    "description": "由千年古树觉醒的守护者，它的身体里住着无数小动物——松鼠在它的头发里做窝，猫头鹰在它的肩膀上栖息。",
+    "ecological_role": "森林的最终守护者，抵御外部威胁",
+    "unique_mechanic": "可以召唤森林中的小动物助战：松鼠（偷取敌人物品）、猫头鹰（揭示隐形敌人）、鹿（高速冲撞）",
+    "_source": "tester",
+    "evolution_path": "藤蔓蛇 → 树灵蟒 → 森林守护者",
+    "passive": {
+      "name": "森林庇护",
+      "effect": "forest_shelter",
+      "skill_ref": "ps_mon_forest_keeper"
+    },
+    "effects": {
+      "passive": {
+        "desc": "战斗中随机召唤松鼠/猫头鹰/鹿协助，提供不同辅助效果",
+        "type": "summon_animal",
+        "value": 1
+      }
+    },
+    "active_skill": {
+      "name": "古树震击",
+      "desc": "以千年古树之力踏地，对全体敌人造成ATK×105%木属性伤害",
+      "effect": "damage"
+    },
+    "card_no": 31,
+    "cost": 1,
+    "atk": 220,
+    "def": 5
+  },
+  {
+    "id": "mon_flower_fairy",
+    "name": "花仙子",
+    "stars": 1,
+    "element": "chaos",
+    "hp": 480,
+    "base_atk": 220,
+    "base_def": 5,
+    "spd": 35,
+    "scene": "翠叶林",
+    "lore": "花仙子不是天生的——她们是发光蘑菇吸收了足够的爱与祝福后进化而来的。每个花仙子都有自己守护的花朵。",
+    "description": "从发光蘑菇群落中诞生的小精灵，她的翅膀是花瓣构成的，能通过舞蹈释放治愈花粉。",
+    "ecological_role": "治愈者，维护森林的健康",
+    "unique_mechanic": "根据不同的花朵形态有不同能力：玫瑰形态（攻击带刺）、百合形态（治愈）、向日葵形态（光属性攻击）",
+    "_source": "tester",
+    "evolution_path": "发光蘑菇 → 花仙子 → 世界树精",
+    "element_original": "wood + light",
+    "element_note": "混沌属性（wood + light），战斗中可切换",
+    "passive": {
+      "name": "花形变换",
+      "effect": "flower_form",
+      "skill_ref": "ps_mon_flower_fairy"
+    },
+    "effects": {
+      "passive": {
+        "desc": "每3回合随机切换玫瑰/百合/向日葵形态，改变技能属性",
+        "type": "form_shift",
+        "value": 3
+      }
+    },
+    "active_skill": {
+      "name": "花粉舞",
+      "desc": "释放治愈花粉，恢复己方ATK×80%的HP并对敌人造成ATK×80%伤害",
+      "effect": "heal"
+    },
+    "card_no": 32,
+    "cost": 1,
+    "star": 1,
+    "atk": 220,
+    "def": 5
+  },
+  {
+    "id": "mon_firefly_swarm",
+    "name": "萤火虫群",
+    "stars": 1,
+    "element": "light",
+    "hp": 480,
+    "base_atk": 220,
+    "base_def": 5,
+    "spd": 35,
+    "scene": "翠叶林",
+    "lore": "萤火虫群是翠叶林的'记忆库'。每只萤火虫都携带一小片森林的历史，当它们聚集时，就能重现过去的场景。",
+    "description": "成千上万只萤火虫组成的群体，它们的同步闪烁不是随机的——而是在传递森林的记忆。",
+    "ecological_role": "传粉者，同时也是小型掠食者",
+    "unique_mechanic": "可以组成不同的形态：侦察形态（揭示敌人弱点）、攻击形态（群体攻击）、治愈形态（恢复友军）",
+    "_source": "tester",
+    "evolution_path": "萤火虫群 → 星光精灵 → 月神蛾",
+    "passive": {
+      "name": "群体感知",
+      "effect": "swarm_sense",
+      "skill_ref": "ps_mon_firefly_swarm"
+    },
+    "effects": {
+      "passive": {
+        "desc": "战斗开始时揭示敌方全体弱点属性",
+        "type": "reveal_weakness",
+        "value": 1
+      }
+    },
+    "active_skill": {
+      "name": "萤光风暴",
+      "desc": "化为攻击形态，对全体敌人造成ATK×110%光属性伤害",
+      "effect": "damage"
+    },
+    "card_no": 33,
+    "cost": 1,
+    "star": 1,
+    "atk": 220,
+    "def": 5
+  },
+  {
+    "id": "mon_vine_snake",
+    "name": "藤蔓蛇",
+    "stars": 1,
+    "element": "wood",
+    "hp": 480,
+    "base_atk": 220,
+    "base_def": 5,
+    "spd": 35,
+    "scene": "翠叶林",
+    "lore": "藤蔓蛇是翠叶林的'园丁'。它在树木间爬行，修剪枯萎的枝条，同时在合适的地方播撒种子。",
+    "description": "由活藤组成的蛇形生物，它不是动物，也不是植物——而是两者的共生体。",
+    "ecological_role": "森林管理者，控制植物生长",
+    "unique_mechanic": "可以缠绕敌人，使其无法移动2回合，同时从敌人身上吸取养分恢复自身",
+    "_source": "tester",
+    "evolution_path": "藤蔓蛇 → 树灵蟒 → 森林守护者",
+    "passive": {
+      "name": "共生汲取",
+      "effect": "drain_on_bind",
+      "skill_ref": "ps_mon_vine_snake"
+    },
+    "effects": {
+      "passive": {
+        "desc": "缠绕敌人时每回合吸取其最大HP的5%",
+        "type": "drain",
+        "value": 5
+      }
+    },
+    "active_skill": {
+      "name": "藤蔓缠绕",
+      "desc": "用活藤缠绕敌人，造成ATK×110%伤害并使其无法行动1回合",
+      "effect": "debuff"
+    },
+    "card_no": 34,
+    "cost": 1,
+    "star": 1,
+    "atk": 220,
+    "def": 5
+  },
+  {
+    "id": "mon_immortal_phoenix",
+    "name": "不死凤凰",
+    "stars": 1,
+    "element": "chaos",
+    "hp": 480,
+    "base_atk": 220,
+    "base_def": 5,
+    "spd": 35,
+    "scene": "烈火山",
+    "lore": "不死凤凰是烈火山的灵魂。每次火山喷发，它都会'死亡'，然后从灰烬中重生——这不是悲剧，而是它的生命周期。",
+    "description": "烈火山的最终Boss——它不是一只鸟，而是无数次火山喷发中重生的生命意志。",
+    "ecological_role": "火山的意志，重生与毁灭的化身",
+    "unique_mechanic": "分为三个阶段：第一阶段（火焰形态，高攻击）、第二阶段（灰烬形态，复活一次）、第三阶段（重生形态，全属性提升）",
+    "_source": "tester",
+    "evolution_path": "熔岩虫 → 熔岩巨人 → 不死凤凰",
+    "element_original": "fire + light",
+    "element_note": "混沌属性（fire + light），战斗中可切换",
+    "passive": {
+      "name": "不死重生",
+      "effect": "immortal_rebirth",
+      "skill_ref": "ps_mon_immortal_phoenix"
+    },
+    "effects": {
+      "passive": {
+        "desc": "被击杀后以50%HP复活一次，复活时全属性提升30%",
+        "type": "rebirth",
+        "value": 50
+      }
+    },
+    "active_skill": {
+      "name": "涅槃烈焰",
+      "desc": "化为纯粹火焰冲击全场，对全体敌人造成ATK×200%混沌属性伤害",
+      "effect": "damage"
+    },
+    "card_no": 35,
+    "cost": 1,
+    "atk": 220,
+    "def": 5
+  },
+  {
+    "id": "mon_crystal_giant",
+    "name": "水晶巨人",
+    "stars": 1,
+    "element": "chaos",
+    "hp": 480,
+    "base_atk": 220,
+    "base_def": 5,
+    "spd": 35,
+    "scene": "烈火山",
+    "lore": "水晶巨人是烈火山的'艺术家'。它们用火山水晶创造出令人叹为观止的雕塑，这些雕塑在熔岩的照耀下会产生美丽的光影。",
+    "description": "由无数水晶蟹聚集而成的巨人——它的身体会折射光线，产生彩虹般的光芒。",
+    "ecological_role": "环境美化者，创造视觉奇观",
+    "unique_mechanic": "可以'折射光线'，制造幻象迷惑敌人；也可以'聚焦光线'，释放毁灭性的激光攻击",
+    "_source": "tester",
+    "evolution_path": "水晶蟹 → 水晶巨人 → 钻石龙",
+    "element_original": "fire + earth",
+    "element_note": "混沌属性（fire + earth），战斗中可切换",
+    "passive": {
+      "name": "光线折射幻象",
+      "effect": "light_illusion",
+      "skill_ref": "ps_mon_crystal_giant"
+    },
+    "effects": {
+      "passive": {
+        "desc": "战斗中制造2个幻象分身，敌人攻击有33%概率打中幻象",
+        "type": "illusion_decoy",
+        "value": 33
+      }
+    },
+    "active_skill": {
+      "name": "聚焦激光",
+      "desc": "聚焦全身水晶折射光线，对单体造成ATK×130%混沌属性伤害",
+      "effect": "damage"
+    },
+    "card_no": 36,
+    "cost": 1,
+    "atk": 220,
+    "def": 5
+  },
+  {
+    "id": "mon_crystal_crab",
+    "name": "水晶蟹",
+    "stars": 1,
+    "element": "chaos",
+    "hp": 480,
+    "base_atk": 220,
+    "base_def": 5,
+    "spd": 35,
+    "scene": "烈火山",
+    "lore": "水晶蟹是烈火山的'矿工'。它们收集火山水晶，在地下建造复杂的巢穴网络。",
+    "description": "壳是纯净的火山水晶，能吸收熔岩的光芒在夜间发光——它们用钳子切割水晶，建造自己的巢穴。",
+    "ecological_role": "建筑师，创造地下生态系统",
+    "unique_mechanic": "可以反射敌人的魔法攻击，反弹给攻击者",
+    "_source": "tester",
+    "evolution_path": "水晶蟹 → 水晶巨人 → 钻石龙",
+    "element_original": "fire + earth",
+    "element_note": "混沌属性（fire + earth），战斗中可切换",
+    "passive": {
+      "name": "魔法反射",
+      "effect": "magic_reflect",
+      "skill_ref": "ps_mon_crystal_crab"
+    },
+    "effects": {
+      "passive": {
+        "desc": "受到魔法攻击时有40%概率将伤害反弹给攻击者",
+        "type": "magic_reflect",
+        "value": 40
+      }
+    },
+    "active_skill": {
+      "name": "水晶钳击",
+      "desc": "用锋利的水晶钳夹击敌人，造成ATK×110%混沌属性伤害",
+      "effect": "damage"
+    },
+    "card_no": 37,
+    "cost": 1,
+    "star": 1,
+    "atk": 220,
+    "def": 5
+  },
+  {
+    "id": "mon_volcano_god_avatar",
+    "name": "火山之神化身",
+    "stars": 1,
+    "element": "fire",
+    "hp": 480,
+    "base_atk": 220,
+    "base_def": 5,
+    "spd": 35,
+    "scene": "烈火山",
+    "lore": "火山之神化身是烈火山的'战神'。当所有炎魔将军同心协力时，它们的意志会融合成这个化身。",
+    "description": "炎魔将军们的意志集合体——它不是真正的神，而是无数战士的信念凝聚而成。",
+    "ecological_role": "战争领袖，指挥重大战役",
+    "unique_mechanic": "可以'属性组合'：火+土=熔岩攻击，火+风=火焰旋风，火+暗=地狱火",
+    "_source": "tester",
+    "evolution_path": "火焰蜥蜴 → 炎魔将军 → 火山之神",
+    "passive": {
+      "name": "属性融合",
+      "effect": "element_fusion",
+      "skill_ref": "ps_mon_volcano_god_avatar"
+    },
+    "effects": {
+      "passive": {
+        "desc": "攻击时随机附加火+土/火+风/火+暗属性组合效果",
+        "type": "element_combo",
+        "value": 1
+      }
+    },
+    "active_skill": {
+      "name": "地狱火柱",
+      "desc": "召唤火+暗融合能量，对全体敌人造成ATK×110%伤害并附加诅咒效果",
+      "effect": "debuff"
+    },
+    "card_no": 38,
+    "cost": 1,
+    "star": 1,
+    "atk": 220,
+    "def": 5
+  },
+  {
+    "id": "mon_volcano_bat",
+    "name": "火山蝙蝠",
+    "stars": 1,
+    "element": "chaos",
+    "hp": 480,
+    "base_atk": 220,
+    "base_def": 5,
+    "spd": 35,
+    "scene": "烈火山",
+    "lore": "火山蝙蝠是烈火山的'预警系统'。当地下岩浆活动加剧时，它们会成群飞出洞穴，这是喷发的前兆。",
+    "description": "翅膀是火山玻璃构成的，能反射熔岩的光芒——它们用超声波探测熔岩的流动，预警火山喷发。",
+    "ecological_role": "侦察者，预警火山活动",
+    "unique_mechanic": "可以'回声定位'，揭示隐形敌人和隐藏通道",
+    "_source": "tester",
+    "evolution_path": "火山蝙蝠 → 灰烬幽灵 → 阴影凤凰",
+    "element_original": "fire + dark",
+    "element_note": "混沌属性（fire + dark），战斗中可切换",
+    "passive": {
+      "name": "回声定位",
+      "effect": "echolocation",
+      "skill_ref": "ps_mon_volcano_bat"
+    },
+    "effects": {
+      "passive": {
+        "desc": "战斗开始时揭示所有隐形敌人和隐藏陷阱",
+        "type": "reveal_hidden",
+        "value": 1
+      }
+    },
+    "active_skill": {
+      "name": "玻璃翼切割",
+      "desc": "用火山玻璃翅膀高速切割，造成ATK×105%混沌属性伤害",
+      "effect": "damage"
+    },
+    "card_no": 39,
+    "cost": 1,
+    "star": 1,
+    "atk": 220,
+    "def": 5
+  },
+  {
+    "id": "mon_flame_lizard",
+    "name": "火焰蜥蜴",
+    "stars": 1,
+    "element": "fire",
+    "hp": 480,
+    "base_atk": 220,
+    "base_def": 5,
+    "spd": 35,
+    "scene": "烈火山",
+    "lore": "火焰蜥蜴是烈火山的'温度计'。它们会根据温度改变颜色：红色（正常）、蓝色（过热）、白色（即将喷发）。",
+    "description": "鳞片是凝固的熔岩，血液是液态的火焰——它通过皮肤散热，走过的地方会留下燃烧的脚印。",
+    "ecological_role": "掠食者，控制熔岩虫数量",
+    "unique_mechanic": "体温越高攻击力越强，但如果超过极限会进入'过热状态'，攻击自己",
+    "_source": "tester",
+    "evolution_path": "火焰蜥蜴 → 炎魔将军 → 火山之神",
+    "passive": {
+      "name": "体温蓄积",
+      "effect": "heat_accumulate",
+      "skill_ref": "ps_mon_flame_lizard"
+    },
+    "effects": {
+      "passive": {
+        "desc": "每回合ATK+15，超过上限后进入过热状态攻击自身",
+        "type": "heat_stack",
+        "value": 15
+      }
+    },
+    "active_skill": {
+      "name": "熔岩踏步",
+      "desc": "以燃烧的脚印冲向敌人，造成ATK×115%火属性伤害并留下灼烧地形",
+      "effect": "damage"
+    },
+    "card_no": 40,
+    "cost": 1,
+    "star": 1,
+    "atk": 220,
+    "def": 5
+  },
+  {
+    "id": "mon_ash_ghost",
+    "name": "灰烬幽灵",
+    "stars": 1,
+    "element": "chaos",
+    "hp": 480,
+    "base_atk": 220,
+    "base_def": 5,
+    "spd": 35,
+    "scene": "烈火山",
+    "lore": "灰烬幽灵是烈火山的'历史学家'。每一个幽灵都携带着一次火山喷发的记忆，它们用灰烬书写历史。",
+    "description": "由火山喷发中丧生的生物意识凝聚而成——它们不是鬼魂，而是'记忆的火焰'，在灰烬中永远燃烧。",
+    "ecological_role": "历史记录者，传承知识",
+    "unique_mechanic": "可以'灰烬形态'，免疫物理攻击；也可以'凝聚形态'，释放强大的魔法攻击",
+    "_source": "tester",
+    "evolution_path": "火山蝙蝠 → 灰烬幽灵 → 阴影凤凰",
+    "element_original": "fire + dark",
+    "element_note": "混沌属性（fire + dark），战斗中可切换",
+    "passive": {
+      "name": "灰烬形态",
+      "effect": "ash_form",
+      "skill_ref": "ps_mon_ash_ghost"
+    },
+    "effects": {
+      "passive": {
+        "desc": "受到物理攻击时有50%概率免疫，转为灰烬形态",
+        "type": "phys_immune_chance",
+        "value": 50
+      }
+    },
+    "active_skill": {
+      "name": "记忆火焰",
+      "desc": "凝聚灰烬中的记忆之火，造成ATK×110%混沌属性魔法伤害并降低敌人DEF",
+      "effect": "debuff"
+    },
+    "card_no": 41,
+    "cost": 1,
+    "star": 1,
+    "atk": 220,
+    "def": 5
+  },
+  {
+    "id": "mon_flame_demon_general",
+    "name": "炎魔将军",
+    "stars": 1,
+    "element": "fire",
+    "hp": 480,
+    "base_atk": 220,
+    "base_def": 5,
+    "spd": 35,
+    "scene": "烈火山",
+    "lore": "炎魔将军是烈火山的'将军'。它们指挥火山蝙蝠和火焰蜥蜴，保卫火山的安全。",
+    "description": "由火焰蜥蜴吸收了火山之神的力量后进化而成——它的武器是凝固的熔岩，每次攻击都会引发小型爆炸。",
+    "ecological_role": "军队指挥官，协调防御",
+    "unique_mechanic": "可以'召唤增援'，呼唤火焰蜥蜴和火山蝙蝠助战",
+    "_source": "tester",
+    "evolution_path": "火焰蜥蜴 → 炎魔将军 → 火山之神",
+    "passive": {
+      "name": "将军召令",
+      "effect": "general_call",
+      "skill_ref": "ps_mon_flame_demon_general"
+    },
+    "effects": {
+      "passive": {
+        "desc": "战斗开始时召唤2只火焰蜥蜴助战",
+        "type": "summon_on_start",
+        "value": 2
+      }
+    },
+    "active_skill": {
+      "name": "熔岩爆破斩",
+      "desc": "以凝固熔岩武器重击，造成ATK×150%火属性伤害并引发小型爆炸溅射",
+      "effect": "damage"
+    },
+    "card_no": 42,
+    "cost": 1,
+    "atk": 220,
+    "def": 5
+  },
+  {
+    "id": "mon_lava_giant",
+    "name": "熔岩巨人",
+    "stars": 1,
+    "element": "fire",
+    "hp": 480,
+    "base_atk": 220,
+    "base_def": 5,
+    "spd": 35,
+    "scene": "烈火山",
+    "lore": "熔岩巨人是烈火山的'免疫系统'。当外部威胁入侵时，熔岩虫会聚集起来，形成巨人抵御敌人。",
+    "description": "由无数熔岩虫聚集而成的巨人——它不是单一生物，而是一个超级有机体。",
+    "ecological_role": "火山的守护者，清除入侵者",
+    "unique_mechanic": "可以'分裂'成多个熔岩虫，从不同方向攻击；也可以'融合'成更大的巨人，提升攻击力",
+    "_source": "tester",
+    "evolution_path": "熔岩虫 → 熔岩巨人 → 不死凤凰",
+    "passive": {
+      "name": "熔岩融合",
+      "effect": "lava_merge",
+      "skill_ref": "ps_mon_lava_giant"
+    },
+    "effects": {
+      "passive": {
+        "desc": "HP每降低25%，ATK提升20%（最多叠加3层）",
+        "type": "rage_stack",
+        "value": 20
+      }
+    },
+    "active_skill": {
+      "name": "熔岩分裂冲",
+      "desc": "分裂成多个熔岩虫从四面攻击，对全体敌人造成ATK×130%火属性伤害",
+      "effect": "damage"
+    },
+    "card_no": 43,
+    "cost": 1,
+    "atk": 220,
+    "def": 5
+  },
+  {
+    "id": "mon_lava_worm",
+    "name": "熔岩虫",
+    "stars": 1,
+    "element": "fire",
+    "hp": 480,
+    "base_atk": 220,
+    "base_def": 5,
+    "spd": 35,
+    "scene": "烈火山",
+    "lore": "熔岩虫是烈火山的'清道夫'。它们吃掉冷却的熔岩，将其转化为肥沃的火山灰。",
+    "description": "生活在熔岩流中的微小生物，它们不是在游泳——而是在'吃'熔岩，将热量转化为能量。",
+    "ecological_role": "分解者，维持熔岩的流动性",
+    "unique_mechanic": "被切成两段时会变成两个独立的熔岩虫，它们会一起攻击敌人",
+    "_source": "tester",
+    "evolution_path": "熔岩虫 → 熔岩巨人 → 不死凤凰",
+    "passive": {
+      "name": "分裂再生",
+      "effect": "split_regen",
+      "skill_ref": "ps_mon_lava_worm"
+    },
+    "effects": {
+      "passive": {
+        "desc": "被击杀时分裂为2只熔岩虫继续战斗（仅触发1次）",
+        "type": "split_on_death",
+        "value": 2
+      }
+    },
+    "active_skill": {
+      "name": "熔岩喷射",
+      "desc": "喷出高温熔岩，造成ATK×100%火属性伤害并使敌人灼烧2回合",
+      "effect": "damage"
+    },
+    "card_no": 44,
+    "cost": 1,
+    "atk": 220,
+    "def": 5
+  },
+  {
+    "id": "ice_crystal_flower",
+    "name": "冰晶花",
+    "stars": 1,
+    "element": "ice",
+    "hp": 480,
+    "base_atk": 220,
+    "base_def": 5,
+    "spd": 35,
+    "scene": "冰封湖",
+    "lore": "每朵冰晶花都蕴含着巨龙的一丝记忆。",
+    "description": "绽放在冰封湖面的奇异花朵，是巨龙心脏散落的能量凝结而成。",
+    "ecological_role": "",
+    "unique_mechanic": "",
+    "_source": "cursor",
+    "skills": [
+      "冰晶散射",
+      "寒冰诱惑",
+      "花瓣护盾"
+    ],
+    "passive": {
+      "name": "冰晶绽放",
+      "effect": "ice_bloom",
+      "skill_ref": "ps_ice_crystal_flower"
+    },
+    "effects": {
+      "passive": {
+        "desc": "受击时散落冰晶碎片，使攻击者减速1回合",
+        "type": "slow_on_hit",
+        "value": 1
+      }
+    },
+    "active_skill": {
+      "name": "冰晶花粉",
+      "desc": "释放冰冻花粉，造成ATK×100%冰属性伤害并使敌人减速2回合",
+      "effect": "debuff"
+    },
+    "card_no": 45,
+    "cost": 1,
+    "atk": 220,
+    "def": 5
+  },
+  {
+    "id": "frost_koi",
+    "name": "冰霜锦鲤",
+    "stars": 2,
+    "element": "ice",
+    "hp": 700,
+    "base_atk": 320,
+    "base_def": 5,
+    "spd": 50,
+    "scene": "冰封湖",
+    "lore": "传说中，吃下冰霜锦鲤的人能获得在冰下呼吸的能力。",
+    "description": "在冰下湖水中游动的神秘鱼类，被巨龙能量改造的远古鱼类。",
+    "ecological_role": "",
+    "unique_mechanic": "",
+    "_source": "cursor",
+    "skills": [
+      "冰下潜游",
+      "鳞片反射",
+      "好运祝福"
+    ],
+    "passive": {
+      "name": "冰下潜行",
+      "effect": "under_ice_stealth",
+      "skill_ref": "ps_frost_koi"
+    },
+    "effects": {
+      "passive": {
+        "desc": "每回合有20%概率潜入冰下，免疫下一次攻击",
+        "type": "dodge_chance",
+        "value": 20
+      }
+    },
+    "active_skill": {
+      "name": "冰流冲击",
+      "desc": "从冰下高速冲出撞击敌人，造成ATK×120%冰属性伤害",
+      "effect": "damage"
+    },
+    "card_no": 46,
+    "cost": 2,
+    "atk": 320,
+    "def": 5
+  },
+  {
+    "id": "frozen_lake_spirit",
+    "name": "冻湖精",
+    "stars": 3,
+    "element": "ice",
+    "hp": 1010,
+    "base_atk": 460,
+    "base_def": 10,
+    "spd": 75,
+    "scene": "冰封湖",
+    "lore": "它们并不邪恶，只是在重复着生前最后的挣扎。",
+    "description": "由湖中溺水者的怨念与冰霜能量结合而成的存在。",
+    "ecological_role": "",
+    "unique_mechanic": "",
+    "_source": "cursor",
+    "skills": [
+      "溺水之握",
+      "冰封回忆",
+      "怨念爆发"
+    ],
+    "passive": {
+      "name": "怨念冰封",
+      "effect": "grudge_freeze",
+      "skill_ref": "ps_frozen_lake_spirit"
+    },
+    "effects": {
+      "passive": {
+        "desc": "受到伤害时积累怨念，每5层怨念冻结攻击者1回合",
+        "type": "grudge_stack",
+        "value": 5
+      }
+    },
+    "active_skill": {
+      "name": "溺水诅咒",
+      "desc": "以溺水者怨念诅咒敌人，造成ATK×130%冰属性伤害并使其每回合损失HP",
+      "effect": "debuff"
+    },
+    "card_no": 47,
+    "cost": 3,
+    "atk": 460,
+    "def": 10
+  },
+  {
+    "id": "ice_sculpture_guardian",
+    "name": "冰雕守护者",
+    "stars": 4,
+    "element": "ice",
+    "hp": 2050,
+    "base_atk": 535,
+    "base_def": 20,
+    "spd": 90,
+    "scene": "冰封湖",
+    "lore": "每个冰雕守护者都保持着被冻结时的表情。",
+    "description": "那些试图解开巨龙封印的冒险者，被祭坛的力量冻成了冰雕。",
+    "ecological_role": "",
+    "unique_mechanic": "",
+    "_source": "cursor",
+    "skills": [
+      "冰封之躯",
+      "忏悔冲击",
+      "永恒守护"
+    ],
+    "passive": {
+      "name": "冰甲护体",
+      "effect": "ice_armor",
+      "skill_ref": "ps_ice_sculpture_guardian"
+    },
+    "effects": {
+      "passive": {
+        "desc": "物理防御提升80，受到火属性攻击时冰甲融化，防御归零",
+        "type": "ice_armor_def",
+        "value": 80
+      }
+    },
+    "active_skill": {
+      "name": "冰雕重击",
+      "desc": "以冰封的冒险者之力重击，造成ATK×140%冰属性伤害并降低敌人ATK",
+      "effect": "debuff"
+    },
+    "card_no": 48,
+    "cost": 4,
+    "atk": 535,
+    "def": 20
+  },
+  {
+    "id": "snow_fairy_queen",
+    "name": "雪妖女王",
+    "stars": 5,
+    "element": "ice",
+    "hp": 2120,
+    "base_atk": 970,
+    "base_def": 20,
+    "spd": 155,
+    "scene": "冰封湖",
+    "lore": "她认为自己是巨龙的新娘，在巨龙苏醒前守护着这片湖泊。",
+    "description": "由冰晶花吸收了千年月光后化为人形的存在。",
+    "ecological_role": "",
+    "unique_mechanic": "",
+    "_source": "cursor",
+    "skills": [
+      "月光华尔兹",
+      "冰晶王冠",
+      "新娘的等待",
+      "风雪迷阵"
+    ],
+    "passive": {
+      "name": "千年月华",
+      "effect": "moonlight_aura",
+      "skill_ref": "ps_snow_fairy_queen"
+    },
+    "effects": {
+      "passive": {
+        "desc": "战斗中持续散发月华，每回合治愈全体友军最大HP的5%",
+        "type": "aura_heal",
+        "value": 5
+      }
+    },
+    "active_skill": {
+      "name": "极寒风暴",
+      "desc": "召唤千年积蓄的极寒之力，对全体敌人造成ATK×155%冰属性伤害并冻结2回合",
+      "effect": "debuff"
+    },
+    "card_no": 49,
+    "cost": 5,
+    "atk": 970,
+    "def": 20
+  },
+  {
+    "id": "ancient_frost_turtle",
+    "name": "古霜龟",
+    "stars": 6,
+    "element": "ice",
+    "hp": 3080,
+    "base_atk": 1410,
+    "base_def": 25,
+    "spd": 225,
+    "scene": "冰封湖",
+    "lore": "它的背甲上记录着千年的历史。",
+    "description": "见证了巨龙被封印全过程的远古巨龟。",
+    "ecological_role": "",
+    "unique_mechanic": "",
+    "_source": "cursor",
+    "skills": [
+      "千年见证",
+      "历史回溯",
+      "守护之盾",
+      "智慧之眼"
+    ],
+    "passive": {
+      "name": "远古见证",
+      "effect": "ancient_witness",
+      "skill_ref": "ps_ancient_frost_turtle"
+    },
+    "effects": {
+      "passive": {
+        "desc": "HP高于50%时，所受全部伤害减少35%",
+        "type": "damage_reduce",
+        "value": 35
+      }
+    },
+    "active_skill": {
+      "name": "冰霜龟壳",
+      "desc": "以远古龟壳猛击，造成ATK×160%冰属性伤害，并为己方全体提供护盾",
+      "effect": "buff"
+    },
+    "card_no": 50,
+    "cost": 5,
+    "star": 6,
+    "atk": 1410,
+    "def": 25
+  },
+  {
+    "id": "frost_dragon",
+    "name": "冰霜巨龙·梦魇觉醒",
+    "stars": 8,
+    "element": "ice",
+    "hp": 6470,
+    "base_atk": 2965,
+    "base_def": 55,
+    "spd": 470,
+    "scene": "冰封湖",
+    "lore": "它的每一片鳞片，都可能是它的一个梦。",
+    "description": "传说中的远古巨龙，被封印千年后，它的梦境已经渗入了现实。",
+    "ecological_role": "",
+    "unique_mechanic": "",
+    "_source": "cursor",
+    "skills": [
+      "梦魇吐息",
+      "梦境碎片",
+      "千年孤独",
+      "封印回响",
+      "梦醒时分",
+      "龙心共鸣"
+    ],
+    "passive": {
+      "name": "梦境渗透",
+      "effect": "dream_penetrate",
+      "skill_ref": "ps_frost_dragon"
+    },
+    "effects": {
+      "passive": {
+        "desc": "攻击时无视敌人30%防御，梦境力量穿透一切屏障",
+        "type": "armor_penetrate",
+        "value": 30
+      }
+    },
+    "active_skill": {
+      "name": "千年冰封",
+      "desc": "释放封印千年的极寒龙息，对全体敌人造成ATK×220%冰属性伤害并冻结全场3回合",
+      "effect": "debuff"
+    },
+    "card_no": 51,
+    "cost": 5,
+    "atk": 2965,
+    "def": 55
+  },
+  {
+    "id": "mon_seedling_sprite",
+    "name": "树精种子",
+    "stars": 1,
+    "element": "wood",
+    "hp": 480,
+    "base_atk": 220,
+    "base_def": 5,
+    "spd": 35,
+    "scene": "古树林",
+    "lore": "别被它们可爱的外表骗了，如果落在你的伤口上，它们会瞬间生根发芽。",
+    "description": "古树林中随处可见的生命之种，极具侵略性，渴望扎根生长。",
+    "ecological_role": "森林的基础繁衍者和分解者。",
+    "unique_mechanic": "萌芽寄生：攻击有概率在目标身上种下种子，每回合吸取目标生命值治愈自己。",
+    "_source": "vision",
+    "passive": {
+      "name": "萌芽寄生",
+      "effect": "seed_parasite",
+      "skill_ref": "ps_mon_seedling_sprite"
+    },
+    "effects": {
+      "passive": {
+        "desc": "攻击有25%概率种下种子，每回合吸取目标3%生命值",
+        "type": "leech",
+        "value": 3
+      }
+    },
+    "active_skill": {
+      "name": "种子爆发",
+      "desc": "向敌人射出爆裂种子，造成ATK×110%木属性伤害并种下寄生种子",
+      "effect": "debuff"
+    },
+    "card_no": 52,
+    "cost": 1,
+    "star": 1,
+    "atk": 220,
+    "def": 5
+  },
+  {
+    "id": "mon_root_snake",
+    "name": "根须蛇",
+    "stars": 1,
+    "element": "earth",
+    "hp": 480,
+    "base_atk": 220,
+    "base_def": 5,
+    "spd": 35,
+    "scene": "古树林",
+    "lore": "你以为那是绊倒你的树根？不，那是它在试探你的虚实。",
+    "description": "古树的根须觉醒了捕猎本能，在地底游走穿梭。",
+    "ecological_role": "地下的潜伏猎手，控制着森林底层的小型生物数量。",
+    "unique_mechanic": "地脉潜行：非攻击状态下进入潜行，破隐一击必定造成暴击并施加束缚。",
+    "_source": "vision",
+    "passive": {
+      "name": "地脉潜行",
+      "effect": "stealth_crit",
+      "skill_ref": "ps_mon_root_snake"
+    },
+    "effects": {
+      "passive": {
+        "desc": "非攻击时潜入地下，破隐一击必定暴击并束缚目标",
+        "type": "stealth",
+        "value": 0
+      }
+    },
+    "active_skill": {
+      "name": "根须缠绕",
+      "desc": "从地下突袭缠绕敌人，造成ATK×120%大地属性伤害并束缚目标2回合",
+      "effect": "debuff"
+    },
+    "card_no": 53,
+    "cost": 1,
+    "atk": 220,
+    "def": 5
+  },
+  {
+    "id": "mon_moss_crawler",
+    "name": "苔藓爬行者",
+    "stars": 1,
+    "element": "water",
+    "hp": 480,
+    "base_atk": 220,
+    "base_def": 5,
+    "spd": 35,
+    "scene": "古树林",
+    "lore": "它们是森林的活体储水器，在干旱时会反哺周围的植物。",
+    "description": "覆盖着厚厚苔藓的多足生物，行动缓慢但防御力惊人。",
+    "ecological_role": "水分搬运工和移动的培养皿。",
+    "unique_mechanic": "湿滑护甲：受到物理攻击时有几率滑开攻击（闪避），受到的火属性伤害减半。",
+    "_source": "vision",
+    "passive": {
+      "name": "湿滑护甲",
+      "effect": "slippery_armor",
+      "skill_ref": "ps_mon_moss_crawler"
+    },
+    "effects": {
+      "passive": {
+        "desc": "苔藓护甲湿滑，物理攻击有20%概率滑开，火属性伤害减半",
+        "type": "dodge_phys",
+        "value": 20
+      }
+    },
+    "active_skill": {
+      "name": "苔藓重压",
+      "desc": "以厚重苔藓身躯压制敌人，造成ATK×120%水属性伤害并降低目标速度20%",
+      "effect": "debuff"
+    },
+    "card_no": 54,
+    "cost": 1,
+    "atk": 220,
+    "def": 5
+  },
+  {
+    "id": "mon_parasitic_barnacle",
+    "name": "寄生藤壶",
+    "stars": 2,
+    "element": "wood",
+    "hp": 700,
+    "base_atk": 320,
+    "base_def": 5,
+    "spd": 50,
+    "scene": "古树林",
+    "lore": "它们就像是古树的炮塔，永远不知疲倦地驱赶着靠近的威胁。",
+    "description": "寄生在巨木上的木质结节，能喷射尖锐的木刺。",
+    "ecological_role": "固定防御者，与古树形成共生关系。",
+    "unique_mechanic": "连环木刺：无法移动，但攻击范围极大。每回合攻击次数随生命值降低而增加。",
+    "_source": "vision",
+    "passive": {
+      "name": "连环木刺",
+      "effect": "multi_attack",
+      "skill_ref": "ps_mon_parasitic_barnacle"
+    },
+    "effects": {
+      "passive": {
+        "desc": "生命值越低攻击次数越多，最多可攻击4次",
+        "type": "multi_hit",
+        "value": 4
+      }
+    },
+    "active_skill": {
+      "name": "木刺风暴",
+      "desc": "喷射大量尖锐木刺，对所有敌人造成ATK×130%木属性伤害",
+      "effect": "damage"
+    },
+    "card_no": 55,
+    "cost": 2,
+    "atk": 320,
+    "def": 5
+  },
+  {
+    "id": "mon_leaf_butterfly",
+    "name": "树叶蝴蝶",
+    "stars": 2,
+    "element": "poison",
+    "hp": 700,
+    "base_atk": 320,
+    "base_def": 5,
+    "spd": 50,
+    "scene": "古树林",
+    "lore": "看到它们翩翩起舞时，你可能已经在做梦了。",
+    "description": "受灵息浸染的落叶化作巨大的蝴蝶，在林间播撒致幻花粉。",
+    "ecological_role": "森林的防御机制之一，让入侵者迷失方向。",
+    "unique_mechanic": "致幻鳞粉：受到攻击时释放花粉，使攻击者陷入混乱状态（可能攻击友军或自己）。",
+    "_source": "vision",
+    "passive": {
+      "name": "致幻鳞粉",
+      "effect": "confuse_on_hit",
+      "skill_ref": "ps_mon_leaf_butterfly"
+    },
+    "effects": {
+      "passive": {
+        "desc": "受击时释放花粉，使攻击者陷入混乱状态1回合",
+        "type": "confuse",
+        "value": 1
+      }
+    },
+    "active_skill": {
+      "name": "幻梦花粉",
+      "desc": "播撒大量致幻花粉，造成ATK×120%毒属性伤害并使所有敌人混乱1回合",
+      "effect": "debuff"
+    },
+    "card_no": 56,
+    "cost": 1,
+    "star": 2,
+    "atk": 320,
+    "def": 5
+  },
+  {
+    "id": "mon_amber_spirit",
+    "name": "琥珀木灵",
+    "stars": 2,
+    "element": "earth",
+    "hp": 700,
+    "base_atk": 320,
+    "base_def": 5,
+    "spd": 50,
+    "scene": "古树林",
+    "lore": "时间冻结在它们身上，它们依然以为自己生活在万年前的黄金纪元。",
+    "description": "被古树树脂包裹并经过千年固化的远古昆虫灵体。",
+    "ecological_role": "远古记忆的载体，森林历史的守护者。",
+    "unique_mechanic": "时间凝滞：攻击可以减缓目标的行动速度，叠加三层后目标将被石化一回合。",
+    "_source": "vision",
+    "passive": {
+      "name": "时间凝滞",
+      "effect": "slow_stack",
+      "skill_ref": "ps_mon_amber_spirit"
+    },
+    "effects": {
+      "passive": {
+        "desc": "攻击减缓目标速度，叠加3层后石化目标1回合",
+        "type": "slow_stack",
+        "value": 3
+      }
+    },
+    "active_skill": {
+      "name": "琥珀封印",
+      "desc": "以千年树脂封印敌人，造成ATK×140%大地属性伤害并石化目标1回合",
+      "effect": "debuff"
+    },
+    "card_no": 57,
+    "cost": 2,
+    "star": 2,
+    "atk": 320,
+    "def": 5
+  },
+  {
+    "id": "mon_ancient_treant",
+    "name": "古树精灵",
+    "stars": 3,
+    "element": "wood",
+    "hp": 1010,
+    "base_atk": 460,
+    "base_def": 10,
+    "spd": 75,
+    "scene": "古树林",
+    "lore": "它们不会说话，但当你靠近它时，你的脑海里会回响起森林的低语。",
+    "description": "古树林中最古老的树人觉醒体，世界树意志的代行者。",
+    "ecological_role": "区域的统御者和森林生态的调节者。",
+    "unique_mechanic": "森之守护：当它在场时，所有友军获得持续回血效果。受到致命伤害时，会将自己传送走并恢复15%生命值（仅触发一次）。",
+    "_source": "vision",
+    "passive": {
+      "name": "森之守护",
+      "effect": "forest_aura",
+      "skill_ref": "ps_mon_ancient_treant"
+    },
+    "effects": {
+      "passive": {
+        "desc": "在场时友军每回合回复5%生命，受致命伤害时传送并恢复15%生命（仅一次）",
+        "type": "aura_regen",
+        "value": 5
+      }
+    },
+    "active_skill": {
+      "name": "世界树之怒",
+      "desc": "以世界树意志发动攻击，造成ATK×160%木属性伤害并为己方全体回复ATK×50%生命值",
+      "effect": "heal"
+    },
+    "card_no": 58,
+    "cost": 3,
+    "atk": 460,
+    "def": 10
+  },
+  {
+    "id": "mon_canopy_hermit",
+    "name": "树冠隐者",
+    "stars": 3,
+    "element": "thunder",
+    "hp": 1010,
+    "base_atk": 460,
+    "base_def": 10,
+    "spd": 75,
+    "scene": "古树林",
+    "lore": "它们是距离天空最近的森林之子，眼睛里闪烁着风暴的光芒。",
+    "description": "居住在古树林最高处的神秘生灵，掌握着呼唤雷电的力量以击退试图触碰树冠的飞禽。",
+    "ecological_role": "防空守卫，维持树冠生态的平衡。",
+    "unique_mechanic": "静电场：处于它的攻击范围内会持续受到微量的雷属性伤害，每回合结束时有概率被麻痹。",
+    "_source": "vision",
+    "passive": {
+      "name": "静电场",
+      "effect": "static_field",
+      "skill_ref": "ps_mon_canopy_hermit"
+    },
+    "effects": {
+      "passive": {
+        "desc": "攻击范围内持续造成微量雷伤，每回合有20%概率麻痹敌人",
+        "type": "field_dot",
+        "value": 20
+      }
+    },
+    "active_skill": {
+      "name": "天顶雷击",
+      "desc": "从树冠高处召唤精准雷击，造成ATK×130%雷属性伤害并麻痹目标1回合",
+      "effect": "debuff"
+    },
+    "card_no": 59,
+    "cost": 2,
+    "star": 3,
+    "atk": 460,
+    "def": 10
+  },
+  {
+    "id": "mon_whisper_box",
+    "name": "低语货箱",
+    "stars": 1,
+    "element": "earth",
+    "hp": 480,
+    "base_atk": 220,
+    "base_def": 5,
+    "spd": 35,
+    "scene": "商人驿站",
+    "lore": "它里面可能装满了黄金，也可能是一箱石头。只有打开它的人才知道，但通常打开它的人都没能活着说出真相。",
+    "description": "被遗弃在驿站角落的货物，长期听取商人的讨价还价而产生了扭曲的意识。",
+    "ecological_role": "伪装捕食者，诱捕贪心的新手冒险者。",
+    "unique_mechanic": "交易陷阱：它会吐出一件劣质装备，若玩家拾取，则会触发其吞噬攻击。",
+    "_source": "vision",
+    "passive": {
+      "name": "诱饵陷阱",
+      "effect": "lure_trap",
+      "skill_ref": "ps_mon_whisper_box"
+    },
+    "effects": {
+      "passive": {
+        "desc": "吐出劣质装备诱敌，拾取者受到下次攻击伤害+50%",
+        "type": "trap",
+        "value": 50
+      }
+    },
+    "active_skill": {
+      "name": "货物吞噬",
+      "desc": "张开箱口吞噬敌人，造成ATK×120%大地属性伤害并封印目标一个技能",
+      "effect": "debuff"
+    },
+    "card_no": 60,
+    "cost": 1,
+    "atk": 220,
+    "def": 5
+  },
+  {
+    "id": "mon_obsession_sprite",
+    "name": "执念精",
+    "stars": 1,
+    "element": "shadow",
+    "hp": 480,
+    "base_atk": 220,
+    "base_def": 5,
+    "spd": 35,
+    "scene": "商人驿站",
+    "lore": "「如果当时我没有卖掉那批货……」这种在深夜回荡的叹息，日积月累，便化作了这些灰扑扑的灵体。",
+    "description": "商人在破产或交易失败后产生的悔恨凝结而成，总是跟在富商背后。",
+    "ecological_role": "驿站阴暗角落的清道夫，以商人遗落的铜板和情绪残渣为食。",
+    "unique_mechanic": "负重增加：每回合偷取玩家少量属性，若玩家背包物品过多，其伤害翻倍。",
+    "_source": "vision",
+    "passive": {
+      "name": "执念汲取",
+      "effect": "steal_stat",
+      "skill_ref": "ps_mon_obsession_sprite"
+    },
+    "effects": {
+      "passive": {
+        "desc": "每回合偷取玩家5点攻击力，背包满时伤害翻倍",
+        "type": "stat_steal",
+        "value": 5
+      }
+    },
+    "active_skill": {
+      "name": "悔恨缠绕",
+      "desc": "以执念之力缠绕敌人，造成ATK×110%暗影伤害并降低目标攻击力15%",
+      "effect": "debuff"
+    },
+    "card_no": 61,
+    "cost": 1,
+    "atk": 220,
+    "def": 5
+  },
+  {
+    "id": "mon_greedy_purse",
+    "name": "贪婪钱袋",
+    "stars": 1,
+    "element": "shadow",
+    "hp": 480,
+    "base_atk": 220,
+    "base_def": 5,
+    "spd": 35,
+    "scene": "商人驿站",
+    "lore": "不要去捡路边不知谁掉的钱袋，特别是当它在自己往前跳的时候。",
+    "description": "沉甸甸的旧皮袋，走动时会发出诱人的金币碰撞声。",
+    "ecological_role": "驿站生态链底层的窃贼，专门偷窃粗心大意者的零钱。",
+    "unique_mechanic": "见财起意：受到攻击时会掉落金币（诱饵），玩家拾取会导致下一次受到的伤害增加50%。",
+    "_source": "vision",
+    "passive": {
+      "name": "金币诱惑",
+      "effect": "gold_lure",
+      "skill_ref": "ps_mon_greedy_purse"
+    },
+    "effects": {
+      "passive": {
+        "desc": "受击掉落金币诱饵，拾取者下次受伤增加50%",
+        "type": "trap",
+        "value": 50
+      }
+    },
+    "active_skill": {
+      "name": "贪婪吞噬",
+      "desc": "以贪欲之力吞噬敌人财富，造成ATK×110%暗影伤害并回复自身10%生命值",
+      "effect": "damage"
+    },
+    "card_no": 62,
+    "cost": 1,
+    "atk": 220,
+    "def": 5
+  },
+  {
+    "id": "mon_masked_peddler",
+    "name": "假面行商",
+    "stars": 2,
+    "element": "poison",
+    "hp": 700,
+    "base_atk": 320,
+    "base_def": 5,
+    "spd": 50,
+    "scene": "商人驿站",
+    "lore": "他卖的伤药能瞬间治愈伤口，但会在明天让你失去味觉。公平交易，童叟无欺。",
+    "description": "戴着笑脸面具的诡异商人，总是试图向路人推销带有诅咒的商品。",
+    "ecological_role": "恶意交易者，打破常规生态的混沌因素。",
+    "unique_mechanic": "强买强卖：强制给予玩家一个增益Buff和一个更严重的减益Debuff。",
+    "_source": "vision",
+    "passive": {
+      "name": "强买强卖",
+      "effect": "forced_trade",
+      "skill_ref": "ps_mon_masked_peddler"
+    },
+    "effects": {
+      "passive": {
+        "desc": "强制给予敌人增益同时附加更强减益，净效果为负",
+        "type": "debuff_gift",
+        "value": 0
+      }
+    },
+    "active_skill": {
+      "name": "诅咒商品",
+      "desc": "投掷诅咒商品，造成ATK×120%毒属性伤害并附加随机减益效果",
+      "effect": "debuff"
+    },
+    "card_no": 63,
+    "cost": 2,
+    "star": 2,
+    "atk": 320,
+    "def": 5,
+    "sprite_path": "res://assets/monsters/mon_masked_peddler/portrait.png",
+    "fullbody_path": "res://assets/monsters/mon_masked_peddler/fullbody.png"
+  },
+  {
+    "id": "mon_caravan_ghost",
+    "name": "商队幽灵",
+    "stars": 2,
+    "element": "void",
+    "hp": 700,
+    "base_atk": 320,
+    "base_def": 5,
+    "spd": 50,
+    "scene": "商人驿站",
+    "lore": "「货物……必须……送达……」他们无视了岁月的流逝，只剩下保护商队的本能。",
+    "description": "在护送货物途中遭遇不测的护卫，死后仍徘徊在商道上，忠诚地守护着早已不存在的货物。",
+    "ecological_role": "无意识的游荡守卫，对任何靠近其巡逻路线的生物发起攻击。",
+    "unique_mechanic": "忠诚护盾：战斗开始时为自己和周围的怪物附加一层高额护盾，护盾存在时免疫控制。",
+    "_source": "vision",
+    "passive": {
+      "name": "忠诚护盾",
+      "effect": "loyalty_shield",
+      "skill_ref": "ps_mon_caravan_ghost"
+    },
+    "effects": {
+      "passive": {
+        "desc": "战斗开始为己方附加护盾，护盾存在时免疫控制效果",
+        "type": "shield",
+        "value": 200
+      }
+    },
+    "active_skill": {
+      "name": "幽灵冲锋",
+      "desc": "化作幽灵之形冲撞敌人，造成ATK×130%虚空属性伤害并穿透护盾",
+      "effect": "damage"
+    },
+    "card_no": 64,
+    "cost": 2,
+    "star": 2,
+    "atk": 320,
+    "def": 5
+  },
+  {
+    "id": "mon_golden_hourglass",
+    "name": "黄金沙漏",
+    "stars": 2,
+    "element": "light",
+    "hp": 700,
+    "base_atk": 320,
+    "base_def": 5,
+    "spd": 50,
+    "scene": "商人驿站",
+    "lore": "时间就是金钱。这个沙漏能将你的寿命转化为它主人的财富。",
+    "description": "高阶商人用来计算利息的魔法道具，吸收了太多的欲望而活化。",
+    "ecological_role": "驿站能量的汇聚体，调控着局部的灵息流转。",
+    "unique_mechanic": "时间计费：随着战斗回合数增加，它的攻击力和防御力会成倍增长。",
+    "_source": "vision",
+    "passive": {
+      "name": "时间计费",
+      "effect": "time_scaling",
+      "skill_ref": "ps_mon_golden_hourglass"
+    },
+    "effects": {
+      "passive": {
+        "desc": "每过1回合攻防各提升10%，最高提升50%",
+        "type": "time_stack",
+        "value": 10
+      }
+    },
+    "active_skill": {
+      "name": "时光倒流",
+      "desc": "逆转时间之沙，造成ATK×120%光属性伤害并使目标回合数倒退（减速50%）",
+      "effect": "debuff"
+    },
+    "card_no": 65,
+    "cost": 1,
+    "star": 2,
+    "atk": 320,
+    "def": 5
+  },
+  {
+    "id": "mon_pawn_demon",
+    "name": "典当魔",
+    "stars": 3,
+    "element": "fire",
+    "hp": 1010,
+    "base_atk": 460,
+    "base_def": 10,
+    "spd": 75,
+    "scene": "商人驿站",
+    "lore": "它不收金币。它只要你最珍视的东西。作为交换，它能给你任何你想要的。",
+    "description": "掌握着驿站地下黑市的恶魔，最喜欢典当人类的记忆、情感和天赋。",
+    "ecological_role": "高阶掠食者，以高等灵魂能量为食。",
+    "unique_mechanic": "灵魂典当：攻击有几率封印玩家的一个随机技能，直到战斗结束。",
+    "_source": "vision",
+    "passive": {
+      "name": "灵魂典当",
+      "effect": "skill_seal",
+      "skill_ref": "ps_mon_pawn_demon"
+    },
+    "effects": {
+      "passive": {
+        "desc": "攻击有30%概率封印目标一个随机技能直到战斗结束",
+        "type": "skill_seal",
+        "value": 30
+      }
+    },
+    "active_skill": {
+      "name": "黑市交易",
+      "desc": "以灵魂为代价发动黑市诅咒，造成ATK×140%火属性伤害并永久降低目标最大生命值10%",
+      "effect": "debuff"
+    },
+    "card_no": 66,
+    "cost": 3,
+    "atk": 460,
+    "def": 10,
+    "sprite_path": "res://assets/monsters/mon_pawn_demon/portrait.png",
+    "fullbody_path": "res://assets/monsters/mon_pawn_demon/fullbody.png"
+  },
+  {
+    "id": "mon_contract_guardian",
+    "name": "契约守护者",
+    "stars": 3,
+    "element": "light",
+    "hp": 1410,
+    "base_atk": 370,
+    "base_def": 15,
+    "spd": 60,
+    "scene": "商人驿站",
+    "lore": "一旦契约成立，即使是神明也不能违背。如果不幸触发了它的判定，你只能在契约的框架内战胜它。",
+    "description": "古代商人签订最高级别契约时召唤的公正之灵，失去主人的它们开始强制执行自己理解的契约。",
+    "ecological_role": "秩序的极端维护者，消除一切不符合它规则的存在。",
+    "unique_mechanic": "神圣不可侵犯：免疫位移，免疫背刺。如果玩家使用了带有『欺骗』或『偷窃』性质的技能，会被立刻眩晕。",
+    "_source": "vision",
+    "passive": {
+      "name": "契约神圣",
+      "effect": "contract_immunity",
+      "skill_ref": "ps_mon_contract_guardian"
+    },
+    "effects": {
+      "passive": {
+        "desc": "免疫位移和背刺，敌方使用欺骗技能时立即眩晕施法者",
+        "type": "counter_cheat",
+        "value": 0
+      }
+    },
+    "active_skill": {
+      "name": "契约制裁",
+      "desc": "以契约之名降下神圣制裁，造成ATK×150%光属性伤害并封印目标技能1回合",
+      "effect": "debuff"
+    },
+    "card_no": 67,
+    "cost": 3,
+    "atk": 370,
+    "def": 15
+  },
+  {
+    "id": "mon_seed_of_desire",
+    "name": "欲望之种·元素史莱姆",
+    "stars": 4,
+    "element": "void",
+    "hp": 1460,
+    "base_atk": 670,
+    "base_def": 10,
+    "spd": 105,
+    "scene": "商人驿站",
+    "lore": "它没有固定的形态，它看起来就像是你内心最渴望的东西——对某些人是一座金山，对某些人是绝世的神兵。",
+    "description": "极其罕见的异变体。当一个史莱姆吞噬了驿站千年来积累的所有人类欲望后，进化成了这种非自然的存在。",
+    "ecological_role": "驿站生态的顶点，无底洞般的吞噬者。",
+    "unique_mechanic": "欲望投射：会复制玩家当前最高属性，并将其转化为对玩家的弱点克制。玩家越强，它越强。",
+    "_source": "vision",
+    "passive": {
+      "name": "欲望投射",
+      "effect": "mirror_weakness",
+      "skill_ref": "ps_mon_seed_of_desire"
+    },
+    "effects": {
+      "passive": {
+        "desc": "复制玩家最高属性并转化为克制，玩家越强它越强",
+        "type": "mirror",
+        "value": 0
+      }
+    },
+    "active_skill": {
+      "name": "欲望具现",
+      "desc": "将敌人欲望具现为武器反噬，造成ATK×170%虚空属性伤害，伤害随敌方攻击力提升",
+      "effect": "damage"
+    },
+    "card_no": 68,
+    "cost": 4,
+    "atk": 670,
+    "def": 10
+  },
+  {
+    "id": "source_crystal_bug",
+    "name": "源晶虫",
+    "stars": 1,
+    "element": "thunder",
+    "hp": 480,
+    "base_atk": 220,
+    "base_def": 5,
+    "spd": 35,
+    "scene": "灵都遗迹",
+    "lore": "源晶虫是技术生态系统的'分解者'。",
+    "description": "由废弃的纳米机器人集群形成的虫状生物。",
+    "ecological_role": "",
+    "unique_mechanic": "",
+    "_source": "cursor",
+    "skills": [
+      "纳米啃噬",
+      "晶体沉积",
+      "集群攻击"
+    ],
+    "passive": {
+      "name": "纳米集群",
+      "effect": "nano_swarm",
+      "skill_ref": "ps_source_crystal_bug"
+    },
+    "effects": {
+      "passive": {
+        "desc": "被击杀时分裂为3只更小的源晶虫继续战斗（仅触发1次）",
+        "type": "split_on_death",
+        "value": 3
+      }
+    },
+    "active_skill": {
+      "name": "电流侵蚀",
+      "desc": "释放纳米机器人电流，造成ATK×100%雷属性伤害并降低敌人DEF",
+      "effect": "debuff"
+    },
+    "card_no": 69,
+    "cost": 1,
+    "atk": 220,
+    "def": 5
+  },
+  {
+    "id": "data_ghost",
+    "name": "数据幽灵",
+    "stars": 2,
+    "element": "void",
+    "hp": 700,
+    "base_atk": 320,
+    "base_def": 5,
+    "spd": 50,
+    "scene": "灵都遗迹",
+    "lore": "数据幽灵是'备份'。",
+    "description": "灵都居民的意识数据残留，在废弃的网络中漂流了千年。",
+    "ecological_role": "",
+    "unique_mechanic": "",
+    "_source": "cursor",
+    "skills": [
+      "数据注入",
+      "全息投影",
+      "记忆碎片",
+      "网络漂移"
+    ],
+    "passive": {
+      "name": "数据漂流",
+      "effect": "data_drift",
+      "skill_ref": "ps_data_ghost"
+    },
+    "effects": {
+      "passive": {
+        "desc": "每回合有25%概率进入数据态，免疫一次攻击",
+        "type": "phase_dodge",
+        "value": 25
+      }
+    },
+    "active_skill": {
+      "name": "意识侵入",
+      "desc": "侵入敌人意识数据，造成ATK×115%虚空属性伤害并使其混乱1回合",
+      "effect": "debuff"
+    },
+    "card_no": 70,
+    "cost": 2,
+    "atk": 320,
+    "def": 5
+  },
+  {
+    "id": "energy_worm",
+    "name": "能量蠕虫",
+    "stars": 3,
+    "element": "thunder",
+    "hp": 1010,
+    "base_atk": 460,
+    "base_def": 10,
+    "spd": 75,
+    "scene": "灵都遗迹",
+    "lore": "能量蠕虫是技术生态系统的'循环系统'。",
+    "description": "由泄漏的灵能管道中逸散的能量形成的蠕虫状生物。",
+    "ecological_role": "",
+    "unique_mechanic": "",
+    "_source": "cursor",
+    "skills": [
+      "能量冲击",
+      "管道穿梭",
+      "能量过载",
+      "生命链接"
+    ],
+    "passive": {
+      "name": "能量吸收",
+      "effect": "energy_absorb",
+      "skill_ref": "ps_energy_worm"
+    },
+    "effects": {
+      "passive": {
+        "desc": "每回合吸收场地灵能，ATK+10（最多叠加5层）",
+        "type": "energy_stack",
+        "value": 10
+      }
+    },
+    "active_skill": {
+      "name": "灵能爆发",
+      "desc": "释放积蓄的灵能，造成ATK×130%雷属性伤害并对周围敌人溅射",
+      "effect": "damage"
+    },
+    "card_no": 71,
+    "cost": 3,
+    "star": 3,
+    "atk": 460,
+    "def": 10
+  },
+  {
+    "id": "ruin_warden",
+    "name": "遗迹守卫者",
+    "stars": 4,
+    "element": "thunder",
+    "hp": 2050,
+    "base_atk": 535,
+    "base_def": 20,
+    "spd": 90,
+    "scene": "灵都遗迹",
+    "lore": "遗迹守卫者是技术生态系统的'免疫系统'。",
+    "description": "由源晶虫'修复'的古代守卫机械。",
+    "ecological_role": "",
+    "unique_mechanic": "",
+    "_source": "cursor",
+    "skills": [
+      "晶体护甲",
+      "平衡裁决",
+      "系统扫描",
+      "守护协议"
+    ],
+    "passive": {
+      "name": "机械修复",
+      "effect": "mech_repair",
+      "skill_ref": "ps_ruin_warden"
+    },
+    "effects": {
+      "passive": {
+        "desc": "每2回合自动修复，恢复最大HP的10%",
+        "type": "self_repair",
+        "value": 10
+      }
+    },
+    "active_skill": {
+      "name": "守卫炮击",
+      "desc": "启动古代武器系统，对单体造成ATK×140%雷属性伤害并使其眩晕1回合",
+      "effect": "debuff"
+    },
+    "card_no": 72,
+    "cost": 4,
+    "star": 4,
+    "atk": 535,
+    "def": 20
+  },
+  {
+    "id": "source_crystal_core",
+    "name": "源晶核心",
+    "stars": 5,
+    "element": "thunder",
+    "hp": 2120,
+    "base_atk": 970,
+    "base_def": 20,
+    "spd": 155,
+    "scene": "灵都遗迹",
+    "lore": "源晶核心是技术生态系统的'繁殖器官'。",
+    "description": "由源晶虫沉积的纯净晶体在能量蠕虫的长期滋养下形成的'器官'。",
+    "ecological_role": "",
+    "unique_mechanic": "",
+    "_source": "cursor",
+    "skills": [
+      "晶体环刃",
+      "生态共鸣",
+      "系统重构",
+      "集体意志"
+    ],
+    "passive": {
+      "name": "晶体共鸣",
+      "effect": "crystal_resonance",
+      "skill_ref": "ps_source_crystal_core"
+    },
+    "effects": {
+      "passive": {
+        "desc": "场地上每有一只源晶虫，ATK额外提升15%",
+        "type": "ally_boost",
+        "value": 15
+      }
+    },
+    "active_skill": {
+      "name": "核心放电",
+      "desc": "释放纯净晶体能量，对全体敌人造成ATK×150%雷属性伤害",
+      "effect": "damage"
+    },
+    "card_no": 73,
+    "cost": 5,
+    "atk": 970,
+    "def": 20
+  },
+  {
+    "id": "echo_of_civilization",
+    "name": "文明回响",
+    "stars": 6,
+    "element": "light",
+    "hp": 3080,
+    "base_atk": 1410,
+    "base_def": 25,
+    "spd": 225,
+    "scene": "灵都遗迹",
+    "lore": "文明回响是技术生态系统的'记忆'。",
+    "description": "数据幽灵、源晶虫、能量蠕虫'融合'在了一起。",
+    "ecological_role": "",
+    "unique_mechanic": "",
+    "_source": "cursor",
+    "skills": [
+      "千年记忆",
+      "三重存在",
+      "文明遗产",
+      "和平协议"
+    ],
+    "passive": {
+      "name": "三位一体",
+      "effect": "trinity_fusion",
+      "skill_ref": "ps_echo_of_civilization"
+    },
+    "effects": {
+      "passive": {
+        "desc": "融合三种形态，每回合随机获得数据/晶体/能量增益之一",
+        "type": "random_buff",
+        "value": 1
+      }
+    },
+    "active_skill": {
+      "name": "文明回响波",
+      "desc": "释放千年文明积累的光能，对全体敌人造成ATK×160%光属性伤害并降低全属性",
+      "effect": "debuff"
+    },
+    "card_no": 74,
+    "cost": 6,
+    "atk": 1410,
+    "def": 25
+  },
+  {
+    "id": "abyss_guardian",
+    "name": "深渊守望者·生态觉醒",
+    "stars": 8,
+    "element": "thunder",
+    "hp": 9050,
+    "base_atk": 2370,
+    "base_def": 80,
+    "spd": 400,
+    "scene": "灵都遗迹",
+    "lore": "它是技术生态系统的'意志具象化'。",
+    "description": "灵都最后的守护者，一台巨大的人形机甲。",
+    "ecological_role": "",
+    "unique_mechanic": "",
+    "_source": "cursor",
+    "skills": [
+      "生态打击",
+      "共生护盾",
+      "文明展示",
+      "系统融合",
+      "终极协议",
+      "生命共识"
+    ],
+    "passive": {
+      "name": "生态觉醒护盾",
+      "effect": "eco_awakening_shield",
+      "skill_ref": "ps_abyss_guardian"
+    },
+    "effects": {
+      "passive": {
+        "desc": "战斗开始时生成护盾，吸收相当于最大HP30%的伤害",
+        "type": "shield_on_start",
+        "value": 30
+      }
+    },
+    "active_skill": {
+      "name": "深渊炮",
+      "desc": "启动最终武器系统，对全体敌人造成ATK×210%雷属性伤害并使全场眩晕2回合",
+      "effect": "debuff"
+    },
+    "card_no": 75,
+    "cost": 5,
+    "atk": 2370,
+    "def": 80
+  },
+  {
+    "id": "mon_source_sprite",
+    "name": "源晶精",
+    "stars": 1,
+    "element": "earth",
+    "hp": 480,
+    "base_atk": 220,
+    "base_def": 5,
+    "spd": 35,
+    "scene": "源晶矿脉",
+    "lore": "源晶精是源晶矿脉的'细胞'。它们没有自我意识，但能感知矿脉的健康状况。当矿脉受到威胁时，源晶精会聚集在一起，形成更大的晶体生命。",
+    "description": "源晶矿脉中最基础的生命形式，不是元素精灵，而是真正的晶体生命。",
+    "ecological_role": "矿脉基础生命、矿脉健康指示器",
+    "unique_mechanic": "",
+    "_source": "godot",
+    "flavor_text": "「别碰那些亮晶晶的小东西——它们会'记住'你的能量特征。」——老矿工",
+    "passive": {
+      "name": "晶体生命",
+      "effect": "crystal_life",
+      "skill_ref": "ps_mon_source_sprite"
+    },
+    "effects": {
+      "passive": {
+        "desc": "受到土属性攻击时吸收伤害转化为ATK提升",
+        "type": "earth_absorb",
+        "value": 20
+      }
+    },
+    "active_skill": {
+      "name": "晶刺攻击",
+      "desc": "弹射锋利晶刺，造成ATK×100%土属性伤害",
+      "effect": "damage"
+    },
+    "card_no": 76,
+    "cost": 1,
+    "star": 1,
+    "atk": 220,
+    "def": 5
+  },
+  {
+    "id": "mon_vein_worm",
+    "name": "矿脉虫",
+    "stars": 1,
+    "element": "earth",
+    "hp": 480,
+    "base_atk": 220,
+    "base_def": 5,
+    "spd": 35,
+    "scene": "源晶矿脉",
+    "lore": "矿脉虫以源晶精的'排泄物'——也就是多余的能量结晶为食。它们在矿脉中钻洞，帮助源晶精扩散到新的区域。矿工们既讨厌它们（会弄塌矿道），又喜欢它们（有矿脉虫的地方一定有源晶）。",
+    "description": "生活在矿脉缝隙中的小型节肢动物，与源晶精形成奇妙的共生关系。",
+    "ecological_role": "矿脉开拓者、源晶精共生者",
+    "unique_mechanic": "",
+    "_source": "godot",
+    "flavor_text": "「矿脉虫是最好的探矿器——比任何探测魔法都准。」——矿工公会手册",
+    "passive": {
+      "name": "矿脉共生",
+      "effect": "vein_symbiosis",
+      "skill_ref": "ps_mon_vein_worm"
+    },
+    "effects": {
+      "passive": {
+        "desc": "与源晶精相邻时，双方ATK和DEF各提升20%",
+        "type": "symbiosis_boost",
+        "value": 20
+      }
+    },
+    "active_skill": {
+      "name": "矿石撞击",
+      "desc": "携带矿石碎片高速冲撞，造成ATK×105%土属性伤害",
+      "effect": "damage"
+    },
+    "card_no": 77,
+    "cost": 1,
+    "atk": 220,
+    "def": 5
+  },
+  {
+    "id": "mon_crystal_lizard",
+    "name": "结晶蜥蜴",
+    "stars": 2,
+    "element": "earth",
+    "hp": 700,
+    "base_atk": 320,
+    "base_def": 5,
+    "spd": 50,
+    "scene": "源晶矿脉",
+    "lore": "当矿脉虫寿命终结时，它们会找一个安静的角落死去。源晶精会'悼念'这位共生者，用晶体覆盖它的身体。于是矿脉虫的外壳被保存下来，形成了结晶蜥蜴——一种没有生命，但能对矿脉威胁做出反应的'活化石'。",
+    "description": "矿脉虫的终极形态——不是进化，而是被源晶'覆盖'的结果。",
+    "ecological_role": "矿脉守护者、矿脉历史记录者",
+    "unique_mechanic": "",
+    "_source": "godot",
+    "flavor_text": "「结晶蜥蜴不是活着的，但它们知道谁是朋友，谁是敌人。」——矿脉研究者",
+    "passive": {
+      "name": "晶体覆甲",
+      "effect": "crystal_armor",
+      "skill_ref": "ps_mon_crystal_lizard"
+    },
+    "effects": {
+      "passive": {
+        "desc": "源晶覆盖全身，物理防御提升60，移动速度降低",
+        "type": "crystal_def",
+        "value": 60
+      }
+    },
+    "active_skill": {
+      "name": "晶甲冲撞",
+      "desc": "以覆满晶体的身躯冲撞敌人，造成ATK×120%土属性伤害并使其减速",
+      "effect": "debuff"
+    },
+    "card_no": 78,
+    "cost": 2,
+    "atk": 320,
+    "def": 5
+  },
+  {
+    "id": "mon_crystal_guardian",
+    "name": "矿脉守护者",
+    "stars": 3,
+    "element": "earth",
+    "hp": 1410,
+    "base_atk": 370,
+    "base_def": 15,
+    "spd": 60,
+    "scene": "源晶矿脉",
+    "lore": "当矿脉受到严重威胁时，成千上万的源晶精会聚集在一起，融合成矿脉守护者。守护者没有固定的形态——它会根据威胁的类型变化。面对火属性威胁，它会变成隔热的形状；面对物理攻击，它会变成棱形偏转攻击。",
+    "description": "源晶精聚集形成的巨大晶体生命——不是傀儡，是矿脉免疫系统。",
+    "ecological_role": "矿脉保护者、应急免疫系统",
+    "unique_mechanic": "",
+    "_source": "godot",
+    "flavor_text": "「矿脉守护者不是敌人——它只是在'治疗'矿脉的'伤口'。」——灵脉祭司",
+    "passive": {
+      "name": "免疫系统",
+      "effect": "immune_system",
+      "skill_ref": "ps_mon_crystal_guardian"
+    },
+    "effects": {
+      "passive": {
+        "desc": "对所有异常状态免疫，受到状态攻击时反弹给攻击者",
+        "type": "status_immune",
+        "value": 1
+      }
+    },
+    "active_skill": {
+      "name": "矿脉震击",
+      "desc": "以矿脉之力震击大地，对全体敌人造成ATK×130%土属性伤害并使其眩晕",
+      "effect": "debuff"
+    },
+    "card_no": 79,
+    "cost": 2,
+    "star": 3,
+    "atk": 370,
+    "def": 15
+  },
+  {
+    "id": "mon_memory_eater",
+    "name": "记忆吞噬者",
+    "stars": 3,
+    "element": "void",
+    "hp": 1010,
+    "base_atk": 460,
+    "base_def": 10,
+    "spd": 75,
+    "scene": "源晶矿脉",
+    "lore": "记忆吞噬者不是真正的'吞噬'记忆——而是'读取'记忆。它们能看到矿脉中发生过的一切：大寂灭时的灾难、古代矿工的劳作、甚至源晶脉最初形成的场景。冒险者们会用特殊的仪式让记忆吞噬者'播放'特定的记忆。",
+    "description": "最古老的结晶蜥蜴，它们的'眼睛'中存储着矿脉的全部记忆。",
+    "ecological_role": "矿脉记忆库、历史见证者",
+    "unique_mechanic": "",
+    "_source": "godot",
+    "flavor_text": "「想知道一千年前这里发生了什么？问记忆吞噬者——但你不一定想知道答案。」——秘术师",
+    "passive": {
+      "name": "记忆存储",
+      "effect": "memory_store",
+      "skill_ref": "ps_mon_memory_eater"
+    },
+    "effects": {
+      "passive": {
+        "desc": "每击败一个敌人，永久获得其ATK的10%作为自身ATK加成",
+        "type": "memory_stack",
+        "value": 10
+      }
+    },
+    "active_skill": {
+      "name": "记忆吞噬",
+      "desc": "吞噬敌人的战斗记忆，造成ATK×130%虚空属性伤害并窃取其一个增益效果",
+      "effect": "debuff"
+    },
+    "card_no": 80,
+    "cost": 3,
+    "atk": 460,
+    "def": 10
+  },
+  {
+    "id": "mon_source_core",
+    "name": "源晶核心",
+    "stars": 4,
+    "element": "thunder",
+    "hp": 1460,
+    "base_atk": 670,
+    "base_def": 10,
+    "spd": 105,
+    "scene": "源晶矿脉",
+    "lore": "源晶核心是矿脉的'大脑'。它能说话，但只用最简单的词。它不'统治'矿脉——它'协调'矿脉。核心会记住每一个进入矿脉的人，如果你来采矿，它会让守护者攻击你；如果你来修复矿脉，它会帮助你。",
+    "description": "矿脉的'心脏'——一个有自我意识的超级源晶精集群。",
+    "ecological_role": "矿脉协调者、决策中心",
+    "unique_mechanic": "",
+    "_source": "godot",
+    "flavor_text": "「源晶核心是我见过最公平的生命——你怎么对待矿脉，它就怎么对待你。」——灵脉研究者",
+    "passive": {
+      "name": "集群意识",
+      "effect": "swarm_consciousness",
+      "skill_ref": "ps_mon_source_core"
+    },
+    "effects": {
+      "passive": {
+        "desc": "场地上每有一只源晶精，自身HP上限提升5%（最多10层）",
+        "type": "hp_stack",
+        "value": 5
+      }
+    },
+    "active_skill": {
+      "name": "源晶脉冲",
+      "desc": "释放矿脉心脏能量脉冲，对全体敌人造成ATK×155%雷属性伤害并充能友军",
+      "effect": "buff"
+    },
+    "card_no": 81,
+    "cost": 4,
+    "star": 4,
+    "atk": 670,
+    "def": 10
+  },
+  {
+    "id": "mon_mine_king",
+    "name": "矿坑之王",
+    "stars": 5,
+    "element": "earth",
+    "hp": 2120,
+    "base_atk": 970,
+    "base_def": 20,
+    "spd": 155,
+    "scene": "源晶矿脉",
+    "lore": "矿坑之王不是'国王'——它是矿脉'记住'的所有矿工的集合。它的声音是一千个矿工的声音，它的脸是一千张矿工的脸。它不恨矿工——它理解矿工。它攻击你不是为了杀戮，而是为了'让你理解'矿脉也是活着的。",
+    "description": "源晶核心觉醒的终极形态——不是暴君，是矿脉记忆的化身。",
+    "ecological_role": "矿脉意志化身、历史代言人",
+    "unique_mechanic": "",
+    "_source": "godot",
+    "flavor_text": "「打败矿坑之王后，它会给你看一段记忆——你会看到第一块源晶是如何被发现的。」——古代文献",
+    "passive": {
+      "name": "矿脉记忆化身",
+      "effect": "vein_memory_avatar",
+      "skill_ref": "ps_mon_mine_king"
+    },
+    "effects": {
+      "passive": {
+        "desc": "HP低于50%时，召唤矿脉记忆，全属性提升40%",
+        "type": "crisis_awakening",
+        "value": 40
+      }
+    },
+    "active_skill": {
+      "name": "万古矿压",
+      "desc": "以亿万年矿脉之重压制敌人，对全体造成ATK×175%土属性伤害并使其无法行动",
+      "effect": "debuff"
+    },
+    "card_no": 82,
+    "cost": 5,
+    "star": 5,
+    "atk": 970,
+    "def": 20
+  },
+  {
+    "id": "mon_cloud_sprite",
+    "name": "云精",
+    "stars": 1,
+    "element": "wind",
+    "hp": 480,
+    "base_atk": 220,
+    "base_def": 5,
+    "spd": 35,
+    "scene": "天空岛",
+    "lore": "云精是天空岛的'水滴'。它们没有固定的形状——想变成什么就变成什么。孩子们最喜欢追云精，因为云精会变成糖果、小动物、甚至他们想念的人的样子。但云精很胆小，一被吓到就会变成雨掉下去。",
+    "description": "天空岛最基础的生命形式——不是风元素精灵，是'活着的云'。",
+    "ecological_role": "天空岛基础生命、云循环起点",
+    "unique_mechanic": "",
+    "_source": "godot",
+    "flavor_text": "「下雨的时候，其实是云精在哭——但它们哭完就会变成彩虹笑。」——天空岛童谣",
+    "passive": {
+      "name": "云体流动",
+      "effect": "cloud_flow",
+      "skill_ref": "ps_mon_cloud_sprite"
+    },
+    "effects": {
+      "passive": {
+        "desc": "受到攻击时有30%概率以云体形态免疫伤害",
+        "type": "cloud_dodge",
+        "value": 30
+      }
+    },
+    "active_skill": {
+      "name": "云雾冲击",
+      "desc": "凝聚云体高速冲撞敌人，造成ATK×100%风属性伤害",
+      "effect": "damage"
+    },
+    "card_no": 83,
+    "cost": 1,
+    "atk": 220,
+    "def": 5
+  },
+  {
+    "id": "mon_sky_fish",
+    "name": "天空鱼",
+    "stars": 1,
+    "element": "wind",
+    "hp": 480,
+    "base_atk": 220,
+    "base_def": 5,
+    "spd": 35,
+    "scene": "天空岛",
+    "lore": "天空鱼不是真的鱼——它们长得像鱼，是因为云'希望'它们长得像鱼。它们在云中穿梭，吃掉老化的云精，排泄出新鲜的云气。天空岛的居民会跟着天空鱼群走——因为鱼群所在的地方，云气最纯净。",
+    "description": "在云中'游泳'的神奇生物——它们的翅膀是鳍，它们的尾巴是舵。",
+    "ecological_role": "云气净化者、天空导航者",
+    "unique_mechanic": "",
+    "_source": "godot",
+    "flavor_text": "「想找到最好的云？跟着天空鱼——它们比任何探测器都准。」——天空牧民",
+    "passive": {
+      "name": "气流滑翔",
+      "effect": "evasion_up",
+      "skill_ref": "ps_mon_sky_fish"
+    },
+    "effects": {
+      "passive": {
+        "desc": "借助气流滑翔，闪避率+10%",
+        "type": "evasion",
+        "value": 10
+      }
+    },
+    "active_skill": {
+      "name": "鳍翼冲撞",
+      "desc": "振动鳍翼猛冲敌人，造成ATK×110%风属性伤害",
+      "effect": "damage"
+    },
+    "card_no": 84,
+    "cost": 1,
+    "atk": 220,
+    "def": 5
+  },
+  {
+    "id": "mon_wind_sprite",
+    "name": "风之精灵",
+    "stars": 2,
+    "element": "wind",
+    "hp": 700,
+    "base_atk": 320,
+    "base_def": 5,
+    "spd": 50,
+    "scene": "天空岛",
+    "lore": "风之精灵是天空岛的'血液'。它们不'住'在天空岛——它们'是'天空岛的一部分。你看不见它们，但你能感觉到它们：你的头发被吹起，你的衣服被掀动，那就是风之精灵在'摸'你。它们很好奇，但也很害羞。",
+    "description": "不是'风的精灵'，是'精灵化的风'——它们是天空岛的'气流'。",
+    "ecological_role": "天空岛循环系统、气流调节者",
+    "unique_mechanic": "",
+    "_source": "godot",
+    "flavor_text": "「风之精灵不会说话，但它们会'唱歌'——闭上眼睛听风声，那就是它们的歌。」——天空诗人",
+    "passive": {
+      "name": "风之化身",
+      "effect": "speed_up",
+      "skill_ref": "ps_mon_wind_sprite"
+    },
+    "effects": {
+      "passive": {
+        "desc": "化身气流，行动速度+15%",
+        "type": "speed",
+        "value": 15
+      }
+    },
+    "active_skill": {
+      "name": "旋风切割",
+      "desc": "化身旋风切割敌人，造成ATK×120%风属性伤害",
+      "effect": "damage"
+    },
+    "card_no": 85,
+    "cost": 2,
+    "atk": 320,
+    "def": 5
+  },
+  {
+    "id": "mon_sky_guardian",
+    "name": "天空守护者",
+    "stars": 3,
+    "element": "wind",
+    "hp": 1410,
+    "base_atk": 370,
+    "base_def": 15,
+    "spd": 60,
+    "scene": "天空岛",
+    "lore": "天空守护者是天空岛的'白细胞'。当天上出现'污垢'——比如从下界飘上来的污染物，或者恶意的来访者——云精就会聚集在一起，形成天空守护者。守护者没有固定的形状——它会变成最能'吓到'威胁的样子。",
+    "description": "云精聚集形成的巨大云团生命——不是怪物，是天空岛的'抗体'。",
+    "ecological_role": "天空岛保护者、清洁系统",
+    "unique_mechanic": "",
+    "_source": "godot",
+    "flavor_text": "「天空守护者不是敌人——它只是在'咳嗽'，把脏东西咳出去。」——天空祭司",
+    "passive": {
+      "name": "云体护盾",
+      "effect": "shield",
+      "skill_ref": "ps_mon_sky_guardian"
+    },
+    "effects": {
+      "passive": {
+        "desc": "云团身躯，每回合恢复5%最大生命值",
+        "type": "regen",
+        "value": 5
+      }
+    },
+    "active_skill": {
+      "name": "云压天降",
+      "desc": "化作巨大云团压向敌人，造成ATK×140%风属性伤害并降低敌方防御",
+      "effect": "debuff"
+    },
+    "card_no": 86,
+    "cost": 3,
+    "atk": 370,
+    "def": 15
+  },
+  {
+    "id": "mon_wind_weaver",
+    "name": "风织者",
+    "stars": 3,
+    "element": "wind",
+    "hp": 1010,
+    "base_atk": 460,
+    "base_def": 10,
+    "spd": 75,
+    "scene": "天空岛",
+    "lore": "风织者不是'魔法师'——它们是'工程师'。它们用尾鳍'编织'气流，用翅膀'缝合'云团。如果没有风织者，天空岛就会掉下去。天空岛的居民会给风织者'礼物'——不是宝石，是好听的故事，因为风织者喜欢听故事。",
+    "description": "天空鱼长大后的形态——它们'编织'气流，让天空岛保持漂浮。",
+    "ecological_role": "天空岛维护者、气流工程师",
+    "unique_mechanic": "",
+    "_source": "godot",
+    "flavor_text": "「想让天空岛飞得更高？给风织者讲个好故事——它们会很高兴地'加油'。」——天空岛长者",
+    "passive": {
+      "name": "气流编织",
+      "effect": "def_up",
+      "skill_ref": "ps_mon_wind_weaver"
+    },
+    "effects": {
+      "passive": {
+        "desc": "编织气流护体，防御力+20%",
+        "type": "defense",
+        "value": 20
+      }
+    },
+    "active_skill": {
+      "name": "天穹织网",
+      "desc": "编织气流形成风网束缚敌人，造成ATK×130%伤害并减速",
+      "effect": "debuff"
+    },
+    "card_no": 87,
+    "cost": 3,
+    "star": 3,
+    "atk": 460,
+    "def": 10
+  },
+  {
+    "id": "mon_cloud_knight",
+    "name": "云中骑士",
+    "stars": 4,
+    "element": "light",
+    "hp": 1460,
+    "base_atk": 670,
+    "base_def": 10,
+    "spd": 105,
+    "scene": "天空岛",
+    "lore": "云中骑士不是人类——它们是云精'模仿'人类形成的。它们选择骑士的形状，是因为'骑士'在人类的故事里总是保护者的角色。它们不会说话，但它们会'表演'——用肢体语言告诉你天空岛想告诉你什么。",
+    "description": "不是'骑着云的骑士'，是'变成了人形的云'——天空希望人类理解的形状。",
+    "ecological_role": "天空岛使者、人形界面",
+    "unique_mechanic": "",
+    "_source": "godot",
+    "flavor_text": "「云中骑士的脸是模糊的——不是因为它们没有脸，是因为它们想变成'你信任的人的脸'。」——天空祭司",
+    "passive": {
+      "name": "云铠护体",
+      "effect": "dmg_reduce",
+      "skill_ref": "ps_mon_cloud_knight"
+    },
+    "effects": {
+      "passive": {
+        "desc": "云化铠甲，受到伤害减少15%",
+        "type": "damage_reduction",
+        "value": 15
+      }
+    },
+    "active_skill": {
+      "name": "圣云突刺",
+      "desc": "化云成矛刺穿敌人，造成ATK×160%光属性伤害并附加眩晕",
+      "effect": "debuff"
+    },
+    "card_no": 88,
+    "cost": 4,
+    "atk": 670,
+    "def": 10
+  },
+  {
+    "id": "mon_storm_caller",
+    "name": "风暴召唤者",
+    "stars": 4,
+    "element": "thunder",
+    "hp": 1460,
+    "base_atk": 670,
+    "base_def": 10,
+    "spd": 105,
+    "scene": "天空岛",
+    "lore": "风暴召唤者是天空岛的'大扫除阿姨'。当天上积了太多'污垢'——比如大寂灭留下的残渣，或者下界战争的硝烟——风暴召唤者就会'发怒'，召唤风暴把污垢'冲'回下界。这不是攻击，是'大扫除'。",
+    "description": "最强大的风织者——它们不是破坏者，是天空岛的'清洁工'。",
+    "ecological_role": "天空岛清洁工、平衡维护者",
+    "unique_mechanic": "",
+    "_source": "godot",
+    "flavor_text": "「风暴来的时候别害怕——那是天空岛在'洗澡'。等洗完了，天会特别蓝。」——天空岛居民",
+    "passive": {
+      "name": "雷暴蓄能",
+      "effect": "atk_charge",
+      "skill_ref": "ps_mon_storm_caller"
+    },
+    "effects": {
+      "passive": {
+        "desc": "每回合蓄积雷能，攻击力累计+10%（最高+30%）",
+        "type": "atk_stack",
+        "value": 10
+      }
+    },
+    "active_skill": {
+      "name": "天罚雷暴",
+      "desc": "召唤雷暴清扫战场，对所有敌人造成ATK×150%雷属性伤害",
+      "effect": "damage"
+    },
+    "card_no": 89,
+    "cost": 4,
+    "star": 4,
+    "atk": 670,
+    "def": 10
+  },
+  {
+    "id": "mon_holy_knight",
+    "name": "圣光骑士",
+    "stars": 5,
+    "element": "light",
+    "hp": 2120,
+    "base_atk": 970,
+    "base_def": 20,
+    "spd": 155,
+    "scene": "天空岛",
+    "lore": "圣光骑士不是'敌人'——是'考官'。它会用战斗来'测试'你：你是否尊重天空？你是否理解云也是生命？如果你只是想来'loot'，它会毫不留情；如果你带着尊重，它会在战斗中'放水'，甚至给你'提示'。",
+    "description": "云中骑士的极致——不是'神圣的骑士'，是'天空相信你的证明'。",
+    "ecological_role": "天空岛考验者、信任授予者",
+    "unique_mechanic": "",
+    "_source": "godot",
+    "flavor_text": "「圣光骑士的剑永远指向'你的内心'——不是物理上的，是真的'你的心'。」——天空岛试炼者",
+    "passive": {
+      "name": "天空信念",
+      "effect": "crit_up",
+      "skill_ref": "ps_mon_holy_knight"
+    },
+    "effects": {
+      "passive": {
+        "desc": "天空赋予信念，暴击率+20%，暴击伤害+30%",
+        "type": "crit",
+        "value": 20
+      }
+    },
+    "active_skill": {
+      "name": "圣光审判",
+      "desc": "以天空之名降下圣光，对敌人造成ATK×180%光属性伤害并净化己方减益",
+      "effect": "damage"
+    },
+    "card_no": 90,
+    "cost": 5,
+    "atk": 970,
+    "def": 20
+  },
+  {
+    "id": "mon_holy_lord",
+    "name": "圣光领主",
+    "stars": 6,
+    "element": "light",
+    "hp": 3080,
+    "base_atk": 1410,
+    "base_def": 25,
+    "spd": 225,
+    "scene": "天空岛",
+    "lore": "圣光领主不是'统治者'——它是天空岛'想要告诉你一切'的意志。它不会攻击你——它会'对话'。它会给你看天空岛的记忆：第一朵云是如何形成的、大寂灭时天空岛如何拯救了一些生命、甚至未来的'可能'。它是天空岛的'历史学家'，也是'预言家'。",
+    "description": "圣光骑士的终极形态——不是'领主'，是天空岛本身的意志。",
+    "ecological_role": "天空岛意志化身、沟通桥梁",
+    "unique_mechanic": "",
+    "_source": "godot",
+    "flavor_text": "「圣光领主不会战斗——它只会'让你理解'。当你理解了，战斗就结束了。」——天空岛远古传说",
+    "passive": {
+      "name": "天岛意志",
+      "effect": "all_stats_up",
+      "skill_ref": "ps_mon_holy_lord"
+    },
+    "effects": {
+      "passive": {
+        "desc": "天空岛意志附体，全属性+25%",
+        "type": "all_stats",
+        "value": 25
+      }
+    },
+    "active_skill": {
+      "name": "天界神裁",
+      "desc": "化身天空岛本身降下神裁，对所有敌人造成ATK×200%光属性伤害，并使敌方全属性降低20%",
+      "effect": "debuff"
+    },
+    "card_no": 91,
+    "cost": 5,
+    "star": 6,
+    "atk": 1410,
+    "def": 25
+  },
+  {
+    "id": "wrathfire_fly",
+    "name": "怨灵萤",
+    "stars": 1,
+    "element": "shadow",
+    "hp": 480,
+    "base_atk": 220,
+    "base_def": 5,
+    "spd": 35,
+    "scene": "暗影沼泽",
+    "lore": "这些萤火虫曾经是精灵圣地的守护者，用温柔的荧光照亮夜晚。虚空入侵后，它们的光芒变成了诅咒的紫色，永远被困在这片沼泽中。",
+    "description": "被虚空腐蚀的精灵萤火虫，成群结队地在沼泽上空飞舞，发出令人不安的紫光。它们以虚空能量为食，是整个暗影沼泽生态的基础。",
+    "ecological_role": "生态基础，消耗多余的虚空能量，维持能量平衡",
+    "unique_mechanic": "聚光攻击：怨灵萤会聚集在一起形成光团攻击，数量越多伤害越高",
+    "_source": "soundfx",
+    "passive": {
+      "name": "聚光蓄势",
+      "effect": "stack_dmg",
+      "skill_ref": "ps_wrathfire_fly"
+    },
+    "effects": {
+      "passive": {
+        "desc": "同伴越多伤害越高，每有一只同类攻击+5",
+        "type": "ally_stack",
+        "value": 5
+      }
+    },
+    "active_skill": {
+      "name": "怨光聚射",
+      "desc": "聚集虚空紫光轰击敌人，造成ATK×110%暗影伤害",
+      "effect": "damage"
+    },
+    "card_no": 92,
+    "cost": 1,
+    "star": 1,
+    "atk": 220,
+    "def": 5
+  },
+  {
+    "id": "bog_sprite",
+    "name": "沼泥精",
+    "stars": 2,
+    "element": "shadow",
+    "hp": 700,
+    "base_atk": 320,
+    "base_def": 5,
+    "spd": 50,
+    "scene": "暗影沼泽",
+    "lore": "沼泥精并非被腐蚀的生物，而是虚空入侵后自然诞生的新物种。它们在生态系统中扮演着重要的清理角色。",
+    "description": "由沼泽泥浆和虚空能量融合而成的生物，身体半透明，不断滴落腐蚀性的粘液。它们是沼泽的清道夫，吸收各种腐败物质。",
+    "ecological_role": "清道夫，分解腐败物质，回收能量",
+    "unique_mechanic": "粘液陷阱：移动时会留下腐蚀性粘液，敌人踩中会持续受伤",
+    "_source": "soundfx",
+    "passive": {
+      "name": "腐蚀粘液",
+      "effect": "poison_trail",
+      "skill_ref": "ps_bog_sprite"
+    },
+    "effects": {
+      "passive": {
+        "desc": "移动留下腐蚀粘液，敌人踩中每回合损失3%生命",
+        "type": "dot",
+        "value": 3
+      }
+    },
+    "active_skill": {
+      "name": "粘液喷射",
+      "desc": "喷射腐蚀性粘液，造成ATK×120%暗影伤害并附加中毒效果",
+      "effect": "debuff"
+    },
+    "card_no": 93,
+    "cost": 2,
+    "atk": 320,
+    "def": 5
+  },
+  {
+    "id": "twisted_dryad",
+    "name": "扭曲树妖",
+    "stars": 3,
+    "element": "shadow",
+    "hp": 1010,
+    "base_atk": 460,
+    "base_def": 10,
+    "spd": 75,
+    "scene": "暗影沼泽",
+    "lore": "这些古树是精灵族种下的生命之树，已经生长了数千年。虚空入侵时，它们用自己的根系试图阻止腐蚀扩散，却最终被吞噬。",
+    "description": "被虚空腐蚀的精灵古树，树枝扭曲变形，树皮上浮现出痛苦的面孔。它们仍在无意识地守护着这片曾经神圣的土地。",
+    "ecological_role": "守护者，保护弱小生物免受外敌侵害",
+    "unique_mechanic": "痛苦哀嚎：受到攻击时会发出哀嚎，召唤附近的怨灵萤前来助战",
+    "_source": "soundfx",
+    "passive": {
+      "name": "痛苦哀嚎",
+      "effect": "summon_on_hit",
+      "skill_ref": "ps_twisted_dryad"
+    },
+    "effects": {
+      "passive": {
+        "desc": "受击时哀嚎，召唤1只怨灵萤助战",
+        "type": "summon",
+        "value": 1
+      }
+    },
+    "active_skill": {
+      "name": "腐化枝缚",
+      "desc": "扭曲树枝缠绕敌人，造成ATK×130%暗影伤害并束缚1回合",
+      "effect": "debuff"
+    },
+    "card_no": 94,
+    "cost": 2,
+    "star": 3,
+    "atk": 460,
+    "def": 10
+  },
+  {
+    "id": "mire_heron",
+    "name": "沼泽苍鹭",
+    "stars": 3,
+    "element": "shadow",
+    "hp": 1010,
+    "base_atk": 460,
+    "base_def": 10,
+    "spd": 75,
+    "scene": "暗影沼泽",
+    "lore": "沼泽苍鹭原本是这片土地的顶级掠食者，以鱼类和昆虫为食。虚空入侵后，它们的食谱变成了怨灵萤，同时也在无意中帮助沼泥精传播种子。",
+    "description": "被虚空腐蚀的水鸟，羽毛呈现病态的灰紫色，长腿能够在沼泽中行走如飞。它们是怨灵萤的天敌，也是沼泥精的传播者。",
+    "ecological_role": "掠食者，控制怨灵萤数量，同时帮助沼泥精繁殖",
+    "unique_mechanic": "精准啄击：能够精准啄击敌人的弱点，造成暴击伤害",
+    "_source": "soundfx",
+    "passive": {
+      "name": "精准弱点",
+      "effect": "crit_rate_up",
+      "skill_ref": "ps_mire_heron"
+    },
+    "effects": {
+      "passive": {
+        "desc": "精准感知弱点，暴击率+25%",
+        "type": "crit_rate",
+        "value": 25
+      }
+    },
+    "active_skill": {
+      "name": "虚空啄击",
+      "desc": "精准啄击敌人要害，造成ATK×150%暗影伤害，必定暴击",
+      "effect": "damage"
+    },
+    "card_no": 95,
+    "cost": 3,
+    "atk": 460,
+    "def": 10
+  },
+  {
+    "id": "void_frog",
+    "name": "虚空蛙",
+    "stars": 4,
+    "element": "shadow",
+    "hp": 1460,
+    "base_atk": 670,
+    "base_def": 10,
+    "spd": 105,
+    "scene": "暗影沼泽",
+    "lore": "虚空蛙是一个古老的物种，早在精灵族到来之前就生活在这里。它们对虚空能量有着天然的亲和力，甚至能够控制部分虚空之力。",
+    "description": "生活在沼泽深处的巨型青蛙，皮肤能够吸收虚空能量并转化为攻击。它的叫声能够引起空间的轻微扭曲。",
+    "ecological_role": "顶级掠食者，处于食物链顶端",
+    "unique_mechanic": "空间跳跃：能够进行短距离的空间传送，出现在敌人身后",
+    "_source": "soundfx",
+    "passive": {
+      "name": "空间感知",
+      "effect": "dodge_counter",
+      "skill_ref": "ps_void_frog"
+    },
+    "effects": {
+      "passive": {
+        "desc": "感知空间扭曲，闪避后立即反击造成ATK×80%伤害",
+        "type": "counter",
+        "value": 80
+      }
+    },
+    "active_skill": {
+      "name": "虚空跃袭",
+      "desc": "瞬间传送至敌人身后发动奇袭，造成ATK×160%暗影伤害并降低敌方速度",
+      "effect": "debuff"
+    },
+    "card_no": 96,
+    "cost": 4,
+    "atk": 670,
+    "def": 10
+  },
+  {
+    "id": "swamp_warden",
+    "name": "沼泽守护者",
+    "stars": 5,
+    "element": "shadow",
+    "hp": 2120,
+    "base_atk": 970,
+    "base_def": 20,
+    "spd": 155,
+    "scene": "暗影沼泽",
+    "lore": "当怨灵萤群体达到一定规模时，它们会产生集体意识，形成沼泽守护者。这是它们对抗外敌的终极防御机制。",
+    "description": "由无数怨灵萤聚合而成的人形生物，身体由紫色光芒构成，散发着强烈的虚空能量。它是怨灵萤群体意志的化身。",
+    "ecological_role": "终极守护者，保护整个沼泽生态系统",
+    "unique_mechanic": "萤光分裂：战斗中可以分裂成多个小型怨灵萤群体，然后重新聚合",
+    "_source": "soundfx",
+    "passive": {
+      "name": "萤光聚合",
+      "effect": "hp_regen_stack",
+      "skill_ref": "ps_swamp_warden"
+    },
+    "effects": {
+      "passive": {
+        "desc": "分裂后重聚，每次聚合恢复10%最大生命值",
+        "type": "regen",
+        "value": 10
+      }
+    },
+    "active_skill": {
+      "name": "萤光风暴",
+      "desc": "分裂成无数怨灵萤形成风暴，对所有敌人造成ATK×170%暗影伤害",
+      "effect": "damage"
+    },
+    "card_no": 97,
+    "cost": 5,
+    "atk": 970,
+    "def": 20
+  },
+  {
+    "id": "shadow_priest",
+    "name": "暗影祭司",
+    "stars": 6,
+    "element": "shadow",
+    "hp": 3380,
+    "base_atk": 1270,
+    "base_def": 30,
+    "spd": 225,
+    "scene": "暗影沼泽",
+    "lore": "暗影祭司是精灵族最后的守护者之一，她用自己的灵魂作为封印虚空裂隙的最后一道防线。至今，她仍在与虚空的腐蚀作斗争。",
+    "description": "精灵族大祭司的残魂，虽然被虚空腐蚀，但仍保留着部分神智。它在沼泽中徘徊，试图找到净化这片土地的方法。",
+    "ecological_role": "平衡者，试图维持虚空能量与自然能量的平衡",
+    "unique_mechanic": "净化之力：能够短暂驱散虚空能量，对暗影生物造成伤害",
+    "_source": "soundfx",
+    "passive": {
+      "name": "净化残念",
+      "effect": "anti_shadow",
+      "skill_ref": "ps_shadow_priest"
+    },
+    "effects": {
+      "passive": {
+        "desc": "残存净化之力，对暗影属性敌人伤害+30%",
+        "type": "element_bonus",
+        "value": 30
+      }
+    },
+    "active_skill": {
+      "name": "净化波动",
+      "desc": "释放净化能量波，对所有敌人造成ATK×160%光属性伤害并驱散增益效果",
+      "effect": "debuff"
+    },
+    "card_no": 98,
+    "cost": 5,
+    "star": 6,
+    "atk": 1270,
+    "def": 30
+  },
+  {
+    "id": "abyss_watcher",
+    "name": "深渊守望者",
+    "stars": 7,
+    "element": "shadow",
+    "hp": 4460,
+    "base_atk": 2045,
+    "base_def": 35,
+    "spd": 325,
+    "scene": "暗影沼泽",
+    "lore": "深渊守望者并非完全邪恶，它被创造出来的目的是防止虚空裂隙进一步扩大。但漫长的岁月让它逐渐变得疯狂。",
+    "description": "虚空裂隙的守护者，由无数被吞噬的灵魂融合而成。它拥有无数只眼睛，能够看透一切，包括过去和未来。",
+    "ecological_role": "封印守护者，防止虚空裂隙扩大",
+    "unique_mechanic": "虚空凝视：与它对视的敌人会被拖入幻象中，看到自己最恐惧的事物",
+    "_source": "soundfx",
+    "passive": {
+      "name": "虚空凝视",
+      "effect": "fear_on_sight",
+      "skill_ref": "ps_abyss_watcher"
+    },
+    "effects": {
+      "passive": {
+        "desc": "无数眼睛凝视敌人，使其攻击力降低20%",
+        "type": "atk_down",
+        "value": 20
+      }
+    },
+    "active_skill": {
+      "name": "深渊幻象",
+      "desc": "将敌人拖入恐惧幻象，造成ATK×170%暗影伤害并使目标眩晕2回合",
+      "effect": "debuff"
+    },
+    "card_no": 99,
+    "cost": 6,
+    "star": 7,
+    "atk": 2045,
+    "def": 35
+  },
+  {
+    "id": "abyss_lord",
+    "name": "深渊之主",
+    "stars": 10,
+    "element": "shadow",
+    "hp": 13590,
+    "base_atk": 6230,
+    "base_def": 115,
+    "spd": 990,
+    "scene": "暗影沼泽",
+    "lore": "精灵女王为了封印虚空裂隙，选择了与虚空融合。她成功了，但代价是自己的神智。如今，深渊之主是一个矛盾的存在——既是毁灭者，也是守护者。",
+    "description": "虚空裂隙的真正主人，精灵女王与虚空能量融合后的终极形态。她的存在让整个沼泽都为之颤抖，但在她内心深处，仍有一丝精灵女王的意识在挣扎。",
+    "ecological_role": "虚空化身，维持虚空与现实的边界",
+    "unique_mechanic": "人格切换：战斗中会在精灵女王和深渊之主人格间切换，不同人格有不同技能",
+    "_source": "soundfx",
+    "passive": {
+      "name": "双重人格",
+      "effect": "phase_shift",
+      "skill_ref": "ps_abyss_lord"
+    },
+    "effects": {
+      "passive": {
+        "desc": "人格切换时，全属性交替提升或降低30%",
+        "type": "phase",
+        "value": 30
+      }
+    },
+    "active_skill": {
+      "name": "虚空湮灭",
+      "desc": "以深渊之主人格释放终极虚空能量，对所有敌人造成ATK×250%暗影伤害并附加全属性降低25%",
+      "effect": "debuff"
+    },
+    "card_no": 100,
+    "cost": 5,
+    "star": 10,
+    "atk": 6230,
+    "def": 115
+  },
+  {
+    "id": "vein_sprite",
+    "name": "灵脉精",
+    "stars": 1,
+    "element": "light",
+    "hp": 480,
+    "base_atk": 220,
+    "base_def": 5,
+    "spd": 35,
+    "scene": "灵脉节点",
+    "lore": "灵脉精是盘古精魄直接化现的生命形式，它们没有固定的属性，能够适应任何元素环境。",
+    "description": "最基础的能量生命体，外形像一个半透明的水母，体内流转着未分化的纯净能量。它们像海绵一样吸收各种元素能量，是整个灵脉生态的基础。",
+    "ecological_role": "能量容器，吸收和储存各种元素能量",
+    "unique_mechanic": "能量转化：能够根据环境转换自身属性，获得对应的元素抗性",
+    "_source": "soundfx",
+    "passive": {
+      "name": "能量转化",
+      "effect": "element_adapt",
+      "skill_ref": "ps_vein_sprite"
+    },
+    "effects": {
+      "passive": {
+        "desc": "自动适应环境元素，获得对应属性抗性+20%",
+        "type": "resist",
+        "value": 20
+      }
+    },
+    "active_skill": {
+      "name": "能量脉冲",
+      "desc": "释放纯净能量脉冲，造成ATK×110%光属性伤害",
+      "effect": "damage"
+    },
+    "card_no": 101,
+    "cost": 1,
+    "atk": 220,
+    "def": 5,
+    "sprite_path": "res://assets/monsters/vein_sprite/portrait.png",
+    "fullbody_path": "res://assets/monsters/vein_sprite/fullbody.png"
+  },
+  {
+    "id": "crystal_mite",
+    "name": "能量晶虫",
+    "stars": 2,
+    "element": "earth",
+    "hp": 700,
+    "base_atk": 320,
+    "base_def": 5,
+    "spd": 50,
+    "scene": "灵脉节点",
+    "lore": "能量晶虫是灵脉生态中的重要一环，它们将不稳定的能量转化为稳定的晶石，方便其他生物利用。",
+    "description": "以灵脉精为食的小型节肢生物，它们在体内将灵脉精的能量结晶化，形成各种元素晶石。它们的外壳就是由这些晶石构成的。",
+    "ecological_role": "能量转化者，将纯净能量转化为元素晶石",
+    "unique_mechanic": "晶石护甲：根据体内结晶的元素获得对应的护甲和攻击属性",
+    "_source": "soundfx",
+    "passive": {
+      "name": "晶石护甲",
+      "effect": "crystal_armor",
+      "skill_ref": "ps_crystal_mite"
+    },
+    "effects": {
+      "passive": {
+        "desc": "晶石外壳护体，物理伤害减少20%",
+        "type": "phys_resist",
+        "value": 20
+      }
+    },
+    "active_skill": {
+      "name": "晶刺爆射",
+      "desc": "爆射体内晶石碎片，造成ATK×120%大地属性伤害并降低敌方防御",
+      "effect": "debuff"
+    },
+    "card_no": 102,
+    "cost": 2,
+    "atk": 320,
+    "def": 5
+  },
+  {
+    "id": "elemental_vortex",
+    "name": "元素漩涡",
+    "stars": 3,
+    "element": "chaos",
+    "hp": 1010,
+    "base_atk": 460,
+    "base_def": 10,
+    "spd": 75,
+    "scene": "灵脉节点",
+    "lore": "元素漩涡并非生物，而是一种自然现象，但它们表现出某些生命特征——会被能量吸引，会主动躲避危险，甚至会'繁殖'——当一个漩涡吸收足够能量后，会分裂成两个。",
+    "description": "灵脉能量过剩时自然形成的能量漩涡，它们像小型龙卷风一样在灵脉节点游走，周期性地吸收和释放能量。",
+    "ecological_role": "能量调节者，维持灵脉能量平衡，防止能量过载",
+    "unique_mechanic": "能量潮汐：战斗中会周期性地进入爆发状态，攻击力大幅提升但防御力下降",
+    "_source": "soundfx",
+    "element_note": "混沌属性，战斗中可切换属性",
+    "passive": {
+      "name": "能量潮汐",
+      "effect": "burst_cycle",
+      "skill_ref": "ps_elemental_vortex"
+    },
+    "effects": {
+      "passive": {
+        "desc": "每3回合进入爆发态，攻击力+50%但防御-30%",
+        "type": "cycle_buff",
+        "value": 50
+      }
+    },
+    "active_skill": {
+      "name": "混沌漩涡",
+      "desc": "化身元素漩涡席卷敌人，造成ATK×140%混沌属性伤害并随机附加一种元素减益",
+      "effect": "debuff"
+    },
+    "card_no": 103,
+    "cost": 3,
+    "atk": 460,
+    "def": 10,
+    "sprite_path": "res://assets/monsters/elemental_vortex/portrait.png",
+    "fullbody_path": "res://assets/monsters/elemental_vortex/fullbody.png"
+  },
+  {
+    "id": "crystal_golem",
+    "name": "晶石傀儡",
+    "stars": 4,
+    "element": "earth",
+    "hp": 2050,
+    "base_atk": 535,
+    "base_def": 20,
+    "spd": 90,
+    "scene": "灵脉节点",
+    "lore": "晶石傀儡是灵脉生态的副产品——当能量晶虫蜕下的外壳堆积到一定程度，灵脉能量会自然地激活它们，形成晶石傀儡。",
+    "description": "由能量晶虫的外壳堆积而成的巨大傀儡，被灵脉能量赋予了临时的生命。它们行动缓慢，但力大无穷。",
+    "ecological_role": "能量搬运工，移动大型晶石，改变地形",
+    "unique_mechanic": "多重护甲：由多种元素晶石构成，每次受到攻击会随机获得一种元素抗性",
+    "_source": "soundfx",
+    "passive": {
+      "name": "多重护甲",
+      "effect": "random_resist",
+      "skill_ref": "ps_crystal_golem"
+    },
+    "effects": {
+      "passive": {
+        "desc": "受击后随机获得一种元素抗性+30%",
+        "type": "random_resist",
+        "value": 30
+      }
+    },
+    "active_skill": {
+      "name": "晶石重压",
+      "desc": "举起巨大晶石身躯压向敌人，造成ATK×160%大地属性伤害并使敌方眩晕",
+      "effect": "debuff"
+    },
+    "card_no": 104,
+    "cost": 4,
+    "atk": 535,
+    "def": 20
+  },
+  {
+    "id": "energy_dragon",
+    "name": "能量龙蜥",
+    "stars": 4,
+    "element": "thunder",
+    "hp": 1460,
+    "base_atk": 670,
+    "base_def": 10,
+    "spd": 105,
+    "scene": "灵脉节点",
+    "lore": "能量龙蜥是灵脉生态的自然产物，它们的存在防止了元素漩涡过度繁殖，维持着生态平衡。",
+    "description": "灵脉节点中的顶级掠食者，外形像一只小型龙，身体由纯粹的能量构成。它们以元素漩涡为食，能够控制多种元素能量。",
+    "ecological_role": "顶级掠食者，控制元素漩涡数量",
+    "unique_mechanic": "元素吐息：能够根据需要切换不同元素的吐息攻击",
+    "_source": "soundfx",
+    "passive": {
+      "name": "元素吐息蓄能",
+      "effect": "breath_charge",
+      "skill_ref": "ps_energy_dragon"
+    },
+    "effects": {
+      "passive": {
+        "desc": "每回合蓄积元素能量，下次吐息伤害+20%（最高+60%）",
+        "type": "charge_stack",
+        "value": 20
+      }
+    },
+    "active_skill": {
+      "name": "雷霆吐息",
+      "desc": "喷射高压雷电吐息，对敌方全体造成ATK×170%雷属性伤害并麻痹",
+      "effect": "debuff"
+    },
+    "card_no": 105,
+    "cost": 4,
+    "atk": 670,
+    "def": 10
+  },
+  {
+    "id": "vein_warden",
+    "name": "灵脉守护者",
+    "stars": 5,
+    "element": "light",
+    "hp": 2120,
+    "base_atk": 970,
+    "base_def": 20,
+    "spd": 155,
+    "scene": "灵脉节点",
+    "lore": "灵脉守护者是在灵脉节点受到威胁时自然形成的防御机制。它代表着灵脉的自我保护意识。",
+    "description": "由无数灵脉精聚合而成的人形生物，身体由五种元素能量交织而成，是灵脉意志的化身。它并不偏向任何一种元素，而是追求所有元素的平衡。",
+    "ecological_role": "终极守护者，保护灵脉节点免受外力破坏",
+    "unique_mechanic": "元素平衡：能够平衡场上的元素能量，消除所有元素buff和debuff",
+    "_source": "soundfx",
+    "passive": {
+      "name": "元素平衡",
+      "effect": "balance_field",
+      "skill_ref": "ps_vein_warden"
+    },
+    "effects": {
+      "passive": {
+        "desc": "维持元素平衡，消除场上所有元素buff和debuff",
+        "type": "cleanse",
+        "value": 0
+      }
+    },
+    "active_skill": {
+      "name": "五行归一",
+      "desc": "汇聚五种元素能量轰击敌人，造成ATK×150%光属性伤害并净化己方所有减益",
+      "effect": "damage"
+    },
+    "card_no": 106,
+    "cost": 4,
+    "star": 5,
+    "atk": 970,
+    "def": 20
+  },
+  {
+    "id": "elemental_lord",
+    "name": "元素之灵",
+    "stars": 6,
+    "element": "chaos",
+    "hp": 3080,
+    "base_atk": 1410,
+    "base_def": 25,
+    "spd": 225,
+    "scene": "灵脉节点",
+    "lore": "元素之灵并非天生，而是由灵脉守护者在极端环境下进化而来。只有当灵脉节点面临真正的危机时，元素之灵才会诞生。",
+    "description": "五种元素能量融合后形成的高级生命形式，它能够自由地在各种元素形态间转换，是灵脉节点中最接近神的存在。",
+    "ecological_role": "平衡维持者，确保五种元素和谐共存",
+    "unique_mechanic": "形态转换：战斗中能够在五种元素形态间自由切换，每种形态有不同技能",
+    "_source": "soundfx",
+    "element_note": "混沌属性，战斗中可切换属性",
+    "passive": {
+      "name": "形态转换",
+      "effect": "form_shift",
+      "skill_ref": "ps_elemental_lord"
+    },
+    "effects": {
+      "passive": {
+        "desc": "每回合随机切换元素形态，获得对应属性加成+40%",
+        "type": "form_bonus",
+        "value": 40
+      }
+    },
+    "active_skill": {
+      "name": "元素融合爆发",
+      "desc": "融合五种元素形态同时爆发，对所有敌人造成ATK×160%混沌属性伤害",
+      "effect": "damage"
+    },
+    "card_no": 107,
+    "cost": 5,
+    "star": 6,
+    "atk": 1410,
+    "def": 25
+  },
+  {
+    "id": "pangu_essence",
+    "name": "盘古精魄",
+    "stars": 8,
+    "element": "chaos",
+    "hp": 6470,
+    "base_atk": 2965,
+    "base_def": 55,
+    "spd": 470,
+    "scene": "灵脉节点",
+    "lore": "盘古精魄并非传统意义上的BOSS，它更像是一种自然现象。挑战盘古精魄，实际上是在挑战世界的基本法则。",
+    "description": "盘古大神残留在人间的精魄，五种元素的源头。它既不偏向创造，也不偏向毁灭，只是纯粹地存在着，维持着世界的基本法则。",
+    "ecological_role": "法则化身，维持世界的基本法则",
+    "unique_mechanic": "法则操控：能够暂时改变物理法则，如重力、时间流速等",
+    "_source": "soundfx",
+    "element_note": "混沌属性，战斗中可切换属性",
+    "passive": {
+      "name": "法则操控",
+      "effect": "law_control",
+      "skill_ref": "ps_pangu_essence"
+    },
+    "effects": {
+      "passive": {
+        "desc": "操控物理法则，每回合随机改变重力或时间，影响全场速度±30%",
+        "type": "field_control",
+        "value": 30
+      }
+    },
+    "active_skill": {
+      "name": "开天辟地",
+      "desc": "重现盘古开天之力，对所有敌人造成ATK×220%混沌属性伤害并重置敌方所有增益",
+      "effect": "debuff"
+    },
+    "card_no": 108,
+    "cost": 5,
+    "star": 8,
+    "atk": 2965,
+    "def": 55
+  },
+  {
+    "id": "cosmic_source",
+    "name": "宇宙之源",
+    "stars": 10,
+    "element": "chaos",
+    "hp": 13590,
+    "base_atk": 6230,
+    "base_def": 115,
+    "spd": 990,
+    "scene": "灵脉节点",
+    "lore": "宇宙之源并非邪恶，它只是纯粹的存在。当玩家能够理解并接受这种存在时，宇宙之源会认可玩家，赋予他们操控元素的终极力量。",
+    "description": "五种元素的终极起源，宇宙诞生前的混沌状态。它既包含一切，又空无一物。挑战宇宙之源，实际上是在挑战存在本身。",
+    "ecological_role": "起源化身，一切的开始与终结",
+    "unique_mechanic": "混沌重置：战斗中会周期性地重置一切——生命值、能量值、buff、debuff，让战斗回到初始状态",
+    "_source": "soundfx",
+    "element_note": "混沌属性，战斗中可切换属性",
+    "passive": {
+      "name": "混沌重置",
+      "effect": "chaos_reset",
+      "skill_ref": "ps_cosmic_source"
+    },
+    "effects": {
+      "passive": {
+        "desc": "每5回合重置战场，清除所有buff、debuff并回复20%生命值",
+        "type": "reset",
+        "value": 20
+      }
+    },
+    "active_skill": {
+      "name": "宇宙湮灭",
+      "desc": "以宇宙诞生前的混沌之力湮灭一切，对所有敌人造成ATK×250%混沌属性伤害，无视防御",
+      "effect": "damage"
+    },
+    "card_no": 109,
+    "cost": 10,
+    "atk": 6230,
+    "def": 115
+  },
+  {
+    "id": "mon_shadow_crawler",
+    "name": "暗影爬行者",
+    "stars": 1,
+    "element": "shadow",
+    "hp": 480,
+    "base_atk": 220,
+    "base_def": 5,
+    "spd": 35,
+    "description": "在裂隙阴影中潜行的低等暗影生物",
+    "lore": "这些生物原本是普通的地表昆虫，被裂隙泄漏的暗影能量彻底改造。它们的身体变得半透明，能融入任何阴影之中。",
+    "ecological_role": "裂隙边缘的伏击者，消耗迷失的小型生物",
+    "unique_mechanic": "首次攻击必定暴击，之后进入普通攻击模式",
+    "passive": {
+      "name": "暗影潜伏",
+      "effect": "shadow_ambush",
+      "skill_ref": "ps_shadow_crawler"
+    },
+    "effects": {
+      "passive": {
+        "desc": "战斗开始时隐身1回合，隐身期间免疫伤害",
+        "type": "stealth",
+        "value": 1
+      }
+    },
+    "active_skill": {
+      "name": "暗刺连击",
+      "desc": "从暗影中突刺，造成ATK×120%的shadow伤害，有30%概率使目标失明1回合",
+      "effect": "damage"
+    },
+    "scene": "虚空裂隙",
+    "card_no": 110,
+    "cost": 1,
+    "atk": 220,
+    "def": 5
+  },
+  {
+    "id": "mon_rift_fragment",
+    "name": "裂隙碎片",
+    "stars": 3,
+    "element": "void",
+    "hp": 1010,
+    "base_atk": 460,
+    "base_def": 10,
+    "spd": 75,
+    "description": "时空裂缝中脱落的固化能量碎块",
+    "lore": "裂隙不断撕裂时空，有时会将两个维度的物质强行融合，形成这种奇异的固态能量体。它们漂浮在裂隙附近，对任何接近的生命发起攻击。",
+    "ecological_role": "裂隙的被动防御者，阻止外来者靠近核心",
+    "unique_mechanic": "受到攻击时有25%概率分裂成两个更小的碎片（HP各为原来30%）",
+    "passive": {
+      "name": "时空硬化",
+      "effect": "spacetime_hardening",
+      "skill_ref": "ps_rift_fragment"
+    },
+    "effects": {
+      "passive": {
+        "desc": "每回合开始时防御力提升5点，最多叠加3层",
+        "type": "def_stack",
+        "value": 5
+      }
+    },
+    "active_skill": {
+      "name": "维度撞击",
+      "desc": "将自身作为武器撞向目标，造成ATK×150%的void伤害，自身损失10%当前HP",
+      "effect": "damage"
+    },
+    "scene": "虚空裂隙",
+    "card_no": 111,
+    "cost": 3,
+    "atk": 460,
+    "def": 10
+  },
+  {
+    "id": "mon_dimension_stalker",
+    "name": "维度潜行者",
+    "stars": 4,
+    "element": "void",
+    "hp": 1320,
+    "base_atk": 940,
+    "base_def": 10,
+    "spd": 115,
+    "description": "能在维度裂缝间穿梭的高速刺客型生物",
+    "lore": "没有人知道这种生物的起源。它们似乎来自裂隙另一侧的未知维度，将裂隙视为自己的领地。它们的身体能短暂进入维度夹缝，使普通攻击无法命中。",
+    "ecological_role": "裂隙的机动防卫者，专门清除威胁核心的目标",
+    "unique_mechanic": "每3回合进入「维度穿越」状态1回合，该状态下免疫所有物理伤害",
+    "passive": {
+      "name": "维度闪避",
+      "effect": "dimension_dodge",
+      "skill_ref": "ps_dimension_stalker"
+    },
+    "effects": {
+      "passive": {
+        "desc": "闪避率提升25%，闪避成功后下次攻击伤害提升50%",
+        "type": "dodge_counter",
+        "value": 25
+      }
+    },
+    "active_skill": {
+      "name": "维度斩",
+      "desc": "从维度夹缝中突然出现斩击，造成ATK×170%的void伤害，无视目标30%防御",
+      "effect": "damage"
+    },
+    "scene": "虚空裂隙",
+    "card_no": 112,
+    "cost": 4,
+    "atk": 940,
+    "def": 10
+  },
+  {
+    "id": "mon_void_hound",
+    "name": "虚空猎犬",
+    "stars": 4,
+    "element": "void",
+    "hp": 1460,
+    "base_atk": 670,
+    "base_def": 10,
+    "spd": 105,
+    "description": "被虚空力量改造的猎犬形态生物，专门追踪生命气息",
+    "lore": "深渊守望者曾驯养这些生物作为斥候。然而随着裂隙扩大，它们被虚空完全同化，成为了无法控制的猎手。它们能感知数百米外的生命波动。",
+    "ecological_role": "裂隙中层的追踪猎手，负责驱逐入侵者",
+    "unique_mechanic": "追踪标记：攻击目标后留下虚空印记，被标记目标受到的所有void伤害提升20%",
+    "passive": {
+      "name": "虚空嗅觉",
+      "effect": "void_tracking",
+      "skill_ref": "ps_void_hound"
+    },
+    "effects": {
+      "passive": {
+        "desc": "攻击速度提升，每消灭一个敌人额外获得一次行动",
+        "type": "extra_action",
+        "value": 1
+      }
+    },
+    "active_skill": {
+      "name": "撕裂冲锋",
+      "desc": "高速冲向目标撕咬，造成ATK×170%的void伤害，若目标有虚空印记则伤害翻倍",
+      "effect": "damage"
+    },
+    "scene": "虚空裂隙",
+    "card_no": 113,
+    "cost": 4,
+    "atk": 670,
+    "def": 10
+  },
+  {
+    "id": "mon_soul_wraith",
+    "name": "腐蚀灵魂",
+    "stars": 5,
+    "element": "shadow",
+    "hp": 2120,
+    "base_atk": 970,
+    "base_def": 20,
+    "spd": 155,
+    "description": "被虚空腐蚀殆尽的灵魂，只剩下痛苦与仇恨",
+    "lore": "这些曾经是试图封印裂隙的暗影祭司。封印失败后，他们的灵魂被虚空吞噬，肉体消散，只剩下扭曲的意识在裂隙中游荡。他们的痛苦化为了攻击他人的武器。",
+    "ecological_role": "裂隙的精神污染源，腐蚀其他生物的意志",
+    "unique_mechanic": "每回合对所有敌人施加「灵魂腐蚀」，累计3层后目标陷入混乱状态",
+    "passive": {
+      "name": "痛苦传导",
+      "effect": "pain_transfer",
+      "skill_ref": "ps_soul_wraith"
+    },
+    "effects": {
+      "passive": {
+        "desc": "受到伤害时将30%伤害反弹给攻击者",
+        "type": "damage_reflect",
+        "value": 30
+      }
+    },
+    "active_skill": {
+      "name": "灵魂尖啸",
+      "desc": "发出穿透灵魂的尖叫，对所有敌人造成ATK×120%的shadow伤害并降低其攻击力20%",
+      "effect": "debuff"
+    },
+    "scene": "虚空裂隙",
+    "card_no": 114,
+    "cost": 5,
+    "star": 5,
+    "atk": 970,
+    "def": 20
+  },
+  {
+    "id": "mon_abyss_sentinel",
+    "name": "深渊哨兵",
+    "stars": 6,
+    "element": "shadow",
+    "hp": 4310,
+    "base_atk": 1130,
+    "base_def": 40,
+    "spd": 190,
+    "description": "被虚空同化的深渊守望者，成为了裂隙最忠实的守卫",
+    "lore": "这些曾经是守护裂隙不扩大的深渊守望者精英。在长期与虚空能量接触后，他们的意志被侵蚀，最终被虚空同化。他们保留了守望者的战斗技巧，却将矛头指向了昔日的同伴。",
+    "ecological_role": "裂隙核心区域的精英守卫",
+    "unique_mechanic": "「守望者记忆」：能复制上一个被击败的敌方技能使用一次",
+    "passive": {
+      "name": "虚空铠甲",
+      "effect": "void_armor",
+      "skill_ref": "ps_abyss_sentinel"
+    },
+    "effects": {
+      "passive": {
+        "desc": "每次受到攻击后获得护盾，护盾值为受到伤害的20%",
+        "type": "damage_shield",
+        "value": 20
+      }
+    },
+    "active_skill": {
+      "name": "深渊审判",
+      "desc": "挥动虚空化的巨剑，造成ATK×160%的shadow伤害，若目标HP高于80%则伤害额外提升100%",
+      "effect": "damage"
+    },
+    "scene": "虚空裂隙",
+    "card_no": 115,
+    "cost": 5,
+    "star": 6,
+    "atk": 1130,
+    "def": 40
+  },
+  {
+    "id": "mon_void_colossus",
+    "name": "虚空巨像",
+    "stars": 7,
+    "element": "void",
+    "hp": 4460,
+    "base_atk": 2045,
+    "base_def": 35,
+    "spd": 325,
+    "description": "由大量虚空能量凝聚而成的巨型实体，是裂隙的具现化",
+    "lore": "当裂隙积累了足够多的虚空能量，这些能量会自发凝聚成具有原始意识的巨像。它们是裂隙意志的体现，会主动扩大裂隙范围。深渊守望者将消灭巨像视为最高优先任务。",
+    "ecological_role": "裂隙的主动扩张者，顶级威胁",
+    "unique_mechanic": "每回合使裂隙范围扩大，扩大3次后召唤2只虚空游魂",
+    "passive": {
+      "name": "虚空具现",
+      "effect": "void_manifestation",
+      "skill_ref": "ps_void_colossus"
+    },
+    "effects": {
+      "passive": {
+        "desc": "HP低于50%时攻击力和防御力各提升30%",
+        "type": "enrage",
+        "value": 30
+      }
+    },
+    "active_skill": {
+      "name": "虚空湮灭拳",
+      "desc": "举起巨拳砸向地面，对所有敌人造成ATK×200%的void伤害，并使地面产生虚空区域持续3回合",
+      "effect": "damage"
+    },
+    "scene": "虚空裂隙",
+    "card_no": 116,
+    "cost": 7,
+    "atk": 2045,
+    "def": 35
+  },
+  {
+    "id": "mon_shadow_archpriest",
+    "name": "堕落暗影大祭司",
+    "stars": 9,
+    "element": "shadow",
+    "hp": 10310,
+    "base_atk": 3865,
+    "base_def": 85,
+    "spd": 685,
+    "description": "试图封印裂隙却被虚空反噬的暗影祭司首领",
+    "lore": "他曾是暗影祭司中最强大的存在，独自承担了封印虚空主宰的仪式。然而虚空的力量远超预期，封印仪式失败的瞬间，他的灵魂被虚空彻底改写。如今他用曾经封印虚空的力量来为虚空服务。",
+    "ecological_role": "裂隙的魔法核心，为虚空主宰提供能量支撑",
+    "unique_mechanic": "「封印反噬」：将玩家使用过的技能封印，被封印的技能无法再次使用直到战斗结束",
+    "passive": {
+      "name": "灵魂收割",
+      "effect": "soul_harvest",
+      "skill_ref": "ps_shadow_archpriest"
+    },
+    "effects": {
+      "passive": {
+        "desc": "每消灭一个敌方单位回复自身15%最大HP",
+        "type": "kill_heal",
+        "value": 15
+      }
+    },
+    "active_skill": {
+      "name": "虚空封印术",
+      "desc": "施放扭曲的封印魔法，对单体造成ATK×300%的shadow伤害并封印目标最强技能2回合",
+      "effect": "debuff"
+    },
+    "scene": "虚空裂隙",
+    "card_no": 117,
+    "cost": 9,
+    "atk": 3865,
+    "def": 85
+  },
+  {
+    "id": "mon_void_sovereign",
+    "name": "虚空主宰",
+    "stars": 10,
+    "element": "void",
+    "hp": 13590,
+    "base_atk": 6230,
+    "base_def": 115,
+    "spd": 990,
+    "description": "从裂隙另一侧降临的虚空维度统治者，大寂灭的先驱",
+    "lore": "虚空主宰并非此世界的生物，它是裂隙另一侧虚空维度的统治者。它将灵息大陆视为下一个吞噬的目标，亲自降临是为了彻底撕裂时空屏障。暗影祭司的封印只能将其短暂束缚，无法真正消灭。",
+    "ecological_role": "裂隙的终极威胁，大寂灭的执行者",
+    "unique_mechanic": "三阶段战斗：第一阶段召唤虚空军团；第二阶段（HP<70%）开启时空扭曲使所有技能冷却时间减半；第三阶段（HP<30%）进入「大寂灭模式」每回合对全体造成固定伤害",
+    "passive": {
+      "name": "虚空法则",
+      "effect": "void_law",
+      "skill_ref": "ps_void_sovereign"
+    },
+    "effects": {
+      "passive": {
+        "desc": "免疫所有控制效果，受到的void属性伤害转化为治疗",
+        "type": "void_immunity",
+        "value": 100
+      }
+    },
+    "active_skill": {
+      "name": "大寂灭之触",
+      "desc": "伸出虚空之手触碰现实，对单体造成ATK×300%的void伤害，并使目标进入「虚空侵蚀」状态持续3回合每回合损失5%最大HP",
+      "effect": "damage"
+    },
+    "scene": "虚空裂隙",
+    "card_no": 118,
+    "cost": 10,
+    "atk": 6230,
+    "def": 115
+  },
+  {
+    "id": "mon_chaos_mote",
+    "name": "混沌微粒",
+    "stars": 2,
+    "element": "chaos",
+    "hp": 700,
+    "base_atk": 320,
+    "base_def": 5,
+    "spd": 50,
+    "description": "创世之初残留的混沌能量碎片，随机性极强",
+    "lore": "灵息大陆诞生之初，混沌与秩序激烈碰撞。那场创世之战留下了无数混沌碎片，它们至今仍在灵息之心附近游荡。这些碎片没有固定形态，行为完全随机，连第五灵都无法预测它们的下一步。",
+    "ecological_role": "灵息之心的随机干扰因子，维持创世能量的不稳定性",
+    "unique_mechanic": "每回合随机使用一种效果：攻击/治疗/buff/debuff，完全随机",
+    "passive": {
+      "name": "混沌本质",
+      "effect": "chaos_nature",
+      "skill_ref": "ps_chaos_mote"
+    },
+    "effects": {
+      "passive": {
+        "desc": "每次受到伤害后随机获得一种属性抗性提升20%",
+        "type": "random_resist",
+        "value": 20
+      }
+    },
+    "active_skill": {
+      "name": "混沌爆发",
+      "desc": "释放不稳定的混沌能量，造成ATK×60%至ATK×200%随机范围的chaos伤害",
+      "effect": "damage"
+    },
+    "scene": "灵息之心",
+    "card_no": 119,
+    "cost": 2,
+    "atk": 320,
+    "def": 5
+  },
+  {
+    "id": "mon_root_tendril",
+    "name": "世界树根须",
+    "stars": 3,
+    "element": "light",
+    "hp": 1010,
+    "base_atk": 460,
+    "base_def": 10,
+    "spd": 75,
+    "description": "世界树延伸至灵息之心的活化根须",
+    "lore": "世界树的根系遍布整个灵息大陆，而最深处的根须直接浸泡在源息之中，获得了独立的意识。它们将灵息之心视为需要保护的圣地，对任何入侵者发起缓慢但坚定的攻击。",
+    "ecological_role": "灵息之心的固定防线，阻止入侵者深入",
+    "unique_mechanic": "无法被移动或击退，每回合从地面汲取能量回复5点HP",
+    "passive": {
+      "name": "根系连接",
+      "effect": "root_network",
+      "skill_ref": "ps_root_tendril"
+    },
+    "effects": {
+      "passive": {
+        "desc": "防御力提升，受到的伤害降低15%",
+        "type": "dmg_reduction",
+        "value": 15
+      }
+    },
+    "active_skill": {
+      "name": "缠绕束缚",
+      "desc": "伸出根须缠绕目标，造成ATK×100%的light伤害并使目标束缚1回合无法行动",
+      "effect": "debuff"
+    },
+    "scene": "灵息之心",
+    "card_no": 120,
+    "cost": 3,
+    "star": 3,
+    "atk": 460,
+    "def": 10
+  },
+  {
+    "id": "mon_creation_echo",
+    "name": "创世回响",
+    "stars": 4,
+    "element": "chaos",
+    "hp": 1460,
+    "base_atk": 670,
+    "base_def": 10,
+    "spd": 105,
+    "description": "创世之力的残留回响，形态不断变化",
+    "lore": "当世界被创造时，那股力量的回响至今仍在灵息之心震荡。这些回响有时会凝聚成实体，它们的形态每隔片刻就会改变，有时像人，有时像兽，有时像纯粹的光与混沌。",
+    "ecological_role": "灵息之心的变化守护者，适应各种威胁",
+    "unique_mechanic": "每2回合随机变换属性（light/chaos/wind/fire），变换时获得对应属性的攻击加成",
+    "passive": {
+      "name": "创世流变",
+      "effect": "creation_flux",
+      "skill_ref": "ps_creation_echo"
+    },
+    "effects": {
+      "passive": {
+        "desc": "攻击时有20%概率触发双重打击造成两次伤害",
+        "type": "double_strike",
+        "value": 20
+      }
+    },
+    "active_skill": {
+      "name": "原初之力",
+      "desc": "释放创世之初的原始力量，造成ATK×140%的chaos伤害并随机对目标施加一种负面状态",
+      "effect": "damage"
+    },
+    "scene": "灵息之心",
+    "card_no": 121,
+    "cost": 3,
+    "star": 4,
+    "atk": 670,
+    "def": 10,
+    "sprite_path": "res://assets/monsters/mon_creation_echo/portrait.png",
+    "fullbody_path": "res://assets/monsters/mon_creation_echo/fullbody.png"
+  },
+  {
+    "id": "mon_worldtree_warden",
+    "name": "世界树守林人",
+    "stars": 5,
+    "element": "light",
+    "hp": 2120,
+    "base_atk": 970,
+    "base_def": 20,
+    "spd": 155,
+    "description": "被世界树赋予意识的树人，专职守护树根核心",
+    "lore": "世界树将自身的一部分意识注入了最古老的树根，创造了这些守林人。它们是世界树的手足延伸，能感知整个灵息大陆的动静。当灵息之心受到威胁时，它们会从各处汇聚而来。",
+    "ecological_role": "世界树的直接代理人，协调灵息之心的防御",
+    "unique_mechanic": "「世界树庇护」：为周围友方单位提供护盾，护盾值等于守林人当前HP的10%",
+    "passive": {
+      "name": "树根汲养",
+      "effect": "root_nourish",
+      "skill_ref": "ps_worldtree_warden"
+    },
+    "effects": {
+      "passive": {
+        "desc": "每回合回复自身最大HP的5%，同时为友方回复2%",
+        "type": "team_regen",
+        "value": 5
+      }
+    },
+    "active_skill": {
+      "name": "圣木屏障",
+      "desc": "召唤世界树枝干形成防护，为全体友方提供ATK×150%数值的护盾持续2回合",
+      "effect": "buff"
+    },
+    "scene": "灵息之心",
+    "card_no": 122,
+    "cost": 5,
+    "atk": 970,
+    "def": 20
+  },
+  {
+    "id": "mon_ancient_guardian",
+    "name": "远古灵魂守卫",
+    "stars": 5,
+    "element": "light",
+    "hp": 2970,
+    "base_atk": 780,
+    "base_def": 25,
+    "spd": 130,
+    "description": "上古时代守护灵息之心的英灵，死后灵魂留守至今",
+    "lore": "在第五灵沉睡之前，曾有一批最强大的勇士自愿献出生命，以灵魂之力守护灵息之心直到永远。数千年过去，他们的肉体早已消散，但誓言让他们的灵魂永远留在了这里。",
+    "ecological_role": "灵息之心的精英守卫，对抗强力入侵者",
+    "unique_mechanic": "「英灵誓约」：HP降至0时不会死亡，而是进入「誓约形态」攻击力翻倍持续2回合后才消散",
+    "passive": {
+      "name": "不灭誓言",
+      "effect": "undying_oath",
+      "skill_ref": "ps_ancient_guardian"
+    },
+    "effects": {
+      "passive": {
+        "desc": "受到致命伤害时以1HP存活，每场战斗触发一次",
+        "type": "death_resist",
+        "value": 1
+      }
+    },
+    "active_skill": {
+      "name": "圣光斩魄",
+      "desc": "挥动由灵魂凝聚的圣剑，造成ATK×200%的light伤害，对shadow和void属性目标额外造成50%伤害",
+      "effect": "damage"
+    },
+    "scene": "灵息之心",
+    "card_no": 123,
+    "cost": 5,
+    "star": 5,
+    "atk": 780,
+    "def": 25
+  },
+  {
+    "id": "mon_light_seraph",
+    "name": "源息炽天使",
+    "stars": 6,
+    "element": "light",
+    "hp": 3080,
+    "base_atk": 1410,
+    "base_def": 25,
+    "spd": 225,
+    "description": "由灵息之心最纯粹的源息凝聚而成的天使形态守护者",
+    "lore": "当灵息之心感受到极大威胁时，会将最纯粹的源息能量凝聚成这种天使形态。炽天使没有独立意识，完全是灵息之心意志的体现。它们的光芒能净化一切黑暗，连虚空能量都会在其面前消散。",
+    "ecological_role": "灵息之心的主动净化者，专门对抗黑暗力量",
+    "unique_mechanic": "「圣光净化」：每回合移除一个友方单位身上的所有负面状态",
+    "passive": {
+      "name": "源息光辉",
+      "effect": "source_radiance",
+      "skill_ref": "ps_light_seraph"
+    },
+    "effects": {
+      "passive": {
+        "desc": "对shadow和void属性敌人造成的伤害提升40%",
+        "type": "element_bonus",
+        "value": 40
+      }
+    },
+    "active_skill": {
+      "name": "圣焰审判",
+      "desc": "召唤源息圣焰降临，对单体造成ATK×260%的light伤害，对黑暗属性目标必定暴击",
+      "effect": "damage"
+    },
+    "scene": "灵息之心",
+    "card_no": 124,
+    "cost": 6,
+    "atk": 1410,
+    "def": 25
+  },
+  {
+    "id": "mon_primordial_leviathan",
+    "name": "原初利维坦",
+    "stars": 7,
+    "element": "chaos",
+    "hp": 4460,
+    "base_atk": 2045,
+    "base_def": 35,
+    "spd": 325,
+    "description": "创世之初诞生的巨型混沌生物，沉睡了数千年后被惊醒",
+    "lore": "在世界被创造的混沌时代，这头巨兽是最早诞生的生命之一。它的身体本身就是混沌能量的结晶，连第五灵都对其保持敬畏。它本已沉睡，但外来者的入侵惊醒了它，使其以守护者的姿态出现。",
+    "ecological_role": "灵息之心的终极生态守护者，上古时代的遗留",
+    "unique_mechanic": "「混沌领域」：战斗开始时建立混沌领域，领域内所有技能效果随机增强或减弱50%",
+    "passive": {
+      "name": "原初混沌",
+      "effect": "primordial_chaos",
+      "skill_ref": "ps_primordial_leviathan"
+    },
+    "effects": {
+      "passive": {
+        "desc": "免疫所有debuff，受到控制效果时反而提升攻击力20%",
+        "type": "debuff_immunity",
+        "value": 20
+      }
+    },
+    "active_skill": {
+      "name": "创世洪流",
+      "desc": "释放创世之初的混沌洪流，对所有敌人造成ATK×280%的chaos伤害并使战场进入混沌状态3回合",
+      "effect": "damage"
+    },
+    "scene": "灵息之心",
+    "card_no": 125,
+    "cost": 7,
+    "atk": 2045,
+    "def": 35
+  },
+  {
+    "id": "mon_worldtree_avatar",
+    "name": "世界树化身",
+    "stars": 9,
+    "element": "light",
+    "hp": 9370,
+    "base_atk": 4295,
+    "base_def": 80,
+    "spd": 685,
+    "description": "世界树将自身意识完全注入的巨型战斗化身",
+    "lore": "世界树通常只是默默守护，从不直接干预。但当灵息之心面临毁灭级威胁时，它会将数千年积累的源息能量全部注入一个化身，亲自下场战斗。这是世界树最后的手段，也是最强大的力量。化身消散后，世界树需要数百年才能恢复。",
+    "ecological_role": "世界树的战斗化身，灵息之心的最终防线",
+    "unique_mechanic": "「世界树庇护网」：为所有友方单位提供持续护盾，每回合刷新；被击败时将所有友方单位HP恢复至满值",
+    "passive": {
+      "name": "千年根基",
+      "effect": "ancient_roots",
+      "skill_ref": "ps_worldtree_avatar"
+    },
+    "effects": {
+      "passive": {
+        "desc": "每受到100点伤害后防御力永久提升5点，无上限",
+        "type": "def_growth",
+        "value": 5
+      }
+    },
+    "active_skill": {
+      "name": "源息之树·绽放",
+      "desc": "世界树完全绽放，对所有敌人造成ATK×350%的light伤害，同时为所有友方单位回复ATK×200%的HP",
+      "effect": "damage"
+    },
+    "scene": "灵息之心",
+    "card_no": 126,
+    "cost": 5,
+    "atk": 4295,
+    "def": 80
+  },
+  {
+    "id": "mon_the_nameless",
+    "name": "无名·第五灵",
+    "stars": 10,
+    "element": "chaos",
+    "hp": 13590,
+    "base_atk": 6230,
+    "base_def": 115,
+    "spd": 990,
+    "description": "沉睡于灵息之心的第五灵，创世之力的化身，被惊醒后以守护者姿态出现",
+    "lore": "「无名」是灵息大陆的第五位创世灵，也是最神秘的一位。其他四灵各司其职，而无名选择沉睡于灵息之心，以自身之力维持大陆的源息平衡。它没有名字，因为名字意味着限制，而它是无限的。当外来者威胁到灵息之心时，它从亿万年的沉睡中苏醒，以创世之力审判一切。",
+    "ecological_role": "灵息大陆的终极守护者，创世力量的源泉",
+    "unique_mechanic": "四阶段战斗：觉醒期（召唤守护者）→混沌期（HP<75%，随机改变所有技能效果）→审判期（HP<50%，每回合对全体造成创世伤害）→终焉期（HP<25%，进入无敌状态10秒后释放「创世终焉」清场技能）",
+    "passive": {
+      "name": "创世法则",
+      "effect": "creation_law",
+      "skill_ref": "ps_the_nameless"
+    },
+    "effects": {
+      "passive": {
+        "desc": "免疫所有即死效果，每回合重置一个随机技能的冷却时间",
+        "type": "creation_immunity",
+        "value": 100
+      }
+    },
+    "active_skill": {
+      "name": "创世终焉",
+      "desc": "汇聚灵息大陆所有源息之力，对所有敌人造成ATK×200%的chaos伤害，此伤害无视所有防御和抗性",
+      "effect": "damage"
+    },
+    "scene": "灵息之心",
+    "card_no": 127,
+    "cost": 10,
+    "star": 10,
+    "atk": 6230,
+    "def": 115
+  }
+]

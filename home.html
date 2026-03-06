@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>灵息大陆 — 龙虾游戏工作室</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#050510;--bg2:#0a0a1a;--blue:#4fc3f7;--purple:#ab47bc;--gold:#ffb347;--text:#e0dce8;--text2:#b0a8c8;--text3:#665f80}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:'Segoe UI',system-ui,-apple-system,sans-serif;overflow-x:hidden}
+a{color:var(--blue);text-decoration:none}
+.hero{position:relative;height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;overflow:hidden}
+.hero canvas{position:absolute;inset:0;z-index:0}
+.hero-content{position:relative;z-index:2;text-align:center;opacity:0;animation:heroIn 2s ease .5s forwards}
+.hero-sub{font-size:14px;color:var(--text3);letter-spacing:6px;text-transform:uppercase;margin-bottom:12px}
+.hero-title{font-size:clamp(36px,8vw,72px);font-weight:900;background:linear-gradient(135deg,var(--blue),var(--purple),var(--gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1.2;margin-bottom:8px}
+.hero-tagline{font-size:clamp(16px,3vw,22px);color:var(--text2);margin-bottom:32px;font-weight:300}
+.hero-tagline em{color:var(--gold);font-style:normal}
+.hero-cta{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+.cta{padding:12px 32px;border-radius:8px;font-size:15px;font-weight:600;cursor:pointer;transition:all .3s;border:none;display:inline-block}
+.cta-p{background:linear-gradient(135deg,var(--blue),var(--purple));color:#fff;box-shadow:0 4px 20px rgba(79,195,247,.3)}
+.cta-p:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(79,195,247,.5)}
+.cta-s{background:transparent;color:var(--text);border:1px solid rgba(255,255,255,.2)}
+.cta-s:hover{border-color:var(--gold);color:var(--gold)}
+.scroll-hint{position:absolute;bottom:30px;z-index:2;animation:bounce 2s infinite}
+.scroll-hint span{display:block;width:24px;height:24px;border-right:2px solid var(--text3);border-bottom:2px solid var(--text3);transform:rotate(45deg)}
+@keyframes heroIn{to{opacity:1}}
+@keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(10px)}}
+section{padding:80px 24px;max-width:1100px;margin:0 auto}
+.stitle{font-size:clamp(24px,5vw,36px);font-weight:800;text-align:center;margin-bottom:12px;background:linear-gradient(135deg,var(--blue),var(--purple));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.ssub{text-align:center;color:var(--text3);font-size:14px;margin-bottom:48px}
+.wgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px}
+.wcard{background:rgba(20,16,42,.8);border:1px solid rgba(42,32,64,.6);border-radius:12px;padding:24px;transition:all .3s}
+.wcard:hover{border-color:var(--purple);transform:translateY(-4px);box-shadow:0 8px 30px rgba(100,60,200,.15)}
+.wcard h3{font-size:18px;color:var(--gold);margin-bottom:8px}
+.wcard p{font-size:14px;color:var(--text2);line-height:1.8}
+.wicon{font-size:32px;margin-bottom:12px}
+.timeline{position:relative;padding-left:40px}
+.timeline::before{content:'';position:absolute;left:15px;top:0;bottom:0;width:2px;background:linear-gradient(to bottom,var(--blue),var(--purple),var(--gold),transparent)}
+.ch{position:relative;margin-bottom:48px;opacity:0;transform:translateY(30px);transition:all .6s ease}
+.ch.vis{opacity:1;transform:translateY(0)}
+.ch-dot{position:absolute;left:-33px;top:4px;width:18px;height:18px;border-radius:50%;border:3px solid var(--purple);background:var(--bg);z-index:1}
+.ch-num{font-size:12px;color:var(--purple);letter-spacing:2px;margin-bottom:4px}
+.ch h3{font-size:20px;color:#f0e6ff;margin-bottom:8px}
+.ch p{font-size:14px;color:var(--text2);line-height:1.8;margin-bottom:12px}
+.ch-bg{width:100%;height:200px;border-radius:10px;overflow:hidden;margin-bottom:12px;position:relative}
+.ch-bg img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.ch:hover .ch-bg img{transform:scale(1.05)}
+.ch-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(transparent 40%,var(--bg))}
+.monsters-preview{display:flex;gap:12px;overflow-x:auto;padding:20px 0;scroll-snap-type:x mandatory}
+.mp-card{flex:0 0 160px;scroll-snap-align:start;background:rgba(20,16,42,.8);border:1px solid rgba(42,32,64,.6);border-radius:10px;overflow:hidden;transition:all .3s}
+.mp-card:hover{border-color:var(--blue);transform:translateY(-4px)}
+.mp-card img{width:100%;aspect-ratio:1;object-fit:cover}
+.mp-card .mp-info{padding:8px 10px}
+.mp-card .mp-no{font-size:10px;color:var(--gold);font-family:monospace}
+.mp-card .mp-name{font-size:13px;color:#f0e6ff}
+.footer{text-align:center;padding:40px 24px;border-top:1px solid rgba(42,32,64,.4);color:var(--text3);font-size:13px}
+.footer a{color:var(--purple)}
+.races{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-top:24px}
+.race{text-align:center;padding:16px;min-width:100px}
+.race .ri{font-size:36px;margin-bottom:6px}
+.race .rn{font-size:13px;color:var(--text2)}
+.race .rs{font-size:11px;color:var(--text3)}
+</style>
+</head>
+<body>
+<div class="hero" id="hero">
+<canvas id="particles"></canvas>
+<div class="hero-content">
+<div class="hero-sub">龙虾游戏工作室 出品</div>
+<h1 class="hero-title">灵息大陆</h1>
+<p class="hero-tagline">源晶记得你的名字。<em>万物因灵息而生。</em></p>
+<div class="hero-cta">
+<a class="cta cta-p" href="#story">探索故事</a>
+<a class="cta cta-s" href="index.html">怪物图鉴</a>
+</div>
+</div>
+<div class="scroll-hint"><span></span></div>
+</div>
+</body>
+</html>
+
+<!-- World -->
+<section id="world">
+<h2 class="stitle">世界观</h2>
+<p class="ssub">源晶纪元 · 三族鼎立 · 大寂灭 · 重生之路</p>
+<div class="wgrid">
+<div class="wcard"><div class="wicon">💎</div><h3>源晶</h3><p>不是矿物，不是能量——它是大陆本身的"心跳"。每一颗源晶都携带着一段记忆：有的记得风的形状，有的记得水的温度，有的记得火焰燃烧前最后一秒的犹豫。</p></div>
+<div class="wcard"><div class="wicon">🌿</div><h3>灵息术</h3><p>万物中流动的源晶能量。三大流派——生息派治愈万物，静息派封印时间，烈息派操控混沌。与 NPC 深度对话可产生「灵息共鸣」，解锁隐藏能力。</p></div>
+<div class="wcard"><div class="wicon">⚔️</div><h3>大寂灭</h3><p>三百年前，源晶商会在灵脉深渊启动了「灵息抽取器」。灵脉震荡，浮空学院坠落，灵都崩塌。英雄沈星河以生命封印装置，却只是将毁灭减速——大陆仍在缓慢衰亡。</p></div>
+</div>
+<div class="races">
+<div class="race"><div class="ri">🧝</div><div class="rn">精灵族</div><div class="rs">灵息共鸣者</div></div>
+<div class="race"><div class="ri">👤</div><div class="rn">人类</div><div class="rs">源晶开拓者</div></div>
+<div class="race"><div class="ri">🐗</div><div class="rn">兽人族</div><div class="rs">大地之子</div></div>
+<div class="race"><div class="ri">🌳</div><div class="rn">灵树族</div><div class="rs">千年守护者</div></div>
+<div class="race"><div class="ri">🟢</div><div class="rn">史莱姆</div><div class="rs">魔力异变体</div></div>
+</div>
+</section>
+
+<!-- Story -->
+<section id="story">
+<h2 class="stitle">故事章节</h2>
+<p class="ssub">五卷史诗 · 每个选择都将改变世界</p>
+<div class="timeline">
+
+<div class="ch" data-ch="1">
+<div class="ch-dot"></div>
+<div class="ch-num">第一章</div>
+<div class="ch-bg"><img src="/assets/backgrounds/web/village_bg.jpg?v=1772291069" loading="lazy" alt="星落村"></div>
+<h3>醒来的旅人</h3>
+<p>你在星落村边缘醒来，失去了所有记忆。村长老王收留了你，商人小李提供物资，而神秘旅行者只留下一句话：「源晶记得你的名字。」与三位 NPC 对话触发灵息共鸣，获得感知能力——你开始看到隐藏的史莱姆。</p>
+</div>
+
+<div class="ch" data-ch="2">
+<div class="ch-dot"></div>
+<div class="ch-num">第二章</div>
+<div class="ch-bg"><img src="/assets/backgrounds/web/chapter_2_forest_call.jpg?v=1772291069" loading="lazy" alt="史莱姆森林"></div>
+<h3>森林的呼唤</h3>
+<p>史莱姆森林的灵脉节点失控，史莱姆数量激增。你深入森林，发现古树拥有灵智——它是灵树族的最后守护者。神秘石碑上刻着大寂灭前的预言。封印需要三块「灵息碎片」，而史莱姆正在试图重组为更高级的生命体……</p>
+</div>
+
+<div class="ch" data-ch="3">
+<div class="ch-dot"></div>
+<div class="ch-num">第三章</div>
+<div class="ch-bg"><img src="/assets/backgrounds/web/mine_bg.jpg?v=1772291069" loading="lazy" alt="沉默矿坑"></div>
+<h3>碎片之路</h3>
+<p>前往沉默矿坑和云端废墟收集灵息碎片。在矿坑中遇到困在那里的兽人矿工，在废墟中发现精灵后裔正在研究大寂灭的真相。碎片拼凑出惊人事实——大寂灭不是天灾，而是某个组织为垄断源晶能量而人为制造的。</p>
+</div>
+
+<div class="ch" data-ch="4">
+<div class="ch-dot"></div>
+<div class="ch-num">第四章</div>
+<div class="ch-bg"><img src="/assets/backgrounds/web/abyss_bg.jpg?v=1772291069" loading="lazy" alt="灵脉深渊"></div>
+<h3>封印之下</h3>
+<p>三块碎片集齐，森林门开启。灵脉深渊中，古代的灵息抽取装置至今仍在运转。神秘旅行者的身份揭晓——他是三百年前的英雄。你必须选择：摧毁装置让大陆重生，还是控制装置维持脆弱的平衡？</p>
+</div>
+
+<div class="ch" data-ch="5">
+<div class="ch-dot"></div>
+<div class="ch-num">第五章</div>
+<div class="ch-bg"><img src="/assets/backgrounds/web/ruins_bg.jpg?v=1772291069" loading="lazy" alt="新的黎明"></div>
+<h3>新的黎明</h3>
+<p>根据你的选择，世界发生不同变化。NPC 的对话、态度、甚至所在位置都会改变。这一章没有固定剧情——AI NPC 根据世界状态自由演绎后续故事。每个玩家的第五章，都是独一无二的。</p>
+</div>
+
+</div>
+</section>
+
+<!-- Monster Preview -->
+<section id="monsters">
+<h2 class="stitle">怪物图鉴</h2>
+<p class="ssub">127 种灵息生物 · 每一只都有自己的故事</p>
+<div class="monsters-preview" id="monsterPreview"></div>
+<div style="text-align:center;margin-top:24px">
+<a class="cta cta-p" href="index.html">查看完整图鉴 →</a>
+</div>
+</section>
+
+<!-- 运营数据 -->
+<section id="ops">
+<h2 class="stitle">📣 运营数据</h2>
+<p class="ssub">小红书发布记录 · 学习报告 · 运营策略 · 内容日历</p>
+<!-- 统计数据 -->
+<div class="wgrid" id="ops-stats"></div>
+<!-- 小红书发布记录 -->
+<h3 class="stitle" style="font-size:24px;margin-top:48px">小红书笔记</h3>
+<div class="wgrid" id="ops-xhs"></div>
+<!-- 运营文档 -->
+<h3 class="stitle" style="font-size:24px;margin-top:48px">运营文档</h3>
+<div class="wgrid" id="ops-docs"></div>
+</section>
+
+<!-- Footer -->
+<div class="footer">
+<p>🦞 龙虾游戏工作室 · 灵息大陆</p>
+<p style="margin-top:8px">用心做游戏，用 AI 讲故事</p>
+<p style="margin-top:12px"><a href="index.html">素材看板</a> · <a href="story.html">故事阅读</a></p>
+<p style="margin-top:16px;font-size:11px">© 2026 Lobster Game Studio. All rights reserved.</p>
+</div>
+
+<script>
+// ===== Token Passthrough =====
+const QS=location.search||'';
+document.querySelectorAll('a[href]').forEach(a=>{
+  const h=a.getAttribute('href');
+  if(h&&!h.startsWith('http')&&!h.startsWith('#')&&!h.startsWith('mailto')){
+    a.href=h+(h.includes('?')?'&':'?')+QS.replace('?','');
+  }
+});
+
+// ===== Particle System =====
+(function(){
+const canvas=document.getElementById('particles');
+const ctx=canvas.getContext('2d');
+let W,H;
+function resize(){W=canvas.width=window.innerWidth;H=canvas.height=window.innerHeight;}
+resize();window.addEventListener('resize',resize);
+
+const particles=[];
+const COUNT=80;
+const colors=['rgba(79,195,247,','rgba(171,71,188,','rgba(255,179,71,'];
+
+for(let i=0;i<COUNT;i++){
+  particles.push({
+    x:Math.random()*W,
+    y:H+Math.random()*200,
+    r:Math.random()*3+1,
+    speed:Math.random()*1.5+0.3,
+    drift:Math.random()*0.5-0.25,
+    alpha:Math.random()*0.6+0.2,
+    color:colors[Math.floor(Math.random()*3)],
+    pulse:Math.random()*Math.PI*2,
+    pulseSpeed:Math.random()*0.02+0.01
+  });
+}
+
+function draw(){
+  ctx.clearRect(0,0,W,H);
+  // radial glow at center
+  const grd=ctx.createRadialGradient(W/2,H/2,0,W/2,H/2,H*0.6);
+  grd.addColorStop(0,'rgba(79,195,247,0.03)');
+  grd.addColorStop(0.5,'rgba(171,71,188,0.02)');
+  grd.addColorStop(1,'transparent');
+  ctx.fillStyle=grd;
+  ctx.fillRect(0,0,W,H);
+
+  for(const p of particles){
+    p.y-=p.speed;
+    p.x+=p.drift+Math.sin(p.pulse)*0.3;
+    p.pulse+=p.pulseSpeed;
+    const a=p.alpha*(0.5+0.5*Math.sin(p.pulse));
+    if(p.y<-10){p.y=H+10;p.x=Math.random()*W;}
+    ctx.beginPath();
+    ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+    ctx.fillStyle=p.color+a+')';
+    ctx.fill();
+    // glow
+    ctx.beginPath();
+    ctx.arc(p.x,p.y,p.r*3,0,Math.PI*2);
+    ctx.fillStyle=p.color+(a*0.15)+')';
+    ctx.fill();
+  }
+  // connections
+  for(let i=0;i<particles.length;i++){
+    for(let j=i+1;j<particles.length;j++){
+      const dx=particles[i].x-particles[j].x;
+      const dy=particles[i].y-particles[j].y;
+      const d=Math.sqrt(dx*dx+dy*dy);
+      if(d<120){
+        ctx.beginPath();
+        ctx.moveTo(particles[i].x,particles[i].y);
+        ctx.lineTo(particles[j].x,particles[j].y);
+        ctx.strokeStyle='rgba(79,195,247,'+(0.08*(1-d/120))+')';
+        ctx.stroke();
+      }
+    }
+  }
+  requestAnimationFrame(draw);
+}
+draw();
+})();
+
+// ===== Scroll Reveal =====
+const observer=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('vis');});
+},{threshold:0.15});
+document.querySelectorAll('.ch').forEach(el=>observer.observe(el));
+
+// ===== Monster Preview =====
+const _ghPages=location.hostname.includes('github.io');
+const _monsterUrl=_ghPages?'monsters_data.json':'/api/monsters';
+fetch(_monsterUrl).then(r=>r.json()).then(data=>{
+  const pub=data.filter(m=>m.has_fullbody).sort((a,b)=>(a.card_no||999)-(b.card_no||999)).slice(0,12);
+  const imgBase=_ghPages?'':'';
+  document.getElementById('monsterPreview').innerHTML=pub.map(m=>`
+    <div class="mp-card">
+      <img src="${imgBase}/assets/monsters/${m.id}/thumb.png" loading="lazy" alt="${m.name}" onerror="this.style.display='none'">
+      <div class="mp-info">
+        <div class="mp-no">#${String(m.card_no||'?').padStart(3,'0')}</div>
+        <div class="mp-name">${m.name}</div>
+      </div>
+    </div>
+  `).join('');
+}).catch(()=>{});
+
+// ===== 运营数据 =====
+const _opsUrl=_ghPages?'data.json':'/api/ops-materials';
+fetch(_opsUrl).then(r=>r.json()).then(data=>{
+  const stats=_ghPages?(data.ops_stats||{}):(data.stats||{});
+  const mats=_ghPages?{}:(data.materials||{});
+  // 统计数据
+  const statItems=[
+    { label:'运营天数', value:stats.total_days??0, icon:'📅' },
+    { label:'总发帖', value:stats.total_posts??0, icon:'📝' },
+    { label:'已发布', value:stats.published_posts??0, icon:'✅' },
+    { label:'怪物图鉴', value:stats.monster_gallery_count??0, icon:'🖼️' },
+    { label:'知识分享', value:stats.knowledge_share_count??0, icon:'💡' },
+    { label:'定时任务', value:stats.cron_tasks??0, icon:'⏰' }
+  ];
+  document.getElementById('ops-stats').innerHTML=statItems.map(s=>`
+    <div class="wcard">
+      <div class="wicon">${s.icon}</div>
+      <h3>${s.label}</h3>
+      <p style="font-size:28px;font-weight:700;color:var(--gold)">${s.value}</p>
+    </div>
+  `).join('');
+  // 小红书笔记
+  const xhs=mats.xhs_posts||[];
+  document.getElementById('ops-xhs').innerHTML=xhs.map(p=>`
+    <div class="wcard">
+      <div class="wicon">📣</div>
+      <h3>${p.title||p.id}</h3>
+      <p style="color:var(--text3);font-size:12px;margin-bottom:8px">${p.date||''} · ${(p.tags||[]).slice(0,3).join(' · ')}</p>
+      <p style="font-size:13px">${p.status==='published'?'<span style="color:var(--blue)">已发布</span>':'待发布'}</p>
+    </div>
+  `).join('');
+  // 运营文档：学习报告、策略、内容日历
+  const docs=[...(mats.reports||[]).map(r=>({...r,icon:'📊'})),...(mats.strategies||[]).map(s=>({...s,icon:'📋'})),...(mats.content_calendar||[]).map(c=>({...c,icon:'📅'}))];
+  document.getElementById('ops-docs').innerHTML=docs.map(d=>`
+    <div class="wcard">
+      <div class="wicon">${d.icon||'📄'}</div>
+      <h3>${d.title||d.id}</h3>
+      <p style="color:var(--text3);font-size:12px">${d.date||d.type||''}</p>
+      <p style="font-size:13px;color:var(--text2)">${d.path||''}</p>
+    </div>
+  `).join('');
+}).catch(()=>{});
+</script>
+</html>

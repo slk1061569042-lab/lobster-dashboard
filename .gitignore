@@ -1,0 +1,4 @@
+serve-stderr.log
+serve-stdout.log
+*.bak
+*.new

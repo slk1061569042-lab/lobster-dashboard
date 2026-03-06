@@ -1,16 +1,18 @@
 #!/usr/bin/env node
 import { readdir, readFile, writeFile } from 'fs/promises';
-import { join, basename } from 'path';
+import { join } from 'path';
 
 const ROOT = '/Users/slk/.openclaw';
 const SHARED_DIR = join(ROOT, 'shared');
-const OUTPUT = join(import.meta.dirname, 'data.json');
+const GAME_DIR = '/Users/slk/Projects/ai-npc-game';
+const OUT_DIR = import.meta.dirname;
 
 async function main() {
   const data = {
     generated_at: new Date().toLocaleString('zh-CN'),
     agents: {},
-    shared: {}
+    shared: {},
+    ops_stats: {}
   };
 
   // 1. 扫描所有 agent workspaces
@@ -42,11 +44,34 @@ async function main() {
     } catch { /* skip */ }
   }
 
-  // 3. 写 data.json
-  await writeFile(OUTPUT, JSON.stringify(data, null, 2));
-  console.log('✅ Generated', OUTPUT);
+  // 3. 生成怪物数据（从游戏项目）
+  try {
+    const raw = await readFile(join(GAME_DIR, 'data/monster_cards.json'), 'utf8');
+    const mc = JSON.parse(raw);
+    const cards = mc.cards || mc;
+    await writeFile(join(OUT_DIR, 'monsters_data.json'), JSON.stringify(cards, null, 2));
+    console.log('✅ monsters_data.json:', cards.length, 'monsters');
+  } catch (e) {
+    console.warn('⚠️ Failed to generate monsters_data.json:', e.message);
+  }
+
+  // 4. 写 data.json
+  await writeFile(join(OUT_DIR, 'data.json'), JSON.stringify(data, null, 2));
+  console.log('✅ data.json generated');
   console.log('  - Agents:', Object.keys(data.agents).length);
   console.log('  - Shared:', Object.keys(data.shared).length);
+
+  // 5. 写 data_meta.json（更新时间戳）
+  const meta = {
+    updated_at: new Date().toLocaleString('zh-CN'),
+    monsters_count: 0
+  };
+  try {
+    const raw = await readFile(join(OUT_DIR, 'monsters_data.json'), 'utf8');
+    meta.monsters_count = JSON.parse(raw).length;
+  } catch {}
+  await writeFile(join(OUT_DIR, 'data_meta.json'), JSON.stringify(meta));
+  console.log('✅ data_meta.json:', meta.updated_at);
 }
 
 main().catch(console.error);

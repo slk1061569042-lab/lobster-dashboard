@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>灵息大陆 — 故事阅读</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#050510;--bg2:#0a0a1a;--bg3:#14102a;--bg4:#1a1030;--border:#2a2040;--blue:#4fc3f7;--purple:#ab47bc;--gold:#ffb347;--text:#e0dce8;--text2:#b0a8c8;--text3:#665f80}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:'Segoe UI',system-ui,-apple-system,sans-serif;min-height:100vh}
+a{color:var(--blue);text-decoration:none}
+.topbar{background:var(--bg2);border-bottom:1px solid var(--border);padding:12px 24px;display:flex;align-items:center;gap:16px;position:sticky;top:0;z-index:50}
+.topbar a.back{color:var(--text3);font-size:14px;transition:color .2s}
+.topbar a.back:hover{color:var(--blue)}
+.topbar h1{font-size:16px;color:#f0e6ff;flex:1}
+.layout{display:flex;max-width:1200px;margin:0 auto;min-height:calc(100vh - 50px)}
+/* Sidebar */
+.sidebar{width:260px;border-right:1px solid var(--border);padding:20px 0;position:sticky;top:50px;height:calc(100vh - 50px);overflow-y:auto;flex-shrink:0}
+.sidebar::-webkit-scrollbar{width:4px}
+.sidebar::-webkit-scrollbar-thumb{background:var(--border);border-radius:2px}
+.ch-item{display:flex;align-items:center;gap:10px;padding:12px 20px;cursor:pointer;transition:all .2s;border-left:3px solid transparent;font-size:13px;color:var(--text2)}
+.ch-item:hover{background:rgba(79,195,247,.05);color:var(--text)}
+.ch-item.active{background:rgba(79,195,247,.08);border-left-color:var(--blue);color:var(--blue)}
+.ch-item .ch-icon{font-size:18px;flex-shrink:0}
+.ch-item .ch-title{line-height:1.4}
+.ch-item .ch-sub{font-size:11px;color:var(--text3);display:block}
+/* Content */
+.content{flex:1;padding:32px 40px;max-width:760px}
+.content-loading{text-align:center;padding:60px;color:var(--text3)}
+.content-loading .spinner{display:inline-block;width:24px;height:24px;border:3px solid var(--border);border-top-color:var(--blue);border-radius:50%;animation:spin .6s linear infinite;margin-bottom:12px}
+@keyframes spin{to{transform:rotate(360deg)}}
+/* Markdown rendered */
+.md h1{font-size:28px;color:#f0e6ff;margin:0 0 20px;padding-bottom:12px;border-bottom:1px solid var(--border);background:linear-gradient(135deg,var(--blue),var(--purple));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.md h2{font-size:20px;color:var(--gold);margin:32px 0 12px;padding-bottom:6px;border-bottom:1px solid rgba(42,32,64,.4)}
+.md h3{font-size:16px;color:var(--purple);margin:24px 0 8px}
+.md p{font-size:14px;line-height:2;color:var(--text2);margin-bottom:14px}
+.md strong{color:var(--text)}
+.md em{color:var(--gold);font-style:normal}
+.md blockquote{border-left:3px solid var(--purple);padding:8px 16px;margin:16px 0;background:rgba(20,16,42,.6);border-radius:0 8px 8px 0;font-size:13px;color:var(--text2);line-height:1.8}
+.md ul,.md ol{margin:12px 0;padding-left:24px}
+.md li{font-size:14px;color:var(--text2);line-height:1.8;margin-bottom:4px}
+.md hr{border:none;border-top:1px solid var(--border);margin:24px 0}
+.md table{width:100%;border-collapse:collapse;margin:16px 0;font-size:13px}
+.md th{background:var(--bg4);color:var(--gold);padding:8px 12px;text-align:left;border:1px solid var(--border)}
+.md td{padding:8px 12px;border:1px solid var(--border);color:var(--text2)}
+.md tr:hover td{background:rgba(79,195,247,.03)}
+/* Nav buttons */
+.page-nav{display:flex;justify-content:space-between;margin-top:40px;padding-top:20px;border-top:1px solid var(--border)}
+.nav-btn{padding:10px 20px;border-radius:8px;font-size:13px;cursor:pointer;transition:all .2s;border:1px solid var(--border);background:var(--bg3);color:var(--text2)}
+.nav-btn:hover{border-color:var(--blue);color:var(--blue)}
+.nav-btn:disabled{opacity:.3;cursor:default}
+/* Mobile */
+.sidebar-toggle{display:none;background:none;border:1px solid var(--border);color:var(--text2);padding:6px 12px;border-radius:6px;font-size:13px;cursor:pointer}
+@media(max-width:768px){
+  .sidebar{position:fixed;left:-280px;top:50px;z-index:40;background:var(--bg);width:280px;transition:left .3s;box-shadow:4px 0 20px rgba(0,0,0,.5)}
+  .sidebar.open{left:0}
+  .sidebar-toggle{display:block}
+  .content{padding:20px 16px}
+}
+
+.home-fab{position:fixed;bottom:24px;left:24px;width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,#4fc3f7,#ab47bc);display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:999;box-shadow:0 4px 16px rgba(79,195,247,.4);transition:all .3s;text-decoration:none;font-size:20px;border:none;color:#fff}
+.home-fab:hover{transform:scale(1.1);box-shadow:0 6px 24px rgba(79,195,247,.6)}
+</style>
+</head>
+<body>
+<a class="home-fab" href="/" title="回到首页">🏠</a>
+<div class="topbar">
+<a class="back" href="/" id="backLink">← 首页</a>
+<button class="sidebar-toggle" onclick="document.querySelector('.sidebar').classList.toggle('open')">☰ 目录</button>
+<h1>📖 灵息大陆 · 故事阅读</h1>
+</div>
+<div class="layout">
+<div class="sidebar" id="sidebar"></div>
+<div class="content">
+<div class="md" id="reader"><div class="content-loading"><div class="spinner"></div><p>加载中...</p></div></div>
+<div class="page-nav" id="pageNav" style="display:none">
+<button class="nav-btn" id="prevBtn" onclick="go(-1)">← 上一卷</button>
+<button class="nav-btn" id="nextBtn" onclick="go(1)">下一卷 →</button>
+</div>
+</div>
+</div>
+</body>
+</html>
+<script>
+const QS=location.search||'';
+const API='';
+let chapters=[];
+let current=0;
+
+// token passthrough
+document.getElementById('backLink').href='/'+QS;
+
+// Simple markdown to HTML
+function md2html(md){
+  let h=md
+    .replace(/^### (.+)$/gm,'<h3>$1</h3>')
+    .replace(/^## (.+)$/gm,'<h2>$1</h2>')
+    .replace(/^# (.+)$/gm,'<h1>$1</h1>')
+    .replace(/^> (.+)$/gm,'<blockquote>$1</blockquote>')
+    .replace(/^---$/gm,'<hr>')
+    .replace(/\*\*(.+?)\*\*/g,'<strong>$1</strong>')
+    .replace(/\*(.+?)\*/g,'<em>$1</em>')
+    .replace(/`(.+?)`/g,'<code style="background:var(--bg4);padding:1px 4px;border-radius:3px;font-size:12px">$1</code>');
+  // tables
+  h=h.replace(/^\|(.+)\|$/gm,(line)=>{
+    const cells=line.split('|').filter(c=>c.trim());
+    if(cells.every(c=>/^[\s-:]+$/.test(c)))return '<!--sep-->';
+    return cells.map(c=>`<td>${c.trim()}</td>`).join('');
+  });
+  // wrap table rows
+  let inTable=false;let isHeader=true;
+  const lines=h.split('\n');
+  const out=[];
+  for(let i=0;i<lines.length;i++){
+    const l=lines[i];
+    if(l.startsWith('<td>')){
+      if(!inTable){out.push('<table>');inTable=true;isHeader=true;}
+      if(l==='<!--sep-->'){isHeader=false;continue;}
+      const tag=isHeader?'th':'td';
+      out.push('<tr>'+l.replace(/<td>/g,`<${tag}>`).replace(/<\/td>/g,`</${tag}>`)+'</tr>');
+    }else{
+      if(inTable){out.push('</table>');inTable=false;}
+      out.push(l);
+    }
+  }
+  if(inTable)out.push('</table>');
+  h=out.join('\n');
+  // lists
+  h=h.replace(/^- (.+)$/gm,'<li>$1</li>');
+  h=h.replace(/(<li>.*<\/li>\n?)+/gs,(m)=>'<ul>'+m+'</ul>');
+  // paragraphs
+  h=h.replace(/^(?!<[hubltoap\-!])((?!<).+)$/gm,'<p>$1</p>');
+  // merge consecutive blockquotes
+  h=h.replace(/<\/blockquote>\n<blockquote>/g,'\n');
+  return h;
+}
+
+async function loadChapters(){
+  try{
+    const r=await fetch(API+'/api/stories');
+    chapters=await r.json();
+    renderSidebar();
+    if(chapters.length)loadChapter(0);
+  }catch(e){
+    document.getElementById('reader').innerHTML='<p style="color:var(--red)">加载失败</p>';
+  }
+}
+
+function renderSidebar(){
+  const icons=['🌍','👥','🐾','🗡️','💎','❤️','📊','📋'];
+  document.getElementById('sidebar').innerHTML=chapters.map((ch,i)=>
+    `<div class="ch-item${i===current?' active':''}" onclick="loadChapter(${i})">
+      <span class="ch-icon">${icons[i]||'📖'}</span>
+      <span class="ch-title">${ch.title}<span class="ch-sub">卷 ${i+1}</span></span>
+    </div>`
+  ).join('');
+}
+
+async function loadChapter(idx){
+  current=idx;
+  renderSidebar();
+  const reader=document.getElementById('reader');
+  reader.innerHTML='<div class="content-loading"><div class="spinner"></div><p>加载中...</p></div>';
+  // close mobile sidebar
+  document.querySelector('.sidebar').classList.remove('open');
+  try{
+    const r=await fetch(API+'/api/stories/'+chapters[idx].id);
+    const d=await r.json();
+    reader.innerHTML=md2html(d.content);
+    // scroll to top
+    window.scrollTo({top:0,behavior:'smooth'});
+    // nav buttons
+    const nav=document.getElementById('pageNav');
+    nav.style.display='flex';
+    document.getElementById('prevBtn').disabled=idx===0;
+    document.getElementById('nextBtn').disabled=idx===chapters.length-1;
+  }catch(e){
+    reader.innerHTML='<p style="color:var(--red)">加载失败: '+e.message+'</p>';
+  }
+}
+
+function go(dir){
+  const next=current+dir;
+  if(next>=0&&next<chapters.length)loadChapter(next);
+}
+
+// keyboard nav
+document.addEventListener('keydown',e=>{
+  if(e.key==='ArrowLeft')go(-1);
+  if(e.key==='ArrowRight')go(1);
+});
+
+loadChapters();
+</script>
+</html>
