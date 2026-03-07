@@ -632,6 +632,21 @@ async function handleScanRefresh(req, res) {
   scanAndUpdateMonsters();
 }
 
+/** POST /api/refresh — 重新生成 data.json + 更新 index.html + git push（静默） */
+async function handleDashboardRefresh(req, res) {
+  try {
+    // Step 1: 运行 generate.mjs 生成 data.json + monsters_data.json
+    execSync('node generate.mjs', { cwd: DASHBOARD_DIR, stdio: 'pipe', timeout: 30000 });
+    // Step 2: 运行 update-dashboard.mjs --push 更新 index.html 并推送
+    execSync('node update-dashboard.mjs --push', { cwd: DASHBOARD_DIR, stdio: 'pipe', timeout: 60000 });
+    const now = new Date().toLocaleString('zh-CN', { timeZone: 'Asia/Shanghai' });
+    jsonRes(res, { ok: true, timestamp: now, message: '仪表盘已刷新并推送' });
+  } catch (e) {
+    console.error('Dashboard refresh error:', e.message);
+    jsonRes(res, { ok: false, error: e.message }, 500);
+  }
+}
+
 /** GET /api/ops-materials — 返回 workspace-ops 的 ops_materials.json */
 function handleOpsMaterials(req, res) {
   const opsPath = '/Users/slk/.openclaw/workspace-ops/memory/ops_materials.json';
@@ -819,6 +834,12 @@ function handleRequest(req, res) {
     return;
   }
 
+  // POST /api/refresh — 手动刷新：重新生成 data.json + 更新 index.html + git push
+  if (req.method === 'POST' && pathname === '/api/refresh') {
+    handleDashboardRefresh(req, res);
+    return;
+  }
+
   serveStatic(req, res, pathname);
 }
 
@@ -831,9 +852,26 @@ server.listen(PORT, () => {
   console.log('🎨 素材 API：/api/assets/list|meta|save|replace|stage|scan');
   console.log('📋 GET /api/monsters');
    console.log('🔍 扫描 API：GET /api/scan/status | POST /api/scan/refresh');
+  console.log('🔄 手动刷新：POST /api/refresh');
   console.log('⏰ 静默扫描：每 ' + (SCAN_INTERVAL_MS / 60000) + ' 分钟');
   console.log('🗄️ Supabase：/supabase/* → ' + SUPABASE_HOST);
   // 启动时立即扫描一次，然后每 5 分钟静默扫描
   scanAndUpdateMonsters();
   setInterval(scanAndUpdateMonsters, SCAN_INTERVAL_MS);
+
+  // 静默仪表盘刷新：每 5 分钟重新生成 data.json + 更新 index.html + git push
+  function silentDashboardRefresh() {
+    try {
+      execSync('node generate.mjs', { cwd: DASHBOARD_DIR, stdio: 'ignore', timeout: 30000 });
+      execSync('node update-dashboard.mjs --push', { cwd: DASHBOARD_DIR, stdio: 'ignore', timeout: 60000 });
+      console.log('🔄 静默仪表盘刷新完成 ' + new Date().toLocaleTimeString('zh-CN'));
+    } catch (e) {
+      console.warn('⚠️ 静默仪表盘刷新失败:', e.message);
+    }
+  }
+  // 启动 2 分钟后首次刷新（避免和 monster scan 冲突），之后每 5 分钟
+  setTimeout(() => {
+    silentDashboardRefresh();
+    setInterval(silentDashboardRefresh, SCAN_INTERVAL_MS);
+  }, 2 * 60 * 1000);
 });

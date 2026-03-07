@@ -488,6 +488,31 @@ document.querySelectorAll('[data-id]').forEach(el => {
     openModal(el.dataset.id);
   });
 });
+
+// 手动刷新：调用 POST /api/refresh 重新生成数据并推送
+async function refreshData() {
+  const btn = document.getElementById('refreshBtn');
+  if (!btn) return;
+  const orig = btn.textContent;
+  btn.textContent = '⏳ 刷新中...';
+  btn.disabled = true;
+  try {
+    const res = await fetch('/api/refresh', { method: 'POST' });
+    const data = await res.json();
+    if (data.ok) {
+      btn.textContent = '✅ 已刷新';
+      setTimeout(() => location.reload(), 1500);
+    } else {
+      btn.textContent = '❌ 失败';
+      console.error('Refresh failed:', data.error);
+      setTimeout(() => { btn.textContent = orig; btn.disabled = false; }, 3000);
+    }
+  } catch (e) {
+    btn.textContent = '❌ 网络错误';
+    console.error('Refresh error:', e);
+    setTimeout(() => { btn.textContent = orig; btn.disabled = false; }, 3000);
+  }
+}
 </script>
 </body>
 </html>
